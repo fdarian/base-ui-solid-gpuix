@@ -4,6 +4,12 @@ import { createEffect, createSignal, on, onCleanup } from "solid-js";
 const POPUP_EXIT_MS = 60;
 
 /**
+ * The unmount timer for popups whose exit `onMotionComplete` releases them:
+ * the exit tween plus a buffer, like FF's `exitFallbackMs`.
+ */
+export const POPUP_EXIT_FALLBACK_MS = POPUP_EXIT_MS + 100;
+
+/**
  * `open` drives the animation; `mounted` outlives it by `exitMs`, so the exit
  * can play. The exit's own completion (`onMotionComplete`) can unmount sooner
  * with `release()`; the timer covers an exit that never animates.
