@@ -35,6 +35,15 @@ export function moveIndex(
 	return null;
 }
 
+/** The first (or last) row a keyboard step can enter, or `null` when there is none. */
+export function edgeIndex(
+	edge: "first" | "last",
+	count: number,
+	isDisabled?: (index: number) => boolean | undefined,
+) {
+	return moveIndex(null, edge === "first" ? 1 : -1, count, isDisabled);
+}
+
 /**
  * Scrolls `scroller` so `row` is visible. `nearest` moves the least it can
  * (with `padding` of breathing room); `center` puts the row in the middle.
