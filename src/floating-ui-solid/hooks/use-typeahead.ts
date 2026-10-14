@@ -1,4 +1,5 @@
 import type { KeyEvent } from "@gpuix/solid";
+import { isChord } from "./list-nav";
 
 /** Base UI `useTypeahead` `resetMs`. */
 export const TYPEAHEAD_RESET_MS = 750;
@@ -75,10 +76,7 @@ export function createTypeahead(options: TypeaheadOptions): Typeahead {
 	const handleKey = (event: Pick<KeyEvent, "key" | "modifiers">) => {
 		const key = event.key;
 		if (key === undefined) return false;
-		const modifiers = event.modifiers;
-		if (modifiers !== undefined && (modifiers.ctrl || modifiers.alt || modifiers.cmd)) {
-			return false;
-		}
+		if (isChord(event)) return false;
 		if (key === "space" && buffer === "") return false;
 		const char = key === "space" ? " " : key;
 		if (char.length !== 1) return false;
