@@ -1,5 +1,4 @@
 import type { HostElement, KeyEvent } from "@gpuix/solid";
-import { readBounds } from "./bounds";
 
 /** Ctrl, alt or cmd is held: the key is a shortcut, not a list command or a typed character. */
 export function isChord(event: Pick<KeyEvent, "ctrlKey" | "altKey" | "metaKey">) {
@@ -44,13 +43,13 @@ export function edgeIndex(
 /**
  * Scrolls `scroller` so `row` is visible. `nearest` moves the least it can
  * (with `padding` of breathing room); `center` puts the row in the middle.
- * gpuix's own `scrollIntoView` only aligns a direct child of the scroller, and
- * these rows sit inside a wrapper, so the offset is set by hand.
+ * `scrollIntoView` only aligns a direct child of the scroller, and these rows
+ * sit inside a wrapper, so the offset is set by hand.
  *
  * `row` is the fluid-hover rect: content space, independent of the scroll
  * offset. A painted row box would lag the offset by a frame, so successive
- * key presses would overshoot. A scroller that has not been painted is left
- * where it is.
+ * key presses would overshoot. A scroller that has not been painted (no client
+ * height) is left where it is.
  */
 export function revealRow(
 	scroller: HostElement,
@@ -58,29 +57,19 @@ export function revealRow(
 	mode: "nearest" | "center",
 	padding = 0,
 ) {
-	const renderer = scroller.root?.nativeRenderer;
-	if (
-		renderer?.getScrollOffset === undefined ||
-		renderer.scrollTo === undefined
-	) {
-		throw new Error("This renderer does not expose scroll offsets");
-	}
-	const view = readBounds(scroller);
-	const offset = renderer.getScrollOffset(scroller.id);
-	if (view === null || offset === null) return;
-	const scrollTop = -offset[1];
+	const viewHeight = scroller.clientHeight;
+	if (viewHeight === 0) return;
+	const scrollTop = scroller.scrollTop;
 	const top = row.top;
 	const bottom = top + row.height;
 	if (mode === "center") {
-		renderer.scrollTo(
-			scroller.id,
-			0,
-			-Math.max(0, top + row.height / 2 - view.height / 2),
-		);
+		scroller.scrollTo({
+			top: Math.max(0, top + row.height / 2 - viewHeight / 2),
+		});
 		return;
 	}
-	if (top >= scrollTop && bottom <= scrollTop + view.height) return;
+	if (top >= scrollTop && bottom <= scrollTop + viewHeight) return;
 	const target =
-		top < scrollTop ? top - padding : bottom + padding - view.height;
-	renderer.scrollTo(scroller.id, 0, -Math.max(0, target));
+		top < scrollTop ? top - padding : bottom + padding - viewHeight;
+	scroller.scrollTo({ top: Math.max(0, target) });
 }
