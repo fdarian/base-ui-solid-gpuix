@@ -46,7 +46,7 @@ export function createPressToggle(options: {
 			toggle(event, true);
 		},
 		onClick(event: EventPayload) {
-			if (event.key !== undefined) return;
+			if (event.detail === 0) return;
 			options.onClickEnd?.();
 			if (pressHandled) {
 				pressHandled = false;

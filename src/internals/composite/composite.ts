@@ -2,11 +2,8 @@ import type { HostElement, KeyEvent } from "@gpuix/solid";
 import { readBounds } from "./bounds";
 
 /** Ctrl, alt or cmd is held: the key is a shortcut, not a list command or a typed character. */
-export function isChord(event: Pick<KeyEvent, "modifiers">) {
-	const modifiers = event.modifiers;
-	return (
-		modifiers !== undefined && (modifiers.ctrl || modifiers.alt || modifiers.cmd)
-	);
+export function isChord(event: Pick<KeyEvent, "ctrlKey" | "altKey" | "metaKey">) {
+	return event.ctrlKey === true || event.altKey === true || event.metaKey === true;
 }
 
 /**
