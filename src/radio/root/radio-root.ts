@@ -1,6 +1,6 @@
 import { createUniqueId } from 'solid-js';
-import type { RadioGroup } from '../../radio-group/radio-group';
 import type { RowItem } from '../../internals/composite';
+import type { RadioGroup } from '../../radio-group/radio-group';
 
 export interface RadioRootOptions {
 	index: number;

@@ -434,7 +434,7 @@ export function createMenuList<
 			field = element;
 		},
 		containsFocus: () =>
-			panel !== undefined && panel.mounted && panel.matches(':focus-within'),
+			panel?.mounted === true && panel.matches(':focus-within'),
 	};
 }
 
