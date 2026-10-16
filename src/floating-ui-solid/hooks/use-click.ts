@@ -1,4 +1,17 @@
-import type { HostMouseEvent } from "@gpuix/solid";
+import { document, type HostElement, type HostMouseEvent } from "@gpuix/solid";
+
+/**
+ * After an outside press has closed a popup: a press over bare background
+ * blurs focus once its handlers have returned, which is after the closing
+ * popup handed focus to its trigger. The trigger takes it again then; a control
+ * that took focus from the press keeps it.
+ */
+export function refocusAfterPress(trigger: HostElement | null | undefined) {
+	if (trigger === null || trigger === undefined) return;
+	setTimeout(() => {
+		if (trigger.mounted && document.activeElement === null) trigger.focus();
+	}, 0);
+}
 
 /**
  * Press-to-toggle for the element that opens a popup, like Base UI: the
@@ -26,6 +39,8 @@ export function createPressToggle(options: {
 	return {
 		onMouseDown(event: HostMouseEvent) {
 			if (event.button !== undefined && event.button !== 0) return;
+			// A press moves focus to what it landed on after its handlers have run, which would pull it back from the popup the toggle just focused. Windows and Linux run the handler after that move, where this changes nothing.
+			event.preventDefault();
 			pressHandled = true;
 			toggle(event, true);
 		},
