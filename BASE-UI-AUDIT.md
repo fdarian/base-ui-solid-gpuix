@@ -12,7 +12,7 @@ and props FF uses (defaults included), against Base UI 1.9.0's source and this p
 
 ## Summary
 
-About 125 gaps were fixed on this branch (Status `fixed (sha)`), and the gpuix DOM-parity release removed most of what blocked the port: DOM click and pointer semantics, explicit pointer capture, hover and wheel chaining, ARIA and `inert`, forms, popup flip and anchor width, outside press. What is left:
+About 175 gaps were fixed on this branch (Status `fixed (sha)`), and the gpuix DOM-parity release removed most of what blocked the port: DOM click and pointer semantics, explicit pointer capture, hover and wheel chaining, ARIA and `inert`, forms, popup flip and anchor width, outside press. What is left:
 
 - **Not fixed in the port, no gpuix cause**: mount-order indices for accordion items and tabs (static lists only), tabs-subtle
   horizontal overflow (no demo overflows), and FF-only layers that are not Base UI (select gap-click, combobox `onCreate` / `variant` / `error` / `size`, tabs `selectedIndex` / `onSelect`, button `active` /
@@ -24,11 +24,10 @@ About 125 gaps were fixed on this branch (Status `fixed (sha)`), and the gpuix D
 |---|---|
 | Pointer events that no longer capture or hide the ancestor: `onMouseMove` on a trigger keeps the child's click, enter and leave fire per element (FORK.md:296, :351, :406) | switch hover count |
 | `maskImage` (host.ts:575), `onScroll` offsets, rounded overflow clip (FORK.md:32) | scroll fade and thumb inside select / combobox popups (the `ScrollArea` fade, dividers and rounded clip are done) |
-| Motion: `pathLength` / `strokeDasharray` (host.ts:276-297), colour transitions (FORK.md:33), `createMotionValue` / `createSpring` (packages/solid/src/index.ts:36-38) | switch drag from the live thumb; icon stroke-width ease (`Icon easeStroke`: input-copy, dropdown, select, combobox) |
+| Motion: `pathLength` / `strokeDasharray` (host.ts:276-297), colour transitions (FORK.md:33), `createMotionValue` / `createSpring` (packages/solid/src/index.ts:36-38) | switch drag from the live thumb |
 | `display: contents` (FORK.md:564) | menu `RadioGroup` `role="group"` wrapper |
 | `<input disabled>` (FORK.md:451) | combobox `disabled` (still `readOnly` + `tabIndex` -1) |
 | `position: absolute` against the nearest positioned ancestor (FORK.md:559) | dialog `container` (still the direct-child `scoped` placement) |
-| `tabIndex` / `focus()` on rows | menu items as real focus targets (popup rows are, since F1 and F3; the port keeps a virtual highlight with `aria-activedescendant` only in combobox, as Base UI does) |
 
 - **Blocked by gpuix**, only what gpuix still lacks:
 
@@ -642,7 +641,7 @@ Out of scope by plan (single-select only), recorded rather than counted as gaps:
 
 Audit: Select 40 rows (15 ported, 16 gap, 7 blocked by gpuix, 2 n/a); Combobox 44 rows (13 ported, 25 gap, 5 blocked by gpuix, 1 n/a for multiple/chips, out of scope by plan).
 
-Now: Select 41 rows (14 ported, 22 fixed, 2 gap, 1 blocked by gpuix, 2 n/a); Combobox 45 rows (13 ported, 26 fixed, 4 gap, 1 blocked by gpuix, 1 n/a). The blocked rows are the popup `scaleY` entrance in both; the gaps are the list thumb and fade inside popups, the combobox `<input disabled>`, and the FF styling-layer gap click. The check draw and the row colour transitions are fixed in both (and the checkbox's check now draws too).
+Now: Select 44 rows (13 ported, 26 fixed, 2 gap, 1 blocked by gpuix, 2 n/a); Combobox 47 rows (14 ported, 27 fixed, 4 gap, 1 blocked by gpuix, 1 n/a). The blocked rows are the popup `scaleY` entrance in both; the gaps are the list thumb and fade inside popups, the combobox `<input disabled>`, and the FF styling-layer gap click. The check draw and the row colour transitions are fixed in both (and the checkbox's check now draws too).
 
 After the fix phase: every `gap` row is `fixed (<sha>)` (Select f4e2f16, Combobox efb9663, shared 65e350b) except three recorded as `gap — not fixed` (Select gap click; Combobox `onCreate` and `variant`/`error`/`size`), all FF styling-layer features the lead scoped out, and the popup exit release (Select and Combobox), which 65e350b fixed and 7464e6c reverted. The Select keyboard focus ring was one of the four and is now fixed (43037c4), with the shared travelling ring of accordion, tabs, checkbox and radio (`src/lib/focus-ring.tsx`). Partial fixes: Select press-drag-release lacks cancel-on-release-outside (no mouse-up-outside event); Combobox `disabled` still uses `readOnly` and `tabIndex` -1, though gpuix has `<input disabled>` now (a gap).
 
