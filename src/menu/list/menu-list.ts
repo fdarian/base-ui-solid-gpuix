@@ -78,7 +78,8 @@ export interface MenuListOptions {
 	onRowsChanged?: () => void;
 }
 
-interface SubmenuHost {
+/** Which of the list's rows has its submenu open: the list keeps that row lit under a pointer crossing others. */
+export interface MenuSubmenuHost {
 	openIndex: Accessor<number | null>;
 	setOpenIndex: (index: number | null) => void;
 }
@@ -397,7 +398,7 @@ export function createMenuList<
 		),
 	);
 
-	const submenuHost: SubmenuHost = {
+	const submenuHost: MenuSubmenuHost = {
 		openIndex: openSubIndex,
 		setOpenIndex: setOpenSubIndex,
 	};
