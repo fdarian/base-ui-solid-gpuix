@@ -1,8 +1,12 @@
-import type { HostElement, KeyEvent } from "@gpuix/solid";
+import type { HostElement, KeyEvent } from '@gpuix/solid';
 
 /** Ctrl, alt or cmd is held: the key is a shortcut, not a list command or a typed character. */
-export function isChord(event: Pick<KeyEvent, "ctrlKey" | "altKey" | "metaKey">) {
-	return event.ctrlKey === true || event.altKey === true || event.metaKey === true;
+export function isChord(
+	event: Pick<KeyEvent, 'ctrlKey' | 'altKey' | 'metaKey'>,
+) {
+	return (
+		event.ctrlKey === true || event.altKey === true || event.metaKey === true
+	);
 }
 
 /**
@@ -33,11 +37,17 @@ export function moveIndex(
 
 /** The first (or last) row a keyboard step can enter, or `null` when there is none. */
 export function edgeIndex(
-	edge: "first" | "last",
+	edge: 'first' | 'last',
 	count: number,
 	isDisabled?: (index: number) => boolean | undefined,
 ) {
-	return moveIndex(null, edge === "first" ? 1 : -1, count, isDisabled);
+	return moveIndex(null, edge === 'first' ? 1 : -1, count, isDisabled);
+}
+
+/** A row's box in the scroller's content space. */
+export interface RevealRect {
+	top: number;
+	height: number;
 }
 
 /**
@@ -54,8 +64,8 @@ export function edgeIndex(
  */
 export function revealRow(
 	scroller: HostElement,
-	row: { top: number; height: number },
-	mode: "nearest" | "center",
+	row: RevealRect,
+	mode: 'nearest' | 'center',
 	padding = 0,
 	topInset = 0,
 ) {
@@ -64,7 +74,7 @@ export function revealRow(
 	const scrollTop = scroller.scrollTop;
 	const top = row.top;
 	const bottom = top + row.height;
-	if (mode === "center") {
+	if (mode === 'center') {
 		scroller.scrollTo({
 			top: Math.max(0, top + row.height / 2 - viewHeight / 2),
 		});
@@ -73,8 +83,6 @@ export function revealRow(
 	const hiddenTop = scrollTop + topInset;
 	if (top >= hiddenTop && bottom <= scrollTop + viewHeight) return;
 	const target =
-		top < hiddenTop
-			? top - padding - topInset
-			: bottom + padding - viewHeight;
+		top < hiddenTop ? top - padding - topInset : bottom + padding - viewHeight;
 	scroller.scrollTo({ top: Math.max(0, target) });
 }
