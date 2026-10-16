@@ -19,8 +19,8 @@ import {
 	type RevealRect,
 	revealRow,
 } from '../../internals/composite/composite';
+import { contains } from '../../internals/filter';
 import { createPresence } from '../../internals/use-transition-status';
-import { contains } from './utils/filter';
 
 export interface ComboboxRootItem {
 	value: string;
