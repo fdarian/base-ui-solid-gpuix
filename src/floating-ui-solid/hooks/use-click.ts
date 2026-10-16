@@ -1,20 +1,4 @@
-import type { HostMouseEvent, useGpuixRequired } from "@gpuix/solid";
-
-/**
- * Base UI's `returnFocus`: a closing popup hands focus back to its trigger,
- * unless focus already moved to another control (an outside press on one keeps
- * that control's focus). `force` is for focus that sat inside the popup itself.
- */
-export function returnFocusTo(
-	renderer: ReturnType<typeof useGpuixRequired>,
-	elementId: number,
-	force = false,
-) {
-	const focused = renderer.getFocusedElementId?.();
-	if (force || focused === undefined || focused === null) {
-		renderer.focusElement?.(elementId);
-	}
-}
+import type { HostMouseEvent } from "@gpuix/solid";
 
 /**
  * Press-to-toggle for the element that opens a popup, like Base UI: the
