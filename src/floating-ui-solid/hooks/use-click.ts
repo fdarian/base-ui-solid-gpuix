@@ -1,19 +1,16 @@
-import type { EventPayload, useGpuixRequired } from "@gpuix/solid";
+import { document, type HostElement, type HostMouseEvent } from "@gpuix/solid";
 
 /**
- * Base UI's `returnFocus`: a closing popup hands focus back to its trigger,
- * unless focus already moved to another control (an outside press on one keeps
- * that control's focus). `force` is for focus that sat inside the popup itself.
+ * After an outside press has closed a popup: a press over bare background
+ * blurs focus once its handlers have returned, which is after the closing
+ * popup handed focus to its trigger. The trigger takes it again then; a control
+ * that took focus from the press keeps it.
  */
-export function returnFocusTo(
-	renderer: ReturnType<typeof useGpuixRequired>,
-	elementId: number,
-	force = false,
-) {
-	const focused = renderer.getFocusedElementId?.();
-	if (force || focused === undefined || focused === null) {
-		renderer.focusElement?.(elementId);
-	}
+export function refocusAfterPress(trigger: HostElement | null | undefined) {
+	if (trigger === null || trigger === undefined) return;
+	setTimeout(() => {
+		if (trigger.mounted && document.activeElement === null) trigger.focus();
+	}, 0);
 }
 
 /**
@@ -25,7 +22,7 @@ export function returnFocusTo(
 export function createPressToggle(options: {
 	isOpen: () => boolean;
 	/** `pressed` is false for a click that came without a press. */
-	open: (event: EventPayload, pressed: boolean) => void;
+	open: (event: HostMouseEvent, pressed: boolean) => void;
 	close: () => void;
 	/** Runs on every pointer interaction, before the toggle. */
 	onPointer?: () => void;
@@ -34,18 +31,20 @@ export function createPressToggle(options: {
 }) {
 	/** The press already toggled the popup: its click must not toggle it back. */
 	let pressHandled = false;
-	const toggle = (event: EventPayload, pressed: boolean) => {
+	const toggle = (event: HostMouseEvent, pressed: boolean) => {
 		options.onPointer?.();
 		if (options.isOpen()) options.close();
 		else options.open(event, pressed);
 	};
 	return {
-		onMouseDown(event: EventPayload) {
+		onMouseDown(event: HostMouseEvent) {
 			if (event.button !== undefined && event.button !== 0) return;
+			// A press moves focus to what it landed on after its handlers have run, which would pull it back from the popup the toggle just focused. Windows and Linux run the handler after that move, where this changes nothing.
+			event.preventDefault();
 			pressHandled = true;
 			toggle(event, true);
 		},
-		onClick(event: EventPayload) {
+		onClick(event: HostMouseEvent) {
 			if (event.detail === 0) return;
 			options.onClickEnd?.();
 			if (pressHandled) {

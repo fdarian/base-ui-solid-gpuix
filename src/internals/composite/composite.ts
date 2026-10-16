@@ -49,13 +49,15 @@ export function edgeIndex(
  * `row` is the fluid-hover rect: content space, independent of the scroll
  * offset. A painted row box would lag the offset by a frame, so successive
  * key presses would overshoot. A scroller that has not been painted (no client
- * height) is left where it is.
+ * height) is left where it is. `topInset` is the height of a sticky row
+ * covering the scroller's top edge: a row under it counts as hidden.
  */
 export function revealRow(
 	scroller: HostElement,
 	row: { top: number; height: number },
 	mode: "nearest" | "center",
 	padding = 0,
+	topInset = 0,
 ) {
 	const viewHeight = scroller.clientHeight;
 	if (viewHeight === 0) return;
@@ -68,8 +70,11 @@ export function revealRow(
 		});
 		return;
 	}
-	if (top >= scrollTop && bottom <= scrollTop + viewHeight) return;
+	const hiddenTop = scrollTop + topInset;
+	if (top >= hiddenTop && bottom <= scrollTop + viewHeight) return;
 	const target =
-		top < scrollTop ? top - padding : bottom + padding - viewHeight;
+		top < hiddenTop
+			? top - padding - topInset
+			: bottom + padding - viewHeight;
 	scroller.scrollTo({ top: Math.max(0, target) });
 }
