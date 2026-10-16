@@ -411,7 +411,7 @@ Base UI paths below are relative to `packages/react/src/` (abbreviations: `ULN` 
 | Enter in the field does nothing | FF `dropdown-search.tsx:310-314` | `dropdown.tsx:431-435` (`inField`) | ported | The key is told from a row's by its event target (`event.target` against the field element). |
 | Query is cleared when the popup finishes closing (not at the start of the exit) and again on open | FF `dropdown-search.tsx:265-295` | `dropdown.tsx:527-537` (fires on `open` going false, so the list re-fills during the 60 ms fade) | fixed (7461108) | Key the clear effect on `options.mounted` instead of `options.open`. |
 | Field autofocuses on open, first row stays unlit; role `searchbox`, no `aria-activedescendant` | FF `dropdown-search.tsx:270-284,343-347`, test `:175-186` | `dropdown-search.tsx:97-103` (`role="searchbox"`, `autoFocus`), `dropdown.tsx:520-526` | ported | `autoFocus={false}` leaves open to the popup, as in the source: a keyboard open focuses the first row, a pointer open the panel. |
-| Sticky field above the scrolling rows | FF `dropdown-search.tsx:323` | `dropdown-search.tsx:24-28` (chrome above the scroller) | ported | The field sits above the scroller; gpuix has `position: sticky` now (FORK.md:560), not adopted. |
+| Sticky field above the scrolling rows | FF `dropdown-search.tsx:323` | `dropdown-search.tsx:75-135`, `dropdown.tsx:692-701` (first child of the scroller) | ported | `position: sticky; top: 0; zIndex: 20`; a child of the scroller, not of the padded list (`drift/dropdown.md`). |
 
 ### Inline `Dropdown` panel (FF's own code, no Base UI)
 
