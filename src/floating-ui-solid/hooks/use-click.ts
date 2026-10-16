@@ -1,4 +1,4 @@
-import type { EventPayload, useGpuixRequired } from "@gpuix/solid";
+import type { HostMouseEvent, useGpuixRequired } from "@gpuix/solid";
 
 /**
  * Base UI's `returnFocus`: a closing popup hands focus back to its trigger,
@@ -25,7 +25,7 @@ export function returnFocusTo(
 export function createPressToggle(options: {
 	isOpen: () => boolean;
 	/** `pressed` is false for a click that came without a press. */
-	open: (event: EventPayload, pressed: boolean) => void;
+	open: (event: HostMouseEvent, pressed: boolean) => void;
 	close: () => void;
 	/** Runs on every pointer interaction, before the toggle. */
 	onPointer?: () => void;
@@ -34,18 +34,18 @@ export function createPressToggle(options: {
 }) {
 	/** The press already toggled the popup: its click must not toggle it back. */
 	let pressHandled = false;
-	const toggle = (event: EventPayload, pressed: boolean) => {
+	const toggle = (event: HostMouseEvent, pressed: boolean) => {
 		options.onPointer?.();
 		if (options.isOpen()) options.close();
 		else options.open(event, pressed);
 	};
 	return {
-		onMouseDown(event: EventPayload) {
+		onMouseDown(event: HostMouseEvent) {
 			if (event.button !== undefined && event.button !== 0) return;
 			pressHandled = true;
 			toggle(event, true);
 		},
-		onClick(event: EventPayload) {
+		onClick(event: HostMouseEvent) {
 			if (event.detail === 0) return;
 			options.onClickEnd?.();
 			if (pressHandled) {
