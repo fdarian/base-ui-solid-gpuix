@@ -1,0 +1,4 @@
+enableGlobalVirtualStore: true
+packageImportMethod: clone-or-copy
+overrides:
+  "@gpuix/native": link:../gpuix/packages/native

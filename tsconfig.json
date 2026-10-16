@@ -1,0 +1,11 @@
+{
+	"extends": "@total-typescript/tsconfig/bundler/no-dom/library",
+	"compilerOptions": {
+		"allowImportingTsExtensions": true,
+		"noErrorTruncation": true,
+		"jsx": "preserve",
+		"jsxImportSource": "@gpuix/solid",
+		"types": ["bun"]
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"]
+}
