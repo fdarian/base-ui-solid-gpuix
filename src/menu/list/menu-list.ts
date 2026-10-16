@@ -410,8 +410,17 @@ export function createMenuList<
 		searchHost: searchState.host,
 		submenuHost,
 		handlers,
-		onKey,
-		activateActive,
+		/** The popup element's role, name and keys (`menu/popup/MenuPopup.tsx`). `id` is the trigger's `aria-controls` target. */
+		popupProps(ids: { id: string; labelledBy: string }) {
+			return {
+				id: ids.id,
+				role: 'menu',
+				'aria-labelledby': ids.labelledBy,
+				// A press on the bare popup, or a pointer open, lands focus here so the keys still reach it.
+				tabIndex: -1,
+				onKeyDown: onKey,
+			} as const;
+		},
 		lightFirst() {
 			highlight(enabledRows()[0] ?? null);
 		},
