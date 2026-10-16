@@ -320,9 +320,6 @@ export function createComboboxRoot<Item extends ComboboxRootItem>(
 			},
 		},
 		inputProps: {
-			ref(element: HostElement) {
-				inputElement = element;
-			},
 			id: inputId,
 			get value() {
 				return inputText();
@@ -359,6 +356,13 @@ export function createComboboxRoot<Item extends ComboboxRootItem>(
 			onKeyDown,
 		},
 		inputElement: () => inputElement,
+		// The refs are not in the prop objects: JSX spread applies a `ref` in an effect after the element is created. Pass them as `ref={...}` on the element.
+		inputRef(element: HostElement) {
+			inputElement = element;
+		},
+		listRef(element: HostElement) {
+			scroller = element;
+		},
 		/** The chevron: a press toggles and always focuses the input. */
 		triggerProps: {
 			role: 'button' as const,
@@ -376,9 +380,6 @@ export function createComboboxRoot<Item extends ComboboxRootItem>(
 		},
 		/** The scrolling listbox. */
 		listProps: {
-			ref(element: HostElement) {
-				scroller = element;
-			},
 			id: listId,
 			role: 'listbox' as const,
 		},

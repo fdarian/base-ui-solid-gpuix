@@ -369,6 +369,16 @@ export function createSelectRoot<
 		/** Whether navigation keys (or a keyboard open) have earned the rows their focus ring. */
 		keyboardNav: () => keyboardNav,
 		triggerElement: () => triggerElement,
+		// The refs are not in the prop objects: JSX spread applies a `ref` in an effect after the element is created, and the open reads these as the popup mounts. Pass them as `ref={...}` on the element.
+		triggerRef(element: HostElement) {
+			triggerElement = element;
+		},
+		popupRef(element: HostElement) {
+			scroller = element;
+		},
+		itemRef(index: number, element: HostElement) {
+			itemElements.set(index, element);
+		},
 		onListMouseMove,
 		/** Spread on the element that holds both the trigger and the popup: an outside press closes. */
 		dismissProps: {
@@ -379,9 +389,6 @@ export function createSelectRoot<
 			},
 		},
 		triggerProps: {
-			ref(element: HostElement) {
-				triggerElement = element;
-			},
 			id: triggerId,
 			role: 'combobox' as const,
 			'aria-haspopup': 'listbox' as const,
@@ -414,9 +421,6 @@ export function createSelectRoot<
 		},
 		/** The scrolling listbox. */
 		popupProps: {
-			ref(element: HostElement) {
-				scroller = element;
-			},
 			id: popupId,
 			role: 'listbox' as const,
 			// A pointer open, and a pointer leaving every row, land focus here so the keys still reach it.
@@ -425,9 +429,6 @@ export function createSelectRoot<
 		},
 		itemProps(item: Item, index: number) {
 			return {
-				ref(element: HostElement) {
-					itemElements.set(index, element);
-				},
 				id: itemId(index),
 				role: 'option' as const,
 				get tabIndex() {
