@@ -10,5 +10,5 @@ Headless Base UI primitives for Solid on `@gpuix/solid`, ported from `@base-ui/r
 - `pnpm check:type` / `pnpm check:test` (bun test, headless) / `pnpm check` / `pnpm format`
 
 ## Gotchas
-- Exactly one runtime instance of `solid-js` and `@gpuix/solid` may exist across this repo and its consumer. `file:` deps get a per-project store path, so the consumer's pnpm workspace includes this folder and **installs from the consumer's root**; a bare `pnpm install` here links a second `@gpuix/solid`. The consumer's `scripts/check-single-instance.ts` verifies it.
+- Exactly one runtime instance of `solid-js` and `@gpuix/solid` may exist across this repo and its consumer. `file:` deps get a per-project store path, so the consumer's pnpm workspace includes this folder and **installs from the consumer's root**; a bare `pnpm install` here links a second `@gpuix/solid`. The consumer's `scripts/check-single-instance.ts` verifies it. `pnpm-workspace.yaml` sets `verifyDepsBeforeRun: false` so pnpm scripts (`pnpm check`) never auto-install from here; keep it, and install standalone only for a clone without the consumer.
 - `tsconfig` keeps `noUncheckedIndexedAccess` on; no `!` and no fake fallbacks to satisfy it.
