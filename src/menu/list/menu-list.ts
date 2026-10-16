@@ -72,8 +72,10 @@ export interface MenuListOptions {
 	pointer: MenuListPointer;
 	/** A pointer that stops on another row for this long leaves an open submenu. */
 	submenuDwellMs: number;
-	/** FF focuses the first row two frames after a pointer open, once Base UI's own open focus has landed on the popup. */
-	openFocusMs: number;
+	/** FF focuses the first row two frames after a pointer open, once Base UI's own open focus has landed on the popup. `null`: a pointer open leaves every row unlit. */
+	openFocusMs: number | null;
+	/** The page keeps focus while this is true: an open neither lands focus on the popup nor lights a row, and the highlight does not pull focus onto its row. Flip it false, then light a row, to hand focus over. */
+	holdFocus?: Accessor<boolean>;
 	/** Rows were added or removed while the list is mounted. */
 	onRowsChanged?: () => void;
 }
@@ -334,7 +336,7 @@ export function createMenuList<
 			if (!isOpen) return;
 			setLitBy('open');
 			const landing = setTimeout(() => {
-				if (!options.open()) return;
+				if (!options.open() || options.holdFocus?.() === true) return;
 				if (fieldTakesFocus()) {
 					options.onHighlightChange(null, 'reset');
 					return;
@@ -345,12 +347,16 @@ export function createMenuList<
 				}
 				if (!options.isSub) panel?.focus({ preventScroll: true });
 			}, 0);
-			const firstRow = setTimeout(() => {
-				if (!options.open() || options.isSub) return;
-				if (fieldTakesFocus() || options.keyboardActive()) return;
-				if (options.highlightedIndex() !== null) return;
-				lightStart();
-			}, options.openFocusMs);
+			const firstRow =
+				options.openFocusMs === null
+					? undefined
+					: setTimeout(() => {
+							if (!options.open() || options.isSub) return;
+							if (options.holdFocus?.() === true) return;
+							if (fieldTakesFocus() || options.keyboardActive()) return;
+							if (options.highlightedIndex() !== null) return;
+							lightStart();
+						}, options.openFocusMs);
 			onCleanup(() => {
 				clearTimeout(landing);
 				clearTimeout(firstRow);
@@ -361,7 +367,7 @@ export function createMenuList<
 	// the lit row, and the row takes focus. Leaving every row hands focus to the panel.
 	createEffect(
 		on(options.highlightedIndex, (index) => {
-			if (!options.open()) return;
+			if (!options.open() || options.holdFocus?.() === true) return;
 			if (index === null) {
 				if (litBy() === 'pointer') panel?.focus({ preventScroll: true });
 				return;
