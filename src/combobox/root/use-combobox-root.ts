@@ -382,9 +382,12 @@ export function createComboboxRoot<Item extends ComboboxRootItem>(
 			id: listId,
 			role: 'listbox' as const,
 		},
-		itemProps(item: Item, index: number) {
+		/** `index` is an accessor: a filtered list moves its rows. */
+		itemProps(item: Item, index: Accessor<number>) {
 			return {
-				id: itemId(index),
+				get id() {
+					return itemId(index());
+				},
 				role: 'option' as const,
 				get 'aria-selected'() {
 					return value() === item.value;
