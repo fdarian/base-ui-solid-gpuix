@@ -4,8 +4,11 @@ fluidfunctionalism's `registry/base/*` (0a0377e) is built on `@base-ui/react` 1.
 rebuilds that behaviour by hand in Solid on gpuix. Each table compares one primitive's behaviour, limited to the parts
 and props FF uses (defaults included), against Base UI 1.9.0's source and this port.
 
-- Base UI refs are relative to `packages/react/src/` of mui/base-ui at `v1.9.0`; port refs are relative to this
-  directory; FF refs are to `registry/base/*` unless stated.
+- Base UI refs are relative to `packages/react/src/` of mui/base-ui at `v1.9.0`; FF refs (the original Fluid
+  Functionalism) are to `registry/base/*` unless stated.
+- Port refs have two prefixes. `src/...:lines` is code in this repo, the extraction of the Base UI-shaped primitives from
+  FF's port; `ff:src/...:lines` is code that stayed in the FF port repository (`fluid-functionalism-gpuix`, at a2bed08
+  when the refs were refreshed): its styling, fluid hover and the components that consume these primitives.
 - Status: **ported** (same behaviour), **gap** (fixable in the port), **fixed (sha)** (was a gap, fixed here),
   **blocked by gpuix** (gpuix still lacks the capability; the note cites the FORK.md line or the probe that shows it), **n/a** (FF overrides it, or out of scope). A gpuix capability the port has not adopted yet is a **gap**, and the note names the API to use.
 - Where Base UI and FF disagree, the port follows FF; each section lists those conflicts.
