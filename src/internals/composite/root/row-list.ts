@@ -7,8 +7,11 @@ import { onCleanup } from 'solid-js';
 
 /**
  * No upstream file: stands in for CompositeRoot's key handling over a list of
- * rows that radio-group and checkbox-group share. Belongs next to
- * `internals/composite` once the groups are merged.
+ * rows that radio-group and checkbox-group share. Kept beside
+ * `use-composite-root.ts` rather than merged into it: rows are ordered by
+ * index (not registration order), Space and Enter activate, a landed-on row is
+ * activated when `arrowsSelect`, both axes' arrows work, and no modifier
+ * guard or `stopPropagation` applies.
  */
 
 export interface RowEntry {

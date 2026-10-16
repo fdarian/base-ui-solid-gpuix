@@ -1,5 +1,5 @@
 import { createMemo, createSignal, onCleanup } from 'solid-js';
-import { createRowList } from './row-list';
+import { createRowList } from '../internals/composite';
 
 export interface RadioItemEntry {
 	value: string | undefined;

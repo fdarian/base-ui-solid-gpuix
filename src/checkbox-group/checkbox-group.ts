@@ -1,4 +1,4 @@
-import { createRowList } from '../radio-group/row-list';
+import { createRowList } from '../internals/composite';
 
 /** Each row is its own tab stop. Up and Down move focus without toggling, wrapping at both ends; Left and Right do nothing. */
 export function createCheckboxGroup() {

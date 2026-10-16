@@ -1,6 +1,6 @@
 import { createUniqueId } from 'solid-js';
 import type { CheckboxGroup } from '../../checkbox-group/checkbox-group';
-import type { RowItem } from '../../radio-group/row-list';
+import type { RowItem } from '../../internals/composite';
 
 export interface CheckboxRootOptions {
 	index: number;

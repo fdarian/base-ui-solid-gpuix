@@ -1,5 +1,5 @@
 import { createEffect, createSignal, on } from 'solid-js';
-import { createCompositeRoot } from '../composite/use-composite-root';
+import { createCompositeRoot } from '../../internals/composite';
 
 export interface TabsListOptions {
 	/** The selected tab's index, or -1 when none is selected. */

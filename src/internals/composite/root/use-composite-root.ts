@@ -4,9 +4,9 @@ import {
 	useGpuixRequired,
 } from '@gpuix/solid';
 
-// Shared helper, not part of Tabs upstream: Base UI keeps this in
-// `internals/composite/root/useCompositeRoot.ts`. Accordion (an FF extra) and
-// Tabs both use it from here until the shared directory takes it over.
+// Stands in for Base UI's `internals/composite/root/useCompositeRoot.ts`: the
+// key handling Tabs and Accordion (an FF extra) share. Radio and checkbox
+// groups use `row-list.ts` instead, whose behaviour differs.
 
 export type CompositeStep = 'next' | 'previous' | 'first' | 'last';
 
