@@ -1,5 +1,5 @@
-import { type HostElement, setProp } from "@gpuix/solid";
-import { onCleanup, onMount } from "solid-js";
+import { type HostElement, setProp } from '@gpuix/solid';
+import { onCleanup, onMount } from 'solid-js';
 
 /**
  * Base UI's `markOthers`: while a modal is up, everything outside it leaves the
@@ -17,16 +17,17 @@ function hideOutside(popup: HostElement) {
 		const parent = child.parent;
 		if (parent === null) break;
 		for (const sibling of parent.children) {
-			if (sibling === child || sibling.kind !== "element") continue;
-			if (sibling.props.get("aria-hidden") === true) continue;
-			setProp(sibling, "aria-hidden", true);
+			if (sibling === child || sibling.kind !== 'element') continue;
+			if (sibling.props.get('aria-hidden') === true) continue;
+			setProp(sibling, 'aria-hidden', true);
 			hidden.push(sibling);
 		}
-		if (parent.kind === "root") break;
+		if (parent.kind === 'root') break;
 		child = parent;
 	}
 	return () => {
-		for (const sibling of hidden) setProp(sibling, "aria-hidden", undefined, true);
+		for (const sibling of hidden)
+			setProp(sibling, 'aria-hidden', undefined, true);
 	};
 }
 
@@ -34,7 +35,8 @@ function hideOutside(popup: HostElement) {
 export function HideOutside(props: { popup: () => HostElement | undefined }) {
 	onMount(() => {
 		const popup = props.popup();
-		if (popup === undefined) throw new Error("HideOutside: the popup is not mounted");
+		if (popup === undefined)
+			throw new Error('HideOutside: the popup is not mounted');
 		onCleanup(hideOutside(popup));
 	});
 	return null;

@@ -1,4 +1,4 @@
-import { type HostElement, useGpuixRequired } from "@gpuix/solid";
+import { type HostElement, useGpuixRequired } from '@gpuix/solid';
 
 /**
  * Base UI's hidden input: what a form submits for a control that is not an
@@ -25,17 +25,17 @@ export function FormValue(props: {
 			aria-hidden
 			onFocus={() => {
 				const target = props.focusTarget();
-				if (target === undefined) throw new Error("Form value has no control");
+				if (target === undefined) throw new Error('Form value has no control');
 				renderer.focusElement?.(target.id);
 			}}
 			style={{
-				position: "absolute",
+				position: 'absolute',
 				top: 0,
 				left: 0,
 				width: 1,
 				height: 1,
 				opacity: 0,
-				pointerEvents: "none",
+				pointerEvents: 'none',
 				keyboardFocusDim: false,
 			}}
 		/>

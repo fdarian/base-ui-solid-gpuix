@@ -1,4 +1,4 @@
-import { document, type HostElement, type HostMouseEvent } from "@gpuix/solid";
+import { document, type HostElement, type HostMouseEvent } from '@gpuix/solid';
 
 /**
  * After an outside press has closed a popup: a press over bare background

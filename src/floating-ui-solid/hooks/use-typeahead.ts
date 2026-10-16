@@ -1,5 +1,5 @@
-import type { KeyEvent } from "@gpuix/solid";
-import { isChord } from "./list-nav";
+import type { KeyEvent } from '@gpuix/solid';
+import { isChord } from '../../internals/composite';
 
 /** Base UI `useTypeahead` `resetMs`. */
 export const TYPEAHEAD_RESET_MS = 750;
@@ -46,7 +46,9 @@ export interface Typeahead {
 	 * it as a command. Ctrl/cmd/alt chords and a Space that would start a
 	 * session return false.
 	 */
-	handleKey: (event: Pick<KeyEvent, "key" | "ctrlKey" | "altKey" | "metaKey">) => boolean;
+	handleKey: (
+		event: Pick<KeyEvent, 'key' | 'ctrlKey' | 'altKey' | 'metaKey'>,
+	) => boolean;
 	/** A session is in progress: Space belongs to typeahead, not to activation. */
 	typing: () => boolean;
 	reset: () => void;
@@ -60,7 +62,7 @@ export interface Typeahead {
  */
 export function createTypeahead(options: TypeaheadOptions): Typeahead {
 	const resetMs = options.resetMs ?? TYPEAHEAD_RESET_MS;
-	let buffer = "";
+	let buffer = '';
 	let timer: ReturnType<typeof setTimeout> | undefined;
 	/** Where this session searches from; moves on to the last match when the window lapses. */
 	let prevIndex: number | null = null;
@@ -68,21 +70,23 @@ export function createTypeahead(options: TypeaheadOptions): Typeahead {
 
 	const reset = () => {
 		clearTimeout(timer);
-		buffer = "";
+		buffer = '';
 		prevIndex = null;
 		matchIndex = null;
 	};
 
-	const handleKey = (event: Pick<KeyEvent, "key" | "ctrlKey" | "altKey" | "metaKey">) => {
+	const handleKey = (
+		event: Pick<KeyEvent, 'key' | 'ctrlKey' | 'altKey' | 'metaKey'>,
+	) => {
 		const key = event.key;
 		if (key === undefined) return false;
 		if (isChord(event)) return false;
-		if (key === " " && buffer === "") return false;
+		if (key === ' ' && buffer === '') return false;
 		if (key.length !== 1) return false;
 
 		const labels = options.labels();
 		const isDisabled = options.isDisabled;
-		const newSession = buffer === "";
+		const newSession = buffer === '';
 		if (newSession) prevIndex = options.current() ?? -1;
 
 		const allowRepeat = labels.every((label, index) => {
@@ -91,26 +95,31 @@ export function createTypeahead(options: TypeaheadOptions): Typeahead {
 			return label[0]?.toLowerCase() !== label[1]?.toLowerCase();
 		});
 		if (allowRepeat && buffer === key) {
-			buffer = "";
+			buffer = '';
 			prevIndex = matchIndex;
 		}
 
 		buffer += key;
 		clearTimeout(timer);
 		timer = setTimeout(() => {
-			buffer = "";
+			buffer = '';
 			prevIndex = matchIndex;
 		}, resetMs);
 
-		const index = matchTypeahead(labels, buffer, (prevIndex ?? 0) + 1, isDisabled);
+		const index = matchTypeahead(
+			labels,
+			buffer,
+			(prevIndex ?? 0) + 1,
+			isDisabled,
+		);
 		if (index !== -1) {
 			matchIndex = index;
 			options.onMatch(index);
-		} else if (key !== " ") {
-			buffer = "";
+		} else if (key !== ' ') {
+			buffer = '';
 		}
 		return true;
 	};
 
-	return { handleKey, typing: () => buffer !== "", reset };
+	return { handleKey, typing: () => buffer !== '', reset };
 }

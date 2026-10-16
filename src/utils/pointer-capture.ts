@@ -1,4 +1,4 @@
-import type { HostElement, HostMouseEvent } from "@gpuix/solid";
+import type { HostElement, HostMouseEvent } from '@gpuix/solid';
 
 /**
  * A drag has to keep its moves and its release after the pointer leaves the
@@ -15,7 +15,9 @@ export function createPointerCapture(owner: string) {
 		},
 		capture(event: HostMouseEvent) {
 			if (element === undefined) {
-				throw new Error(`${owner}: pressed before the capturing element mounted`);
+				throw new Error(
+					`${owner}: pressed before the capturing element mounted`,
+				);
 			}
 			element.setPointerCapture(event.pointerId);
 		},
