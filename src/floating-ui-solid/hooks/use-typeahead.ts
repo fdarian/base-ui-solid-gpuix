@@ -46,7 +46,7 @@ export interface Typeahead {
 	 * it as a command. Ctrl/cmd/alt chords and a Space that would start a
 	 * session return false.
 	 */
-	handleKey: (event: Pick<KeyEvent, "key" | "modifiers">) => boolean;
+	handleKey: (event: Pick<KeyEvent, "key" | "ctrlKey" | "altKey" | "metaKey">) => boolean;
 	/** A session is in progress: Space belongs to typeahead, not to activation. */
 	typing: () => boolean;
 	reset: () => void;
@@ -73,13 +73,12 @@ export function createTypeahead(options: TypeaheadOptions): Typeahead {
 		matchIndex = null;
 	};
 
-	const handleKey = (event: Pick<KeyEvent, "key" | "modifiers">) => {
+	const handleKey = (event: Pick<KeyEvent, "key" | "ctrlKey" | "altKey" | "metaKey">) => {
 		const key = event.key;
 		if (key === undefined) return false;
 		if (isChord(event)) return false;
-		if (key === "space" && buffer === "") return false;
-		const char = key === "space" ? " " : key;
-		if (char.length !== 1) return false;
+		if (key === " " && buffer === "") return false;
+		if (key.length !== 1) return false;
 
 		const labels = options.labels();
 		const isDisabled = options.isDisabled;
@@ -91,12 +90,12 @@ export function createTypeahead(options: TypeaheadOptions): Typeahead {
 			if (isDisabled?.(index) === true) return true;
 			return label[0]?.toLowerCase() !== label[1]?.toLowerCase();
 		});
-		if (allowRepeat && buffer === char) {
+		if (allowRepeat && buffer === key) {
 			buffer = "";
 			prevIndex = matchIndex;
 		}
 
-		buffer += char;
+		buffer += key;
 		clearTimeout(timer);
 		timer = setTimeout(() => {
 			buffer = "";
@@ -107,7 +106,7 @@ export function createTypeahead(options: TypeaheadOptions): Typeahead {
 		if (index !== -1) {
 			matchIndex = index;
 			options.onMatch(index);
-		} else if (char !== " ") {
+		} else if (key !== " ") {
 			buffer = "";
 		}
 		return true;
