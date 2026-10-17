@@ -1,4 +1,4 @@
-import type { HostMouseEvent, HostMouseMoveEvent } from '@gpuix/solid';
+import type { HostMouseEvent } from '@gpuix/solid';
 import { createSignal } from 'solid-js';
 import { createPointerCapture } from '../../utils/pointer-capture';
 
@@ -37,7 +37,7 @@ export function createSwitchThumb(options: SwitchThumbOptions) {
 		press = { startX: event.x, originX: options.restX() };
 	};
 
-	const onPressMove = (event: HostMouseMoveEvent) => {
+	const onPressMove = (event: HostMouseEvent) => {
 		if (press === undefined) return;
 		if (event.x === undefined) throw new Error('mouseMove without coordinates');
 		const delta = event.x - press.startX;

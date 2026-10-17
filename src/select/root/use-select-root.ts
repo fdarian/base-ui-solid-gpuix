@@ -2,7 +2,6 @@ import {
 	document,
 	type HostElement,
 	type HostMouseEvent,
-	type HostMouseMoveEvent,
 	type KeyEvent,
 } from '@gpuix/solid';
 import {
@@ -325,7 +324,7 @@ export function createSelectRoot<
 		if (allowed) pick(item);
 	};
 	/** Feed the rows' container its mouse moves, next to the caller's own hover handling. */
-	const onListMouseMove = (event: HostMouseMoveEvent) => {
+	const onListMouseMove = (event: HostMouseEvent) => {
 		if (event.pressedButton !== 0 || event.y === undefined) {
 			dragFromY = undefined;
 			return;

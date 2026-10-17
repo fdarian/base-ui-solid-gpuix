@@ -1,4 +1,4 @@
-import type { DomEvent, HostMouseMoveEvent } from '@gpuix/solid';
+import type { DomEvent, HostMouseEvent } from '@gpuix/solid';
 import { onCleanup } from 'solid-js';
 import type { TooltipRoot } from '../root/tooltip-root';
 
@@ -72,7 +72,7 @@ export function createTooltipTrigger(
 			if (fadingOut || root.delay() === 0) root.setOpen(true);
 		},
 		/** Base UI's `restMs`: the tooltip opens once the pointer has rested on the trigger for the delay. */
-		onMouseMove(event: HostMouseMoveEvent) {
+		onMouseMove(event: HostMouseEvent) {
 			if (event.x === undefined || event.y === undefined) return;
 			const last = lastPointer;
 			lastPointer = { x: event.x, y: event.y };

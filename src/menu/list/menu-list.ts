@@ -1,4 +1,4 @@
-import type { HostElement, HostMouseMoveEvent, KeyEvent } from '@gpuix/solid';
+import type { HostElement, HostMouseEvent, KeyEvent } from '@gpuix/solid';
 import {
 	type Accessor,
 	createEffect,
@@ -35,7 +35,7 @@ export type MenuHighlightReason =
 
 export interface MenuListPointer {
 	onMouseEnter: () => void;
-	onMouseMove: (event: HostMouseMoveEvent) => void;
+	onMouseMove: (event: HostMouseEvent) => void;
 	onMouseLeave: () => void;
 }
 
@@ -105,7 +105,7 @@ export function createMenuList<
 	let panel: HostElement | undefined;
 	let field: HostElement | undefined;
 	let dwellTimer: ReturnType<typeof setTimeout> | undefined;
-	let lastMove: HostMouseMoveEvent | undefined;
+	let lastMove: HostMouseEvent | undefined;
 	onCleanup(() => {
 		clearTimeout(dwellTimer);
 		typeahead.reset();
@@ -280,7 +280,7 @@ export function createMenuList<
 			options.setKeyboardActive(false);
 			if (openSubIndex() === null) options.pointer.onMouseEnter();
 		},
-		onMouseMove(event: HostMouseMoveEvent) {
+		onMouseMove(event: HostMouseEvent) {
 			setLitBy('pointer');
 			options.setKeyboardActive(false);
 			if (openSubIndex() === null) {

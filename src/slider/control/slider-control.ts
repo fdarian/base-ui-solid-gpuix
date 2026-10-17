@@ -1,8 +1,4 @@
-import type {
-	HostElement,
-	HostMouseEvent,
-	HostMouseMoveEvent,
-} from '@gpuix/solid';
+import type { HostElement, HostMouseEvent } from '@gpuix/solid';
 import { createSignal } from 'solid-js';
 import { createPointerCapture } from '../../utils/pointer-capture';
 import type { SliderRoot } from '../root/slider-root';
@@ -163,7 +159,7 @@ export function createSliderControl(
 		setMoving(false);
 		root.setThumbValue(activeThumb, valueAt(x, activeThumb));
 	};
-	const onMove = (event: HostMouseMoveEvent) => {
+	const onMove = (event: HostMouseEvent) => {
 		const x = pointerX(event);
 		if (!dragging) {
 			if (root.disabled()) return;

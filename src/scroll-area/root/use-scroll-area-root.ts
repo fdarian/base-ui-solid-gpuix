@@ -2,7 +2,6 @@ import type {
 	DomEvent,
 	HostElement,
 	HostMouseEvent,
-	HostMouseMoveEvent,
 	KeyEvent,
 	ScrollEvent,
 } from '@gpuix/solid';
@@ -161,7 +160,7 @@ export function createScrollAreaRoot(options: UseScrollAreaRootOptions) {
 		setDragging(undefined);
 		stopScrolling(axis);
 	};
-	const dragTo = (event: HostMouseMoveEvent) => {
+	const dragTo = (event: HostMouseEvent) => {
 		// Capture ends the drag on release and on lost capture; this stays for a release the window never saw (outside it, or while it was inactive), which may not be delivered even to a capturing element.
 		if (event.pressedButton === undefined) {
 			stopDrag();
