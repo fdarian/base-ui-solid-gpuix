@@ -309,7 +309,7 @@ export function createSelectRoot<
 	};
 	const onTriggerMouseDown = (event: HostMouseEvent) => {
 		if (event.button !== undefined && event.button !== 0) return;
-		// A press moves focus to the trigger after its handlers have run, which would pull it back from the popup `open` just focused. Windows and Linux run the handler after that move, where this changes nothing.
+		// Cancels the focus move the press would make, which would pull focus back from the popup `open` just focused. Windows and Linux run this handler after native moved focus, where it changes nothing.
 		event.preventDefault();
 		if (presence.open()) close();
 		else open('pointer');

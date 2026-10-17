@@ -1,10 +1,14 @@
 import { document, type HostElement, type HostMouseEvent } from '@gpuix/solid';
 
 /**
- * After an outside press has closed a popup: a press over bare background
- * blurs focus once its handlers have returned, which is after the closing
- * popup handed focus to its trigger. The trigger takes it again then; a control
- * that took focus from the press keeps it.
+ * After an outside press has closed a popup, the trigger takes focus back, as in
+ * Base UI (`FloatingFocusManager` `returnFocus`, pinned by "returns focus to
+ * reference on outside press" in its test). There the return runs after the
+ * popup's exit, behind the press's own focus default. Here the close hands
+ * focus to the trigger at once, and a press over bare background then blurs it:
+ * gpuix, like a browser, runs that default after the `mousedown` handlers. So
+ * the trigger takes focus again on the next tick; a control that took focus
+ * from the press keeps it.
  */
 export function refocusAfterPress(trigger: HostElement | null | undefined) {
 	if (trigger === null || trigger === undefined) return;
@@ -39,7 +43,7 @@ export function createPressToggle(options: {
 	return {
 		onMouseDown(event: HostMouseEvent) {
 			if (event.button !== undefined && event.button !== 0) return;
-			// A press moves focus to what it landed on after its handlers have run, which would pull it back from the popup the toggle just focused. Windows and Linux run the handler after that move, where this changes nothing.
+			// Cancels the focus move the press would make, which would pull focus back from the popup the toggle just focused. Windows and Linux run this handler after native moved focus, where it changes nothing.
 			event.preventDefault();
 			pressHandled = true;
 			toggle(event, true);
