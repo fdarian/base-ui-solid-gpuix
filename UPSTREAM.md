@@ -35,8 +35,8 @@ git -C ~/.claude/notes/base-ui-source checkout v1.9.0
    git -C $B diff --stat v1.9.0 <new-tag> -- \
      packages/react/src/{accordion,collapsible,tabs,checkbox,checkbox-group,radio,radio-group,switch,slider,menu,select,combobox,dialog,drawer,tooltip,scroll-area,popover} \
      packages/react/src/internals/{composite,filter.ts,useTransitionStatus.ts,useAnchorPositioning.ts} \
-     packages/react/src/floating-ui-react/hooks/{useClick,useTypeahead}.ts \
-     packages/react/src/floating-ui-react/utils/markOthers.ts
+     packages/react/src/floating-ui-react/hooks/{useClick,useTypeahead,useHoverReferenceInteraction,useHoverFloatingInteraction,useHoverShared}.ts \
+     packages/react/src/floating-ui-react/{safePolygon.ts,utils/markOthers.ts,utils/element.ts}
    ```
 
    Drop `--stat` and narrow the paths to read one component's diff. Folders upstream has and the port does not
@@ -109,6 +109,10 @@ kebab-case, `use-*.ts` where upstream has a `use*` hook and `create*` is the exp
 | `floating-ui-react/hooks/useClick.ts` | `floating-ui-solid/hooks/use-click.ts` |
 | `floating-ui-react/hooks/useTypeahead.ts` | `floating-ui-solid/hooks/use-typeahead.ts` (and its test) |
 | `floating-ui-react/utils/markOthers.ts` | `floating-ui-solid/utils/mark-others.ts` |
+| `floating-ui-react/safePolygon.ts` | `floating-ui-solid/safe-polygon.ts` (and its test; boxes and containment come from `getBoundingClientRect` and the element tree, `hasOpenChild` replaces the floating tree) |
+| `floating-ui-react/hooks/useHoverReferenceInteraction.ts` (the `handleClose` part of `onMouseLeave`), `useHoverFloatingInteraction.ts` (the popup's enter and leave, `blockPointerEvents`) | `floating-ui-solid/hooks/use-hover-reference-interaction.ts` (`createHoverHandleClose`; the open delays stay in each trigger) |
+| `floating-ui-react/hooks/useHoverShared.ts` (`HandleClose` types) | `floating-ui-solid/hooks/use-hover-shared.ts` |
+| `floating-ui-react/utils/element.ts` (`contains`) | `floating-ui-solid/utils/element.ts` |
 | the hidden `<input>` inside `CheckboxRoot`, `SwitchRoot`, `RadioRoot` | `utils/form-value.tsx` |
 
 Each folder also has an `index.ts`, which is what `base-ui-solid-gpuix/<folder>` resolves to. Upstream parts with no
@@ -166,13 +170,13 @@ Base UI 1.9.0's source and this port, row by row. Port refs read `src/...:lines`
   focus into the popup, focus back to the trigger and Space on key-up; six are FF-only layers that are not Base UI or limits of the demos (select gap click,
   combobox `onCreate`, `variant`, `error` and `size`, mount-order indices for accordion items and tabs, tabs-subtle
   overflow).
-- **fixed (sha)** (177): was a gap, fixed in this port at that commit.
-- **blocked by gpuix** (5): gpuix still lacks the capability: CSS `transform` scale and rotate (the select and combobox
-  popup entrance), pointer position over empty space (an exact safe polygon for tooltip and submenus), and
+- **fixed (sha)** (180): was a gap, fixed in this port at that commit.
+- **blocked by gpuix** (3): gpuix still lacks the capability: CSS `transform` scale and rotate (the select and combobox
+  popup entrance) and
   `<input type="range">` (a native range input under each slider thumb).
-- **n/a** (33): FF overrides the behaviour, or it is out of scope (`DirectionProvider` and RTL, the `active` and
+- **n/a** (34): FF overrides the behaviour, or it is out of scope (`DirectionProvider` and RTL, the `active` and
   `asChild` button props, the inline `Dropdown` panel, which is FF's own code, the popover's modal mode, portal,
-  trigger id and Title / Description names).
+  trigger id and Title / Description names, nested submenus).
 
 | Section | Rows | ported | gap | fixed | blocked | n/a |
 |---|---|---|---|---|---|---|
@@ -184,15 +188,15 @@ Base UI 1.9.0's source and this port, row by row. Port refs read `src/...:lines`
 | [RadioGroup + Radio](BASE-UI-AUDIT.md#radiogroup--radio-base-uireactradio-group-base-uireactradio) | 18 | 10 | 0 | 5 | 0 | 3 |
 | [Switch](BASE-UI-AUDIT.md#switch-base-uireactswitch) | 17 | 10 | 1 | 4 | 0 | 2 |
 | [Slider](BASE-UI-AUDIT.md#slider-base-uireactslider) | 29 | 14 | 0 | 13 | 1 | 1 |
-| [Menu](BASE-UI-AUDIT.md#menu-base-uireactmenu) (with the inline Dropdown and the color picker format menu) | 71 | 34 | 1 | 32 | 1 | 3 |
+| [Menu](BASE-UI-AUDIT.md#menu-base-uireactmenu) (with the inline Dropdown and the color picker format menu) | 73 | 34 | 1 | 34 | 0 | 4 |
 | [DirectionProvider](BASE-UI-AUDIT.md#directionprovider-base-uireactdirection-provider) | 5 | 1 | 0 | 0 | 0 | 4 |
 | [Select](BASE-UI-AUDIT.md#select-base-uireactselect) | 44 | 13 | 2 | 26 | 1 | 2 |
 | [Combobox](BASE-UI-AUDIT.md#combobox-base-uireactcombobox) | 47 | 14 | 4 | 27 | 1 | 1 |
 | [Dialog](BASE-UI-AUDIT.md#dialog-base-uireactdialog) (with the mobile drawer) | 32 | 16 | 1 | 15 | 0 | 0 |
-| [Tooltip](BASE-UI-AUDIT.md#tooltip-base-uireacttooltip) | 23 | 11 | 0 | 10 | 1 | 1 |
+| [Tooltip](BASE-UI-AUDIT.md#tooltip-base-uireacttooltip) | 23 | 11 | 0 | 11 | 0 | 1 |
 | [ScrollArea](BASE-UI-AUDIT.md#scrollarea-base-uireactscroll-area) | 31 | 12 | 0 | 17 | 0 | 2 |
 | [Popover](BASE-UI-AUDIT.md#popover-base-uireactpopover) | 19 | 9 | 6 | 0 | 0 | 4 |
-| **Total** | **424** | **191** | **18** | **177** | **5** | **33** |
+| **Total** | **426** | **191** | **18** | **180** | **3** | **34** |
 
 The audit's [Summary](BASE-UI-AUDIT.md#summary) groups what is left by cause.
 

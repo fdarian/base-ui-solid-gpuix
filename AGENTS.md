@@ -3,7 +3,7 @@ Headless Base UI primitives for Solid on `@gpuix/solid`, ported from `@base-ui/r
 ## Layout
 - `src/<folder>/<part>/<kebab-name>.ts` mirrors `packages/react/src/<folder>/<part>/<PascalName>.tsx` upstream (reference clone: `~/.claude/notes/base-ui-source`). Each folder has an `index.ts`; `exports` is `"./*": "./src/*/index.ts"`, so consumers import `base-ui-solid-gpuix/<folder>`, nested folders included (`.../internals/composite`).
 - Component folders: `accordion collapsible tabs checkbox checkbox-group radio radio-group switch slider menu select combobox dialog drawer tooltip scroll-area`. Each exports `create*` functions returning state and prop objects, not components.
-- Shared: `internals/` (composite key navigation and `createRowList`, `filter`, `use-transition-status`, `use-anchor-positioning`), `floating-ui-solid/` (click, typeahead, `mark-others`), `utils/` (`pointer-capture`, `form-value`).
+- Shared: `internals/` (composite key navigation and `createRowList`, `filter`, `use-transition-status`, `use-anchor-positioning`), `floating-ui-solid/` (click, typeahead, `safe-polygon` with the hover tracker that runs it, `mark-others`), `utils/` (`pointer-capture`, `form-value`).
 - [UPSTREAM.md](UPSTREAM.md) — the pin, how to sync, the upstream-to-port file map and the port-only files; read before moving the pin or adding a primitive.
 - [BASE-UI-AUDIT.md](BASE-UI-AUDIT.md) — Base UI vs port, row by row, with `src/...` and `ff:src/...` refs; update the rows you touch.
 - Files use relative imports, never `#/*`: the consumer compiles this source with its own tsconfig.
