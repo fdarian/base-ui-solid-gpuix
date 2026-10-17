@@ -50,6 +50,8 @@ export interface MenuItemProps {
 	onOpenSubmenu?: () => void;
 	/** A submenu trigger: whether its popup is open and what it is called. */
 	submenu?: { open: boolean; popupId: string };
+	/** The pointer left the row, or the popup anchored inside it. */
+	onMouseLeave?: (event: DomEvent) => void;
 }
 
 /**
@@ -129,6 +131,9 @@ export function createMenuItem(host: MenuItemHost, props: MenuItemProps) {
 			},
 			get 'aria-controls'() {
 				return props.submenu?.open ? props.submenu.popupId : undefined;
+			},
+			onMouseLeave(event: DomEvent) {
+				props.onMouseLeave?.(event);
 			},
 			onMouseDown() {
 				pickedOnRelease = false;

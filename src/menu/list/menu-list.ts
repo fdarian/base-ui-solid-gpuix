@@ -70,8 +70,6 @@ export interface MenuListOptions {
 	searchHeight: number;
 	/** The pointer handlers of whatever owns the hover highlight. */
 	pointer: MenuListPointer;
-	/** A pointer that stops on another row for this long leaves an open submenu. */
-	submenuDwellMs: number;
 	/** FF focuses the first row two frames after a pointer open, once Base UI's own open focus has landed on the popup. `null`: a pointer open leaves every row unlit. */
 	openFocusMs: number | null;
 	/** The page keeps focus while this is true: an open neither lands focus on the popup nor lights a row, and the highlight does not pull focus onto its row. Flip it false, then light a row, to hand focus over. */
@@ -84,6 +82,13 @@ export interface MenuListOptions {
 export interface MenuSubmenuHost {
 	openIndex: Accessor<number | null>;
 	setOpenIndex: (index: number | null) => void;
+	/**
+	 * The row whose hover-opened submenu the pointer has not reached yet: the
+	 * list ignores the pointer meanwhile, as Base UI's `blockPointerEvents`
+	 * sets `pointer-events: none` on the parent popup.
+	 */
+	blockedIndex: Accessor<number | null>;
+	setBlockedIndex: (index: number | null) => void;
 }
 
 /**
@@ -101,15 +106,15 @@ export function createMenuList<
 	const searchState = createMenuSearch<Search>();
 	const search = searchState.search;
 	const [openSubIndex, setOpenSubIndex] = createSignal<number | null>(null);
+	const [blockedSubIndex, setBlockedSubIndex] = createSignal<number | null>(
+		null,
+	);
+	/** The pointer left the list while a submenu was open and the trigger stayed lit: the leave is replayed once the submenu closes. */
+	let leftWhileOpen = false;
 	let scroller: HostElement | undefined;
 	let panel: HostElement | undefined;
 	let field: HostElement | undefined;
-	let dwellTimer: ReturnType<typeof setTimeout> | undefined;
-	let lastMove: HostMouseEvent | undefined;
-	onCleanup(() => {
-		clearTimeout(dwellTimer);
-		typeahead.reset();
-	});
+	onCleanup(() => typeahead.reset());
 
 	const sortedRows = () => [...rows.entries()].sort((a, b) => a[0] - b[0]);
 	/** Base UI lets the keyboard land on a disabled row: only activation refuses it. */
@@ -271,37 +276,40 @@ export function createMenuList<
 		}
 	};
 
-	// While a submenu is open the trigger stays lit whatever row the pointer
-	// crosses on its way there; only a pointer that settles on another row
-	// takes the highlight, and the submenu goes with it.
+	// While the pointer is on its way to a hover-opened submenu the list ignores
+	// it, so the trigger stays lit under whatever row it crosses; the submenu's
+	// safe polygon decides when it has gone elsewhere.
 	const handlers = {
 		onMouseEnter() {
 			setLitBy('pointer');
 			options.setKeyboardActive(false);
-			if (openSubIndex() === null) options.pointer.onMouseEnter();
+			leftWhileOpen = false;
+			if (blockedSubIndex() === null) options.pointer.onMouseEnter();
 		},
 		onMouseMove(event: HostMouseEvent) {
 			setLitBy('pointer');
 			options.setKeyboardActive(false);
-			if (openSubIndex() === null) {
-				options.pointer.onMouseMove(event);
-				return;
-			}
-			lastMove = event;
-			clearTimeout(dwellTimer);
-			dwellTimer = setTimeout(() => {
-				if (lastMove === undefined) return;
-				options.pointer.onMouseMove(lastMove);
-			}, options.submenuDwellMs);
+			leftWhileOpen = false;
+			if (blockedSubIndex() === null) options.pointer.onMouseMove(event);
 		},
 		onMouseLeave() {
-			clearTimeout(dwellTimer);
 			// Base UI resets the highlight on pointer leave only while the pointer was the last
 			// thing used: closing a submenu under a resting pointer reports a leave too.
 			if (litBy() === 'keyboard') return;
-			if (openSubIndex() === null) options.pointer.onMouseLeave();
+			if (openSubIndex() === null) {
+				options.pointer.onMouseLeave();
+				return;
+			}
+			leftWhileOpen = true;
 		},
 	};
+	createEffect(
+		on(openSubIndex, (index) => {
+			if (index !== null || !leftWhileOpen) return;
+			leftWhileOpen = false;
+			options.pointer.onMouseLeave();
+		}),
+	);
 
 	const itemHost: MenuItemHost = {
 		multiple: options.multiple,
@@ -409,6 +417,8 @@ export function createMenuList<
 	const submenuHost: MenuSubmenuHost = {
 		openIndex: openSubIndex,
 		setOpenIndex: setOpenSubIndex,
+		blockedIndex: blockedSubIndex,
+		setBlockedIndex: setBlockedSubIndex,
 	};
 
 	return {
