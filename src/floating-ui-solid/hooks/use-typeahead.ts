@@ -123,3 +123,6 @@ export function createTypeahead(options: TypeaheadOptions): Typeahead {
 
 	return { handleKey, typing: () => buffer !== '', reset };
 }
+
+/** What `MenuRoot` passes to `useTypeahead` (`internals/constants.ts:3`); the select keeps the helper's 750, `useTypeahead`'s own default. */
+export const MENU_TYPEAHEAD_RESET_MS = 500;

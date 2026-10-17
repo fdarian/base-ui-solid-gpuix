@@ -7,7 +7,10 @@ import {
 	on,
 	onCleanup,
 } from 'solid-js';
-import { createTypeahead } from '../../floating-ui-solid/hooks';
+import {
+	createTypeahead,
+	MENU_TYPEAHEAD_RESET_MS,
+} from '../../floating-ui-solid/hooks';
 import {
 	isChord,
 	moveIndex,
@@ -208,6 +211,7 @@ export function createMenuList<
 			);
 		},
 		current: () => options.highlightedIndex(),
+		resetMs: MENU_TYPEAHEAD_RESET_MS,
 		onMatch: (index) => highlight(index, 'typeahead'),
 	});
 

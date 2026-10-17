@@ -21,6 +21,8 @@ export function createScrollAreaScrollbar(
 
 	/** A press on the thumb starts a drag; one on the bare track jumps the way Base UI does and goes on as a drag from there. */
 	const pressTrack = (event: HostMouseEvent) => {
+		// Native scrollbars never move focus, whichever button presses them; gpuix blurs the focused element on a press with no focusable element in its path unless this is called.
+		event.preventDefault();
 		// Only the primary button presses a scrollbar.
 		if (event.button !== undefined && event.button !== 0) return;
 		const thumb = span();
