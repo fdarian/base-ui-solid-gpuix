@@ -335,13 +335,15 @@ export function createMenuList<
 		on(options.open, (isOpen) => {
 			if (!isOpen) return;
 			setLitBy('open');
+			// Read now: a pointer resting where the popup appears reports an enter before the landing below, which would otherwise turn a key's open into a pointer's.
+			const openedByKey = options.keyboardActive();
 			const landing = setTimeout(() => {
 				if (!options.open() || options.holdFocus?.() === true) return;
 				if (fieldTakesFocus()) {
 					options.onHighlightChange(null, 'reset');
 					return;
 				}
-				if (options.keyboardActive()) {
+				if (openedByKey) {
 					lightStart();
 					return;
 				}
