@@ -19,7 +19,7 @@ About 175 gaps were fixed on this branch (Status `fixed (sha)`), and the gpuix D
 
 - **Not fixed in the port, no gpuix cause**: mount-order indices for accordion items and tabs (static lists only), tabs-subtle
   horizontal overflow (no demo overflows), and FF-only layers that are not Base UI (select gap-click, combobox `onCreate` / `variant` / `error` / `size`, tabs `selectedIndex` / `onSelect`, button `active` /
-  `asChild`). DirectionProvider / RTL is deliberately not ported: FF's docs never mount a provider and gpuix has no
+  `asChild`), and the popover's focus handling (focus into the popup and back to the trigger, close on focus-out, Escape from anywhere) and controlled `open`. DirectionProvider / RTL is deliberately not ported: FF's docs never mount a provider and gpuix has no
   RTL layout.
 - **Gap, gpuix now has the API and the port has not adopted it**, grouped by the API to use:
 
@@ -648,6 +648,8 @@ Now: Select 44 rows (13 ported, 26 fixed, 2 gap, 1 blocked by gpuix, 2 n/a); Com
 
 After the fix phase: every `gap` row is `fixed (<sha>)` (Select f4e2f16, Combobox efb9663, shared 65e350b) except three recorded as `gap — not fixed` (Select gap click; Combobox `onCreate` and `variant`/`error`/`size`), all FF styling-layer features the lead scoped out, and the popup exit release (Select and Combobox), which 65e350b fixed and 7464e6c reverted. The Select keyboard focus ring was one of the four and is now fixed (43037c4), with the shared travelling ring of accordion, tabs, checkbox and radio (`ff:src/lib/focus-ring.tsx`). Partial fixes: Select press-drag-release lacks cancel-on-release-outside (no mouse-up-outside event); Combobox `disabled` still uses `readOnly` and `tabIndex` -1, though gpuix has `<input disabled>` now (a gap).
 
+Popover (added with the color picker's move onto the primitives): 19 rows (9 ported, 6 gap, 4 n/a). The gaps are the controlled `open`, Escape from anywhere, close on focus-out, focus into the popup, focus back to the trigger, and Space on key-up.
+
 Decisions applied: disabled rows reachable by arrows (Select, Combobox), open on mouse-down (Select trigger, Combobox input and chevron), focus return only when nothing else took focus, chords ignored, nav keys stopPropagation, pointer-leave refill ported (traced in source).
 
 ## Dialog (`@base-ui/react/dialog`)
@@ -818,3 +820,38 @@ The port uses gpuix's `onLayout` (border-box size, reported after the first pain
 - Pressing the scrollbar: Base UI prevents default on mouse down so a focused input keeps focus (`Bar:150-153`). I marked it ported from reading `renderer.rs:5820-5836` (no focus call) but did not run it with a focused input.
 - Both-axis thumb length: Base UI's `min(scrollbar.offsetHeight − cornerOffset, view − margins)` (`Viewport:199-204`) can pick the track height without subtracting the 8 px thumb margins; the port always subtracts them. At most a few pixels of thumb length; ignored.
 - The port reads `view` and `content` from `onLayout`, which reports the border box. The root's border is on the outer box, not the viewport, so the viewport's border box is its padding box.
+
+## Popover (`@base-ui/react/popover`)
+
+FF usage: `registry/default/color-picker.tsx:2304-2416` (`ColorPickerPopover`) — `Popover.Root` (`open`, `onOpenChange`, `actionsRef`, `modal={false}`; FF owns the controlled value and holds the unmount for the exit), `Popover.Trigger` (a real button), `Popover.Portal`, `Popover.Positioner` (`side="bottom"`, `align="start"`, `sideOffset={6}`) and `Popover.Popup` (`render`). Not used: `Title`, `Description`, `Close`, `Arrow`, `Backdrop`, `Viewport`, `openOnHover`, `handle`, `initialFocus` / `finalFocus`, `keepMounted`. Port: `src/popover/` (`root/popover-root.ts`, `trigger/popover-trigger.ts`, `popup/popover-popup.ts`) and its consumer `ff:src/components/color-picker.tsx:1725-1905` (`ColorPickerPopover`) on the card shared with the format menu (`Popup`, `:702-752`). The primitive covers open state and presence, dismissal, the trigger's ARIA and click, the popup's id and role, and anchored placement.
+
+Base UI refs are relative to `packages/react/src/` (abbreviations: `PR` = `popover/root/PopoverRoot.tsx`, `PT` = `popover/trigger/PopoverTrigger.tsx`, `PP` = `popover/popup/PopoverPopup.tsx`, `PPos` = `popover/positioner/PopoverPositioner.tsx`, `UD` = `floating-ui-react/hooks/useDismiss.ts`, `UC` = `floating-ui-react/hooks/useClick.ts`, `FFM` = `floating-ui-react/components/FloatingFocusManager.tsx`).
+
+| Behaviour | Base UI ref | Port ref | Status | Notes / fix |
+|---|---|---|---|---|
+| **Open state and presence** | | | | |
+| Uncontrolled `defaultOpen` opens without calling `onOpenChange` | `PR:30,39-45` | src/popover/root/popover-root.ts:32-37 | ported | Opens in a microtask, through `presence.show()` directly. |
+| `onOpenChange(open)` on every change (FF reduces it to a boolean) | `PR:54,149-150` | src/popover/root/popover-root.ts:26-31 | ported | Base UI adds event details with a reason; FF reads only the boolean. A `setOpen` to the current state is ignored. |
+| Controlled `open` | `PR:47,143-145`; FF `color-picker.tsx:2304` (`open={rootOpen}`) | none (`PopoverRootProps` has `defaultOpen` and `onOpenChange` only) | gap | FF's `ColorPickerPopover` owns a controlled `open` / `defaultOpen` / `onOpenChange` and always hands the Root `open`. The port's `ColorPickerPopover` is uncontrolled (`drift/color-picker.md`, "Props and exports the port lacks"). Fix: an `open` option as `createMenuRoot` has (`src/menu/root/menu-root.ts:63-71`). |
+| The popup stays mounted through the exit and is released when it ends | `PR:59-62,74-81` (`useOpenStateTransitions`, `actionsRef.unmount`); FF `color-picker.tsx:2211,2260,2386-2389` | src/popover/root/popover-root.ts:24 (`createPresence`); ff:src/components/color-picker.tsx:698 (150 ms fallback), `:734-736` (`presence.release()` on the card's `onMotionComplete`) | ported | FF holds Base UI's unmount (`preventUnmountOnClose`) and releases it through `actionsRef` after the exit spring, with a 150 ms fallback. The port's `exitMs` is that fallback. |
+| **Dismissal** | | | | |
+| Outside press closes; the trigger counts as inside; non-modal, so the page keeps scrolling | `PR:42-49`, `UD:340-520,731-738` | src/popover/root/popover-root.ts:46-49 (`dismissProps.onMouseDownOutside`); ff:src/components/color-picker.tsx:1787 (on the wrapper that holds the trigger and the popup) | ported | Base UI waits for the click (`outsidePressEvent` `intentional` for the mouse, `PR:44-48`); the port closes on the press, as the menu does (`src/menu/root/menu-root.ts:129-135`). Only a press-drag-release differs. |
+| Escape closes, from anywhere | `UD:201-232,727-731` (a `document` keydown listener) | src/popover/root/popover-root.ts:50-52 (`dismissProps.onKeyDown`); ff:src/components/color-picker.tsx:1795-1796 | gap | The port hears Escape only from inside the wrapper, which is `tabIndex={-1}` so a press on the popup's bare content lands focus there. With focus elsewhere on the page Escape does nothing. The select, combobox and dropdown popups join gpuix's Escape stack (`DismissableLayer`, `ff:src/lib/popup.tsx:46-50`); the popover does not. |
+| Focus leaving the popup and the trigger closes it (non-modal) | `FFM:273,555-568` (`closeOnFocusOut` true, reason `focusOut`) | none | gap | No focus-out handler: Tab out of the panel leaves the popover open. See `drift/color-picker.md`, "Popover: focus is not moved in, restored or lost". |
+| **Focus** | | | | |
+| Focus moves into the popup on open (the first tabbable, else the popup; the popup only when opened by touch) | `PP:68-69,108-122` | none | gap | Open changes nothing about focus. |
+| Focus returns to the trigger on close | `PP:114-115` (`restoreFocus="popup"`), `FFM:848-940` | none | gap | The menu primitive does this (`returnFocus`, `src/menu/root/menu-root.ts:43-49`); the popover does not. |
+| **Trigger** | | | | |
+| A click toggles; a repeated click closes | `PT:97`, `UC:100-123,187-216` | src/popover/trigger/popover-trigger.ts:11-13; ff:src/components/color-picker.tsx:1806-1809 | ported | Unlike the menu, a popover toggles on the click, not the press. FF's remove X inside the trigger vetoes the click (`removeHovered`), which is FF's. |
+| Enter and Space activate | `PT:107-110,148`, `internals/use-button/useButton.ts:138-176,207-216` (a native `<button>`; Enter on keydown, Space on keyup) | src/popover/trigger/popover-trigger.ts:14-18; ff:src/components/color-picker.tsx:1798-1810 (`div role="button"`, `tabIndex={0}`) | gap | Both keys toggle on key-down. Low priority; fix as `createSwitchRoot` does, with Space on `onKeyUp` (`src/switch/root/switch-root.ts:26-34`). |
+| `aria-haspopup="dialog"`, `aria-expanded`, `aria-controls` (the popup's id, only while open) | `PT:143-145`, `utils/popups/store.ts:163-175,212-213` | src/popover/trigger/popover-trigger.ts:19-27 (`attributes`); ff:src/components/color-picker.tsx:1799 | ported | |
+| Trigger `id` | `PT:58,142` | src/popover/root/popover-root.ts:43 (`triggerId`; not in `attributes`) | n/a | Nothing refers to it: the popup is named by a Title, which FF never renders. |
+| **Popup** | | | | |
+| Popup `id` (the trigger's `aria-controls` target) and `role="dialog"` | `PP:51,90-91` | src/popover/popup/popover-popup.ts:28-31 (`props`); ff:src/components/color-picker.tsx:1888 | ported | |
+| `aria-labelledby` / `aria-describedby` from `Title` / `Description` | `PP:93-94` | none | n/a | FF renders neither. |
+| **Placement** | | | | |
+| Side, align and offset pass to the Positioner (FF: bottom, start, 6); flips on collision with 5 px of padding; the reported side drives the entrance slide | `PPos:40-43,49,69-87`, `PP:76-82` | src/popover/popup/popover-popup.ts:25,32-39 (`positioner`, `placement`); ff:src/components/color-picker.tsx:712 (`slide`), `:1741-1745` | ported | `fit: "flip"` and `snapMargin` do the flip; `onPlacement` reports the side. The card slides 4 px from that side and fades (`drift/color-picker.md`, "CSS transforms"). |
+| Follows the trigger as it moves | `PPos:69-87` (`disableAnchorTracking` false) | `<anchored>` in `ff:src/components/color-picker.tsx:715-720` | ported | gpuix re-flips live as the trigger moves (FORK.md:566-568). |
+| **Left out** | | | | |
+| `modal` (scroll lock, outside pointer block, backdrop, focus trap) | `PR:33,165-169`, `PPos:98-105,128-130` | none | n/a | FF passes `modal={false}`. |
+| `Portal` and its `container` | `popover/portal/PopoverPortal.tsx` | none | n/a | The card is an `<anchored>` layer under its parent; FF's portal container (`ColorPickerPortalContainer`) only keeps the format menu inside the panel. |
