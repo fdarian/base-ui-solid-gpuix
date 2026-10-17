@@ -165,12 +165,12 @@ Base UI 1.9.0's source and this port, row by row. Port refs read `src/...:lines`
 `ff:src/...:lines` for code that stayed in FF. Each row has one **Status**:
 
 - **ported** (190): same behaviour.
-- **gap** (19): fixable in the port and not fixed. Six are gpuix capabilities the port has not adopted yet (the note
-  names the API to use); one is the menu typeahead's 750 ms reset window (Base UI's menu uses 500); six are the popover's missing controlled `open`, Escape from anywhere, close on focus-out,
+- **gap** (17): fixable in the port and not fixed. Five are gpuix capabilities the port has not adopted yet (the note
+  names the API to use); six are the popover's missing controlled `open`, Escape from anywhere, close on focus-out,
   focus into the popup, focus back to the trigger and Space on key-up; six are FF-only layers that are not Base UI or limits of the demos (select gap click,
   combobox `onCreate`, `variant`, `error` and `size`, mount-order indices for accordion items and tabs, tabs-subtle
   overflow).
-- **fixed (sha)** (180): was a gap, fixed in this port at that commit.
+- **fixed (sha)** (182): was a gap, fixed in this port at that commit.
 - **blocked by gpuix** (3): gpuix still lacks the capability: CSS `transform` scale and rotate (the select and combobox
   popup entrance) and
   `<input type="range">` (a native range input under each slider thumb).
@@ -188,15 +188,15 @@ Base UI 1.9.0's source and this port, row by row. Port refs read `src/...:lines`
 | [RadioGroup + Radio](BASE-UI-AUDIT.md#radiogroup--radio-base-uireactradio-group-base-uireactradio) | 18 | 10 | 0 | 5 | 0 | 3 |
 | [Switch](BASE-UI-AUDIT.md#switch-base-uireactswitch) | 17 | 10 | 1 | 4 | 0 | 2 |
 | [Slider](BASE-UI-AUDIT.md#slider-base-uireactslider) | 29 | 14 | 0 | 13 | 1 | 1 |
-| [Menu](BASE-UI-AUDIT.md#menu-base-uireactmenu) (with the inline Dropdown and the color picker format menu) | 73 | 33 | 2 | 34 | 0 | 4 |
+| [Menu](BASE-UI-AUDIT.md#menu-base-uireactmenu) (with the inline Dropdown and the color picker format menu) | 73 | 33 | 1 | 35 | 0 | 4 |
 | [DirectionProvider](BASE-UI-AUDIT.md#directionprovider-base-uireactdirection-provider) | 5 | 1 | 0 | 0 | 0 | 4 |
 | [Select](BASE-UI-AUDIT.md#select-base-uireactselect) | 44 | 13 | 2 | 26 | 1 | 2 |
 | [Combobox](BASE-UI-AUDIT.md#combobox-base-uireactcombobox) | 47 | 14 | 4 | 27 | 1 | 1 |
 | [Dialog](BASE-UI-AUDIT.md#dialog-base-uireactdialog) (with the mobile drawer) | 32 | 17 | 0 | 15 | 0 | 0 |
 | [Tooltip](BASE-UI-AUDIT.md#tooltip-base-uireacttooltip) | 23 | 11 | 0 | 11 | 0 | 1 |
-| [ScrollArea](BASE-UI-AUDIT.md#scrollarea-base-uireactscroll-area) | 31 | 11 | 1 | 17 | 0 | 2 |
+| [ScrollArea](BASE-UI-AUDIT.md#scrollarea-base-uireactscroll-area) | 31 | 11 | 0 | 18 | 0 | 2 |
 | [Popover](BASE-UI-AUDIT.md#popover-base-uireactpopover) | 19 | 9 | 6 | 0 | 0 | 4 |
-| **Total** | **426** | **190** | **19** | **180** | **3** | **34** |
+| **Total** | **426** | **190** | **17** | **182** | **3** | **34** |
 
 The audit's [Summary](BASE-UI-AUDIT.md#summary) groups what is left by cause.
 
