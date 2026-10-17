@@ -5,7 +5,7 @@ description: Why the port is headless create* functions laid out file-for-file l
 tags: [decisions, api, layout, packaging, gpuix, solid]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-17T00:13:17.331Z
+    at: 2026-10-17T05:21:17.049Z
 sources:
   - id: openwiki-source-8037e2358a2c4f9b2c722a11
     resource: repo://AGENTS.md
@@ -13,6 +13,8 @@ sources:
     resource: repo://package.json
   - id: openwiki-source-40275cb92c3610938f16ade3
     resource: repo://pnpm-workspace.yaml
+  - id: openwiki-source-aca8becc0eaa71ad36246041
+    resource: repo://src/floating-ui-solid/hooks/use-hover-reference-interaction.ts
   - id: openwiki-source-697b5f0115297cf4278345dc
     resource: repo://src/internals/composite/root/row-list.ts
   - id: openwiki-source-2b3b3171534e73f44a729911
@@ -23,11 +25,15 @@ sources:
     resource: repo://src/menu/input/menu-search.ts
   - id: openwiki-source-f9664de5df0da5568df4fcea
     resource: repo://src/menu/list/menu-list.ts
+  - id: openwiki-source-4cebc6c168c351b2426b73f4
+    resource: repo://src/menu/submenu-trigger/menu-submenu-trigger.ts
   - id: openwiki-source-f4b24653c67c1599a4df3bce
     resource: repo://src/select/root/use-select-root.ts
+  - id: openwiki-source-25d8786996ca4a96ca5c6d6f
+    resource: repo://src/tooltip/trigger/tooltip-trigger.ts
   - id: openwiki-source-ff18555ad70362de0f452788
     resource: repo://UPSTREAM.md
-generated: { by: "claude-code", at: "2026-10-17T00:13:17.331Z" }
+generated: { by: "claude-code", at: "2026-10-17T05:21:17.049Z" }
 ---
 
 # Design decisions: API shape, layout and packaging
@@ -49,6 +55,12 @@ Why: FF already owns every visual (fluid hover, focus rings, popup surfaces, spr
 ## Controllable highlight with reasons
 
 Select, Combobox and Menu accept the highlighted index as an option and report every change through `onHighlightChange(index, reason)`. Base UI highlights the hovered item itself; FF's fluid hover picks the nearest row (including in the gaps between rows) and animates to it, so FF must own pointer highlighting. The reason lets FF follow keyboard, typeahead, focus, open and reset changes while the pointer path stays entirely in FF. The menu list never reports a pointer reason: the pointer moves the highlight through FF's own hover, and the list only takes FF's pointer handlers so it can tell keyboard from pointer.
+
+## Hover close is shared, open delays are not
+
+The tooltip and menu submenus both leave their popup open while the pointer travels toward it. The port uses Base UI's safe polygon (`floating-ui-solid/safe-polygon.ts`) for both, run by one tracker (`createHoverHandleClose` in `hooks/use-hover-reference-interaction.ts`) that listens to the window `mousemove` from the trigger's leave until the polygon closes the popup. This replaced a tooltip grace timer and a menu dwell timer. The tracker is split from the open logic because the two consumers open differently: the tooltip has a rest delay and the submenu has its own hover-intent, so each trigger keeps its own open timers and only the close decision is shared. See [gaps](../gpuix/gaps-and-divergences.md) for why this was impossible before gpuix delivered window moves over bare background.
+
+Base UI's `blockPointerEvents` is approximated, not reproduced. Upstream sets `pointer-events: none` on the parent popup while the pointer is on its way to a submenu. Here the menu list ignores pointer movement for that row (`blockedIndex`), so the trigger stays lit under whatever row the pointer crosses, but a click on a sibling row still lands.
 
 ## Refs as functions, and Select rows set props one by one
 

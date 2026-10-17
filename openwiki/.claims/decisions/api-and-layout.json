@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:410ce206a02deb086fa4d6f90a2790c3c7330e505e5aa8c70ca5c8e2138c80eb",
+  "pageVersion": "sha256:89b59280933766cf2933dd732a8ff02a94109f3ffafd5cf1ab7ed92f15912a28",
   "claims": [
     {
       "id": "claim_41909e38602544d1875074f0a9e718cf",
       "statement": "Primitives return refs as separate functions (triggerRef, popupRef, itemRef) rather than inside prop objects, because a spread ref in gpuix JSX applies after the element is created, too late for an open that reads the elements as the popup mounts.",
       "evidence": [
         {
-          "resource": "repo://UPSTREAM.md#L140-L142",
+          "resource": "repo://UPSTREAM.md#L147-L149",
           "version": "repo-lines-v1:sha256:bbc66d11ccf7e941ece1269ea4853bee5cbf6503282cdc668ad75249222b06bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWViODAyMTQ5N2FlOTNkZWQ5Y2UwNjU1YmQ5ZDgzNDdhNDMwMGQ1ZTk4MDc2ZTMzOGVmMzY0ODRiYTUxYmJmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU5NmEyZTMxNDcyNmI3YWFkNzQzYWU4NDU2NDBmNTFmNWU1ZTQ0OGFkZjVhMmQyNGU5MDcwYzBmOTk2NWRmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGRiNzE4YTcxYjQyMzEzMzM4NDhjMjYwMjBlNGNmYTAzY2IwOTM4MzIyM2U3NzVjMWJhOGZkMWFjNDNhMWJjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg2YmE0ZWI0MDlhNTUyN2ExMDIxYTNiMGMwZDNiNWQ0ZWZlNTRlZTkzNzZhOWNkZjVkNGQ2YmYxMzgxMDQ0NyJ9"
         },
         {
-          "resource": "repo://src/select/root/use-select-root.ts#L372-L381",
+          "resource": "repo://src/select/root/use-select-root.ts#L371-L380",
           "version": "repo-lines-v1:sha256:792276b2babeb375c8766df06503a0ddb4244d9af1cc46d6213b72cb66cb237f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhYjJlZTIyZDI1MjlkYTkyMTA0YjAxYzlmMDIzYWFhY2JlZjZkNGFlYjQ0Njg3NTg4MDhjZTg5NjhhMWY5NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYWQ3Y2MyZGZhZmMyMTc1ZmEyZDk3MDRlMDIwMmY5NDA4M2E5ZGE2OWE1ODViMGIxOGM0OGJlYTIzNjI3NWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwMjNmNGQ4NjY1OWEzZjMxMTQ5NWE3ZWRlN2I1MzlmZDYxNThmODg3OTM5ZWQ0MDE5YWIxODM0ZDY5NzAwNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMGEyNDk3MzY5NmE3ZmE0YjdmZTA3YWQyOTA0MzRhOWY2MGQwODA2NGYxMDc3N2YxZTJiMzgyMWFiNTkxNDQifQ"
         }
       ]
@@ -21,11 +21,11 @@
       "statement": "Menu highlight is owned by the consumer: the menu list reports changes through onHighlightChange with reasons keyboard, typeahead, focus, open and reset, and never reports pointer movement, which the consumer's hover drives.",
       "evidence": [
         {
-          "resource": "repo://src/menu/list/menu-list.ts#L25-L40",
-          "version": "repo-lines-v1:sha256:ebdce6149238b93af90cc632eb5940ffa99e673545fdbfb3f9fa251988bb3f05:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5ZDc3N2ZiYjgzMWEwNTViZjNlYTY4NTg5ZTg5ODZjZDI1ZGMwZjZiYTgxOTQxZDVkMTQwZTlkNzM5NWUyODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2NTdkZjU5ZDQ3YjNiZWY2NmVkMTZmZGJjMDU0OTIxNmNjNDMyNzA5YzI4YTE4MzZjYmQ4MDljOWNmOWY0NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1NTlkNGU3NjAzNWQ0YzViM2UyMDZkOWM1NTRjYmUxMmRiZDgyYjBmZTE0NzdmMGVkMWQ1ZDRkNTkyZmQ4YTMifQ"
+          "resource": "repo://src/menu/list/menu-list.ts#L28-L39",
+          "version": "repo-lines-v1:sha256:e95b602b9c8bb57bf3eb789e80281a689b566800724a441b59fde715bbd7d645:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5ZDc3N2ZiYjgzMWEwNTViZjNlYTY4NTg5ZTg5ODZjZDI1ZGMwZjZiYTgxOTQxZDVkMTQwZTlkNzM5NWUyODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNGM0YzAxMTc1NWI4MTgzMjk1ZGY1N2M0NjkyZTcwNDAzMzk4MjcyOGJkZjhiZmQyZTJjYjg4N2M1Njc0YTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2NTdkZjU5ZDQ3YjNiZWY2NmVkMTZmZGJjMDU0OTIxNmNjNDMyNzA5YzI4YTE4MzZjYmQ4MDljOWNmOWY0NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiMWE3YmU0MzExMjg2NzA2MjIzNzMyNzliMTk1NTlmOThlMjc2OGUyMDU5MmJkMGQxYjhmZjBmMDc0ZTdmYzkifQ"
         },
         {
-          "resource": "repo://src/menu/list/menu-list.ts#L61-L64",
+          "resource": "repo://src/menu/list/menu-list.ts#L64-L67",
           "version": "repo-lines-v1:sha256:99ca1762f9443996be654c1d3cc19d5b8cd524d7604b01d71abb97f9ee0520d4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjc2MTFlNDIwZDQ5MzVkYjAxMjZiYjY0OWQxZWZjOGQzNzBhNGE5ZTM1MDM1OWVhMzM4ZjE2M2I2MmI4YmFjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJiMWEzZjA0Zjg0YzM4OGVkOTliMDBmN2YzYzhiMDAyZmM2OWQ5NWJkYjJhMTQ3ZTM1OWU1YjAwMDA0ODUxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzNlYzRjNzZiNmY1MzIxOWE4ZTIzZTYwMDllYmUzZTFlMGExZTc3ZGNlOTljMzZhNzlhYmJjZWUyOTM3NDFmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2RhMzY3OGI5NGU4ZTg2YzYzMjBlODY5NTAwODhjNjMwMTAxZDJlZjIyNTYzMGI4NzBiOWIzOGNkOTY3MDY4MyJ9"
         }
       ]
@@ -63,7 +63,7 @@
       "statement": "The menu search field is FF's real-focus layer, not Base UI's virtual-focus Menu.Input, and is kept here because it is woven into the menu list's keys.",
       "evidence": [
         {
-          "resource": "repo://UPSTREAM.md#L125-L125",
+          "resource": "repo://UPSTREAM.md#L132-L132",
           "version": "repo-lines-v1:sha256:93335c0283160fd42e74d9384fd689ced5ea51dbf7f0cec00f0db7b17d17533c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTMzMzVjMDI4MzE2MGZkNDJlNzRkOTM4NGZkNjg5Y2VkNWVhNTFkYmY3ZjBjZWMwMGYwZGI3YjE3ZDE3NTMzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTMzMzVjMDI4MzE2MGZkNDJlNzRkOTM4NGZkNjg5Y2VkNWVhNTFkYmY3ZjBjZWMwMGYwZGI3YjE3ZDE3NTMzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTU5OGE5Y2JhMmM4NmZkZTVjZGNkZDNkMjYxYjQ5NTAwNTg5MGZlZGM5N2U1OTQ0ZTAxZGM1N2E2OTFlZjk3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzZkNmRhNTAxMDExYjVkNWIxM2FiNzJhNWNmZmE5MWVmYTcyMGMyOTM1ZTMxYjVmMzBmM2I5MmZkYjU5MTMxMyJ9"
         },
         {
@@ -105,10 +105,46 @@
           "version": "repo-lines-v1:sha256:c9731281747e17f5056f6753261cd013bba18e7a64e024e8cc9c93d54c3be357:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzEyODE3NDdlMTdmNTA1NmY2NzUzMjYxY2QwMTNiYmExOGU3YTY0ZTAyNGU4Y2M5YzkzZDU0YzNiZTM1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzEyODE3NDdlMTdmNTA1NmY2NzUzMjYxY2QwMTNiYmExOGU3YTY0ZTAyNGU4Y2M5YzkzZDU0YzNiZTM1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTg2ZDVkNWQyZGJmMjFjOTc5MDBjZTI1M2U3ZTdkYjc3MzA5M2NiOGU2ZDRkZmZiYThhZDlhNzcwN2I5NWE0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTA3MGM2NWZjNzllZWYwMjk1MjAyNWU5MjI4YWFiMmQ0ODRhMDU2ZmY2YjVmMTViNmI3YTFiZGQ1MzQ1OWExNCJ9"
         }
       ]
+    },
+    {
+      "id": "claim_3117dfba92f3449fb251a58d9c577ac0",
+      "statement": "The tooltip and menu submenu triggers share one hover-close tracker, createHoverHandleClose, which starts on the trigger's mouseleave and feeds window mousemove events to Base UI's safe polygon until it closes the popup; each trigger keeps its own open timers.",
+      "evidence": [
+        {
+          "resource": "repo://src/floating-ui-solid/hooks/use-hover-reference-interaction.ts#L38-L129",
+          "version": "repo-lines-v1:sha256:a5fd037a4f729672501a18f9d4782dba6e71a2ff31cd6045ecefcadee1cc063a:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZmE3ZGNhNGQ5ZThjYjMzMzQxODViZWE2MjIzYjdlMGM0ZDEyYjM4NTAzODY1MGNmMGMwMWQ4YzMzZjUwY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOGJkMzg1ZWYyNmZlZWQ2ODljNTZkNzU3ZmVlYTVlZDQ5NjZkOWVmMTM5MTJlZjFkMTJhMDVlN2Q1MmRhMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/menu/submenu-trigger/menu-submenu-trigger.ts#L36-L57",
+          "version": "repo-lines-v1:sha256:61c9761553327863edbc5f9d07b66f6d37e002747b4a79a90a970a0ca7f8a4b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNDAyOGI1YTE0OTk2MDI4MzYxMDUyYmRkYWFkYWM0ZmRhYTFmNTg1MGZjNmM4NjAzNjJkOWVjMTA4OGEwNmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3Njg1OGQ0MzQxODJiNDMzZDQ0N2U2ZWEyYTIwYWY5MDI5ZmE1MTlkY2IwZmJiZDEzZTczMjEyY2NhMWY5OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxYTQ0MmVhZWRlN2ZlNjc5ZDM3Y2ZjNWI3NGJlMTJiOGFhMzJlNjE4ZTY0YzE3ZTlmOTMyYzI1MmViNjZmZTcifQ"
+        },
+        {
+          "resource": "repo://src/tooltip/trigger/tooltip-trigger.ts#L38-L66",
+          "version": "repo-lines-v1:sha256:b21bc6d226b8193b5c6bf7aec6598628b40af93c3affd9028056c441d36d8f34:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YjVkOGFiZDgxNjk2MDllYTIwZDNjY2MxODU2ZDQ3MjlmNTZkYjY2MGYxN2ViMzM4NzUwMDcyYTY0YjBlMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyYWMzMTg5YTE2ZTNhNjhhNDc3YTg3ODgyN2NjMGEzOTJkNzg4N2NlODkzZGQxNzg4YTBlNDY4NDk1MjFhOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0YWNmNzBmYmY2YmQyMDExOGNiZjI1ZTc4YjE5ZTIxODZlYTNjOTFmMGQxM2FmZTMzNzk2M2Y1MWI1ZGI5M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxNmE3MDllNDczOWQwOTMxNzNlOWQxN2JiOTZkYTAyYmEwMjI2YWUxNjJjYTU0MjcwMGYwNTk2MDM5M2MzMjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f061c909cc84e3d8cfb14be58b8a226",
+      "statement": "Base UI's blockPointerEvents is approximated by the menu list ignoring pointer movement for the row whose hover-opened submenu the pointer has not reached yet (blockedIndex), rather than disabling pointer events on the parent popup.",
+      "evidence": [
+        {
+          "resource": "repo://src/menu/list/menu-list.ts#L283-L303",
+          "version": "repo-lines-v1:sha256:0ee338e9130ff6d0d7c657c5ffc0757e96982bc85196714a350f1de409c336f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMjJmNDZhYjM4NmYwMTY0Mzk2MjZiMjFhZmVhY2RiN2NmMzUxZTFhODg5NmIwZDhlNjNkMzJkMmJjZDk0NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyZTEyYzg0YjRhNmFiZmU1NDE5OTA5NDFjMWQ0MDgxNzcyZjYzNDFlMDk1YjU4ZDhlOWQ0ZWE1YzVhMWYxZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4YzdmYjYzOTYyNWQ4ZTU2MThjNmNiYmZkN2M1ZDU2MGM2MGMwY2VkMTUxNWRkMzAyYTgwZTY5Mjc0NjE1MTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhZWI0Njc0NzM1ZmNhNGM0Yzk0YjU2ZTgyZDY4NDNmMDg0ZmNhNTUzNTIyOTRhZjU1ZjJmYmE2MGYwY2M1NjUifQ"
+        },
+        {
+          "resource": "repo://src/menu/list/menu-list.ts#L85-L94",
+          "version": "repo-lines-v1:sha256:641a77f18448273276fbc7fab54e82bcdd2869576db05c01e49c22b462a13817:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MzY0OGMzM2ZjZDk0MGNlYmM5NjFmNTAzYTcwZDI4ZWY1M2Y0ZjA3MjZiZTVkYWFiMTBkYTRjMmMwZWM4NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNWQwODYxMDI1ZGMxYmM5MzMwNjA2NDk3YzIxYzJjNzQ3MTVlYjQ3ZWFjMzYzMWY0YTAwYzljYTFlYTU3OGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3NWRiYTBmYjYxODNjMmZlM2U4MjU4ZTk5NTFiOTRjNTgxNjZjNzU5ZDI0NjcxNjFiY2ZkNjg1ODM2Y2I1ZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        },
+        {
+          "resource": "repo://src/menu/submenu-trigger/menu-submenu-trigger.ts#L76-L85",
+          "version": "repo-lines-v1:sha256:3ddb03814ce5eec19b87bcb8eb19293e32847dc89f8d684cb110d8aa2441e0e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMmEzYjc2ZTEyY2UxNTM3OWQwNWYyODY5ZGM0ODMyZGU3NTg5MDUzYjQ5YmZmMjM3ZTQyNWM3MjM3ODAxNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMmEzYjc2ZTEyY2UxNTM3OWQwNWYyODY5ZGM0ODMyZGU3NTg5MDUzYjQ5YmZmMjM3ZTQyNWM3MjM3ODAxNTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmZDk3OWRmMWFhZTFhNmQ1NjkwNzhlZmM2MDk0YWVlNDA4ZDI1NmQzNjdhMDFmNjc3YzE1NjJlM2U2YzliMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkNWUwZmQxOTJhMzU5OGI0NzNkN2RmZTFhNmY4NTU5NDI5NTI3ZjA5NmRlOWNlMTkyMmExNjJiNWY2YjhhZDkifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-17T00:13:17.331Z"
+    "at": "2026-10-17T05:21:17.049Z"
   }
 }

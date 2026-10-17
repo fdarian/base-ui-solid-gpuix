@@ -3,9 +3,6 @@ type: history
 title: Extraction history (2026-10-17) and known stale notes
 description: How the primitives were split out of Fluid Functionalism's port on 2026-10-17 (filter-repo history, five parallel component groups, consolidation, docs), which BASE-UI-AUDIT.md Notes are known to be stale, and which behaviour mismatches with Base UI are kept on purpose.
 tags: [history, extraction, audit, maintenance]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-17T00:13:17.331Z
 sources:
   - id: openwiki-source-e0c02c9e374a589840154900
     resource: repo://BASE-UI-AUDIT.md
@@ -15,7 +12,10 @@ sources:
     resource: repo://src/internals/composite/root/use-composite-root.ts
   - id: openwiki-source-ff18555ad70362de0f452788
     resource: repo://UPSTREAM.md
-generated: { by: "claude-code", at: "2026-10-17T00:13:17.331Z" }
+generated: { by: "claude-code", at: "2026-10-17T05:21:17.049Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-17T05:21:17.049Z
 ---
 
 # Extraction history (2026-10-17) and known stale notes
@@ -37,14 +37,12 @@ The popover primitive and the color picker's adoption of Menu came after this, a
 
 ## Known stale audit Notes
 
-The audit refresh left these Notes knowingly out of date, to fix once the color-picker follow-up lands. Don't trust their prose without re-reading the code:
+The extraction left four Notes knowingly out of date, to fix once the color-picker follow-up landed. Later audit passes (the Round 5 refresh against Base UI v1.9.0 and gpuix poc `dcfc7a0e`) re-read two of them: the **switch key-repeat** row now reads `fixed (b1c17bc)` and says the port matches Base UI, and the **dialog rows** on focus return after the exit and on nested dialogs ignoring Escape and outside press now read `ported` and verified. Two were not re-checked and may still be stale, so don't trust their prose without re-reading the code:
 
-- the **switch key-repeat** row;
 - **tabs `activateOnFocus`** (the pointer-activation-timing Note);
-- the **Tab rows of the menu and of the color picker's format menu**;
-- **dialog rows at lines 679 and 684** (focus return after the exit, and nested dialogs ignoring Escape and outside press).
+- the **Tab rows of the menu and of the color picker's format menu**.
 
-The color picker's own rows also still need their refs updated.
+The color picker's own rows were also left for that follow-up; check their refs before relying on them.
 
 ## Mismatches kept on purpose
 

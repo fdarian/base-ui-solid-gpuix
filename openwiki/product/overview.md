@@ -3,9 +3,6 @@ type: product
 title: What base-ui-solid-gpuix is
 description: A private Solid + gpuix port of the @base-ui/react 1.9.0 primitives that Fluid Functionalism uses, pinned to mui/base-ui v1.9.0 and consumed as source by FF; only what FF uses is ported.
 tags: [product, base-ui, gpuix, solid, fluid-functionalism, scope]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-17T00:13:17.331Z
 sources:
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json
@@ -13,7 +10,10 @@ sources:
     resource: repo://README.md
   - id: openwiki-source-ff18555ad70362de0f452788
     resource: repo://UPSTREAM.md
-generated: { by: "claude-code", at: "2026-10-17T00:13:17.331Z" }
+generated: { by: "claude-code", at: "2026-10-17T05:21:17.049Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-17T05:21:17.049Z
 ---
 
 # What base-ui-solid-gpuix is
@@ -41,7 +41,7 @@ FF-only layers that are not Base UI stay in FF (fluid hover, focus-ring visuals,
 
 ## Status
 
-Private and unpublished: local only, with no remote and no build step. FF consumes the TypeScript source through a `link:` dependency and a shared pnpm workspace. How closely the port matches Base UI is tracked row by row in [BASE-UI-AUDIT.md](../../BASE-UI-AUDIT.md). At the time of writing that is 405 rows: 182 ported, 177 fixed, 12 gap, 5 blocked by gpuix and 29 n/a ([tally](../../UPSTREAM.md#deviations)).
+Private and unpublished: local only, with no remote and no build step. FF consumes the TypeScript source through a `link:` dependency and a shared pnpm workspace. How closely the port matches Base UI is tracked row by row in [BASE-UI-AUDIT.md](../../BASE-UI-AUDIT.md). At the time of writing that is 426 rows: 190 ported, 182 fixed, 17 gap, 3 blocked by gpuix and 34 n/a ([tally](../../UPSTREAM.md#deviations)).
 
 ## Related
 
