@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:be2d4a29d3afa64c9d06c7d7be6170d0436cc5e942b1c2fa7bca4471b891ff20",
+  "claims": [
+    {
+      "id": "claim_f01f8826afee41abaefdae340b24dd34",
+      "statement": "The two key-navigation helpers were consolidated under internals/composite/root but kept separate, createCompositeRoot for Tabs and Accordion and createRowList for radio and checkbox groups.",
+      "evidence": [
+        {
+          "resource": "repo://src/internals/composite/root/row-list.ts#L8-L15",
+          "version": "repo-lines-v1:sha256:87a121deda06a0e37899d2a4bd26b45278d66428e1200080970cc19cc7c7dd9b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE5NjZiMmYwMDVlM2IzMjc3NTg3OGMxN2UxZjVmNjAzMGEyMjUwZWZkZWM5MjIyMzZiOTEyN2M1OTcwNzBjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBkMDc3OGNmNTk5ZjBjOWE1NTI1ODNhYTY5YmRhNjY0MTY3NWE1OGU0ZTNiMTBiY2NiNzU3ZmNlNWY0MjZjYyJ9"
+        },
+        {
+          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L7-L9",
+          "version": "repo-lines-v1:sha256:38499008c81cf708a20fd7d685ff5b2babb2cba969935def19e3f91bc0c95064:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTgzNGFmMWJlYTUxNDc4OTQyNjBkNjhhNmUzYjY3ZTVmYmYwZmFhNmY0MWI5ZjUyNDk4NmJkNjdjYjliNGZiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiMzUzOGJiNWNkY2Q5YzhhMWE5NDU4MzM3NjEwNTk3NmE4ODg5YjE2N2FiYjY2MzczZTY5YTBjOTM5NWFiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDcyMDE4ZjVhYTViNGIyMjMwNmI4M2IwZjllZjI5NTU4ZjVlNTliNTM5MzM2ZjZkZDVjYzcyMDE0MTk3MWM1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM4MTFkMGYzM2JiOWFhNTFiMWU3ZTRiYjBjNDQzNWI0MmViOTM5OGMzYWQ2NTg1NzIwOGU0ZTY2YzJmMWJmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_afaf41c1adfa472c9767a76e0f4bdb76",
+      "statement": "clamp is duplicated in scroll-area/utils/scroll-math.ts and FF's scroll area because neither exports it.",
+      "evidence": [
+        {
+          "resource": "repo://UPSTREAM.md#L201-L202",
+          "version": "repo-lines-v1:sha256:96b42ab75e3709ffca3ae7dffd685452dbeed72f822c25aa1ad5e719f8ef529e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjM5YjBlMGRhNDZhZDdkZmQwZDUxZDUxMTEzM2UwNWY0MDVlYmZlNzkyZmJmNzdjNDM2ZmUyMmQ4OWMxNGQ4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzRjZmViMzA2MDA1YmViNzg5ZGQ5Yjc4ODg4MjNiNDRmNWMyOThjMmE3ZGZmOTE2MGVhNTM4M2VhNmQ1NjAwNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmMxZmQyYWJlOWNhNWJlYzVjM2RkMDFkY2RiNGQyNjIyM2QzNWY0ZGIwYjMzNTU2ODRlZjUwMTI3ZWYwMjQ3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d7af08d56584454a767249abc478c07",
+      "statement": "The tooltip provider's delays follow FF at 200 and 300 ms instead of Base UI's 600 and 400 ms, a mismatch kept on purpose.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L754-L754",
+          "version": "repo-lines-v1:sha256:44dfd0bc5f06b1f7a5cf307dcab3317668f87cb6972557a9ba3ab8776b539c13:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkZmQwYmM1ZjA2YjFmN2E1Y2YzMDdkY2FiMzMxNzY2OGY4N2NiNjk3MjU1N2E5YmEzYWI4Nzc2YjUzOWMxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkZmQwYmM1ZjA2YjFmN2E1Y2YzMDdkY2FiMzMxNzY2OGY4N2NiNjk3MjU1N2E5YmEzYWI4Nzc2YjUzOWMxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWU5Nzc2MGNjOWI4MGU1YTljMTM1ZDcyYzc0M2FjNzk0ZGFiZjA4OTQ0OWJmZjJiNzFhMjk2NTRkYjgzOWUyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMzNzQ5NTQ0OTM3NWIwMWU0ODE2Yjc2NTQ2YmYzZGQ3ZTgzMzdlMTJlNDkxZmE2YzFiYmY1NDM3MzdiN2RjOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_32a4c95a263e40428e3d228ec83fda01",
+      "statement": "Radio selects on Enter and on Home/End and checkbox acts on Space keydown and toggles on Enter, following FF rather than Base UI.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L218-L219",
+          "version": "repo-lines-v1:sha256:07c0abfb7ffc0b0198fb995b2d52c7e66943926335507096f07b1cc5838156b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDA4MmZkMDdiMTBjM2E4ODAzZTVjZWNjNTk5NTViYWIwZmE2MzJiYmRhMGE3YTJjYjlkNTU1MTliOGIyZTQxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM3NGY2YWE4MGQ5NDJmNGU5YzMzYThkM2U4ZjQ2NmJmNWJlYjhlYTljYWM4OWEzNjRjNDZjZjgyYjFjMDc4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJlNWQwM2ZmYzhkMTE0ZThhMjU0NmVlODQ1OThhOWJlZGU3Y2NhMmIwODhhZGQ4OGZmMTc3NDI2YzQ2OTM1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRlNGRjMTU3NWQyYzI2MTYwZTc3Mzk3MzU4Yzc2NTQ2MmIwYTFhZGJmYzJmMDA3M2JlYzJlOGY0NWEwNGM5OSJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L253-L254",
+          "version": "repo-lines-v1:sha256:a4ee9717395a7e021c803211d5219ad606208608212631b080d54dc598312cd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ2MWVjMmM5ZDMxZjRkZTdmMzcyNjk5ZDJiOTJjMjM1YTMxNDRhMTNmN2Y4NTk5YjFmNGNmMTFiM2FmNGZjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDU2OTNhOGYyNThiYTYxMDdlZTc3NzAwNTIzNjE3MmJlNTNiOWM1MjlmYmZkMGRkZTVkN2VjODhmOWIxNDk3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTNlMTFhOTA2ZTVmZThhMDNmMGY4MjUyNDEwNzYzMjdlODE5ZTIwMmE0YWI4YTVkYTNiZGM3Yjg2ZTc3MThkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjg2MjI3ZmYyYzUzZDY4YjJiZmJiODIxMzc4NGU5ZTY1YmRhZWJiMmJmMDgyNzNlYjRkMzRlMjIwZTZkOTU0OSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-17T00:13:17.331Z"
+  }
+}

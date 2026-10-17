@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:410ce206a02deb086fa4d6f90a2790c3c7330e505e5aa8c70ca5c8e2138c80eb",
+  "claims": [
+    {
+      "id": "claim_41909e38602544d1875074f0a9e718cf",
+      "statement": "Primitives return refs as separate functions (triggerRef, popupRef, itemRef) rather than inside prop objects, because a spread ref in gpuix JSX applies after the element is created, too late for an open that reads the elements as the popup mounts.",
+      "evidence": [
+        {
+          "resource": "repo://UPSTREAM.md#L140-L142",
+          "version": "repo-lines-v1:sha256:bbc66d11ccf7e941ece1269ea4853bee5cbf6503282cdc668ad75249222b06bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWViODAyMTQ5N2FlOTNkZWQ5Y2UwNjU1YmQ5ZDgzNDdhNDMwMGQ1ZTk4MDc2ZTMzOGVmMzY0ODRiYTUxYmJmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU5NmEyZTMxNDcyNmI3YWFkNzQzYWU4NDU2NDBmNTFmNWU1ZTQ0OGFkZjVhMmQyNGU5MDcwYzBmOTk2NWRmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGRiNzE4YTcxYjQyMzEzMzM4NDhjMjYwMjBlNGNmYTAzY2IwOTM4MzIyM2U3NzVjMWJhOGZkMWFjNDNhMWJjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg2YmE0ZWI0MDlhNTUyN2ExMDIxYTNiMGMwZDNiNWQ0ZWZlNTRlZTkzNzZhOWNkZjVkNGQ2YmYxMzgxMDQ0NyJ9"
+        },
+        {
+          "resource": "repo://src/select/root/use-select-root.ts#L372-L381",
+          "version": "repo-lines-v1:sha256:792276b2babeb375c8766df06503a0ddb4244d9af1cc46d6213b72cb66cb237f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhYjJlZTIyZDI1MjlkYTkyMTA0YjAxYzlmMDIzYWFhY2JlZjZkNGFlYjQ0Njg3NTg4MDhjZTg5NjhhMWY5NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYWQ3Y2MyZGZhZmMyMTc1ZmEyZDk3MDRlMDIwMmY5NDA4M2E5ZGE2OWE1ODViMGIxOGM0OGJlYTIzNjI3NWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwMjNmNGQ4NjY1OWEzZjMxMTQ5NWE3ZWRlN2I1MzlmZDYxNThmODg3OTM5ZWQ0MDE5YWIxODM0ZDY5NzAwNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMGEyNDk3MzY5NmE3ZmE0YjdmZTA3YWQyOTA0MzRhOWY2MGQwODA2NGYxMDc3N2YxZTJiMzgyMWFiNTkxNDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f49c2d38ea534460ac63695f8ae32479",
+      "statement": "Menu highlight is owned by the consumer: the menu list reports changes through onHighlightChange with reasons keyboard, typeahead, focus, open and reset, and never reports pointer movement, which the consumer's hover drives.",
+      "evidence": [
+        {
+          "resource": "repo://src/menu/list/menu-list.ts#L25-L40",
+          "version": "repo-lines-v1:sha256:ebdce6149238b93af90cc632eb5940ffa99e673545fdbfb3f9fa251988bb3f05:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5ZDc3N2ZiYjgzMWEwNTViZjNlYTY4NTg5ZTg5ODZjZDI1ZGMwZjZiYTgxOTQxZDVkMTQwZTlkNzM5NWUyODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2NTdkZjU5ZDQ3YjNiZWY2NmVkMTZmZGJjMDU0OTIxNmNjNDMyNzA5YzI4YTE4MzZjYmQ4MDljOWNmOWY0NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1NTlkNGU3NjAzNWQ0YzViM2UyMDZkOWM1NTRjYmUxMmRiZDgyYjBmZTE0NzdmMGVkMWQ1ZDRkNTkyZmQ4YTMifQ"
+        },
+        {
+          "resource": "repo://src/menu/list/menu-list.ts#L61-L64",
+          "version": "repo-lines-v1:sha256:99ca1762f9443996be654c1d3cc19d5b8cd524d7604b01d71abb97f9ee0520d4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjc2MTFlNDIwZDQ5MzVkYjAxMjZiYjY0OWQxZWZjOGQzNzBhNGE5ZTM1MDM1OWVhMzM4ZjE2M2I2MmI4YmFjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJiMWEzZjA0Zjg0YzM4OGVkOTliMDBmN2YzYzhiMDAyZmM2OWQ5NWJkYjJhMTQ3ZTM1OWU1YjAwMDA0ODUxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzNlYzRjNzZiNmY1MzIxOWE4ZTIzZTYwMDllYmUzZTFlMGExZTc3ZGNlOTljMzZhNzlhYmJjZWUyOTM3NDFmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2RhMzY3OGI5NGU4ZTg2YzYzMjBlODY5NTAwODhjNjMwMTAxZDJlZjIyNTYzMGI4NzBiOWIzOGNkOTY3MDY4MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_79a8997f15ce4571a98ed96a7cada069",
+      "statement": "POPUP_MARGIN lives in this repo rather than the consumer because it is Base UI's default collision padding, not a styling constant.",
+      "evidence": [
+        {
+          "resource": "repo://src/internals/use-anchor-positioning.ts#L4-L5",
+          "version": "repo-lines-v1:sha256:3c8452259e74dbf5a47bd684ea336b18eb46fa120189b8827e9e4ceee9a03cb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY0NDQ1OGJmODI3ZGQ2NTdmYTFkOWRmOWU5NmRjMTVkODY2MzVhNzZlOThhN2M4MDVlOGMwMDE2OWE2ZDVhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNkZTg1YTdiMmFmMjU1ODI4MDRhZjJjMWNjMzdjYTY4NmM4Zjk3YmEyNDFmMmZjYmU2NWQyZjRhNjU3OTI2NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODNjMzI4NzYyODY0NTE4NDQyNmQxNDQ1MDdiZTBiNDU2Y2ZlMmJiNWE1ZDQ2Y2FiZjVjZDliYzhmNTM0Y2QyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjI0NmFkMzgwYzFjMjc1ZDQ3NGIzYzBiYzk5OWI3MzgzODJiMDM5OWQxYzQ3ZTNiNGEyNWIyYzAzZDdmZGI2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_52078792c39f4c80be8befb893d1f8e2",
+      "statement": "createRowList is kept separate from the composite root because it orders rows by index, activates with Space and Enter, handles both axes and applies no modifier guard or stopPropagation, whereas the composite root guards modifiers and stops propagation of consumed keys.",
+      "evidence": [
+        {
+          "resource": "repo://src/internals/composite/root/row-list.ts#L8-L15",
+          "version": "repo-lines-v1:sha256:87a121deda06a0e37899d2a4bd26b45278d66428e1200080970cc19cc7c7dd9b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE5NjZiMmYwMDVlM2IzMjc3NTg3OGMxN2UxZjVmNjAzMGEyMjUwZWZkZWM5MjIyMzZiOTEyN2M1OTcwNzBjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBkMDc3OGNmNTk5ZjBjOWE1NTI1ODNhYTY5YmRhNjY0MTY3NWE1OGU0ZTNiMTBiY2NiNzU3ZmNlNWY0MjZjYyJ9"
+        },
+        {
+          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L7-L9",
+          "version": "repo-lines-v1:sha256:38499008c81cf708a20fd7d685ff5b2babb2cba969935def19e3f91bc0c95064:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTgzNGFmMWJlYTUxNDc4OTQyNjBkNjhhNmUzYjY3ZTVmYmYwZmFhNmY0MWI5ZjUyNDk4NmJkNjdjYjliNGZiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiMzUzOGJiNWNkY2Q5YzhhMWE5NDU4MzM3NjEwNTk3NmE4ODg5YjE2N2FiYjY2MzczZTY5YTBjOTM5NWFiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDcyMDE4ZjVhYTViNGIyMjMwNmI4M2IwZjllZjI5NTU4ZjVlNTliNTM5MzM2ZjZkZDVjYzcyMDE0MTk3MWM1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM4MTFkMGYzM2JiOWFhNTFiMWU3ZTRiYjBjNDQzNWI0MmViOTM5OGMzYWQ2NTg1NzIwOGU0ZTY2YzJmMWJmZSJ9"
+        },
+        {
+          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L94-L109",
+          "version": "repo-lines-v1:sha256:4ded78ac61b5d2bc8ef496d6326fb4f86e8d206a02f5830ef82c36e48ea2127c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzN2VkZTYxMzQ0ZDU2YWFlYTc2NzgzZTlhZTQzYzllMTIzMTY1MWVlMGVjOGU5YzQ4OGQyOWFiZDljNTlmOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2Nzc2YzE2ZjQ0NGY3MTQyOTZkNDlhMzc1NTFhOWU5YmEwMjFlNjliMWU3OWE3MzhlMzM0ZDZkMDhhZDUxN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmYzQyZGVmNTMwY2ZmZWVkZDQxMmI5YmI0MDE5OTNlNWY2OGZmYTliNmQxYTgzMTY5N2E2ZTZlYjRhYmQwNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwYTU5MDY3MWMzODQwNWViOWQxMTkyOGE4YjcxNDExYWViYTEwMzVjYTE5MzIzZjI4OWRhNGExY2IxYjIzYTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5276e462bdfa4ba0b23c6b7e848742b7",
+      "statement": "The menu search field is FF's real-focus layer, not Base UI's virtual-focus Menu.Input, and is kept here because it is woven into the menu list's keys.",
+      "evidence": [
+        {
+          "resource": "repo://UPSTREAM.md#L125-L125",
+          "version": "repo-lines-v1:sha256:93335c0283160fd42e74d9384fd689ced5ea51dbf7f0cec00f0db7b17d17533c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTMzMzVjMDI4MzE2MGZkNDJlNzRkOTM4NGZkNjg5Y2VkNWVhNTFkYmY3ZjBjZWMwMGYwZGI3YjE3ZDE3NTMzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTMzMzVjMDI4MzE2MGZkNDJlNzRkOTM4NGZkNjg5Y2VkNWVhNTFkYmY3ZjBjZWMwMGYwZGI3YjE3ZDE3NTMzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTU5OGE5Y2JhMmM4NmZkZTVjZGNkZDNkMjYxYjQ5NTAwNTg5MGZlZGM5N2U1OTQ0ZTAxZGM1N2E2OTFlZjk3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzZkNmRhNTAxMDExYjVkNWIxM2FiNzJhNWNmZmE5MWVmYTcyMGMyOTM1ZTMxYjVmMzBmM2I5MmZkYjU5MTMxMyJ9"
+        },
+        {
+          "resource": "repo://src/menu/input/menu-search.ts#L3-L7",
+          "version": "repo-lines-v1:sha256:55029a481f8c49ed4077279eef0ceb8b52b953cd8ce0e8106b0d5e57212c83be:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTUyODQzZTBjNDE4MzBmYmRlNjQ5MDlhNzEwYmFkYmVhMmJlNTM2ZDEzYWIyNDU0YzZjOTRhYTZjODQ2MTFmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzQ5Yjg5YzY4ZjM0OTI5MjM2ZDhkMTUxN2JlYzQyYmU1Yjk4YTRlNGE1MzAxYmVkOGM2MjRjYzZjOWE3NDVhZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_31b47e96c75f45059c5388d2ce6b8df0",
+      "statement": "The package exports every folder through a single \"./*\" pattern mapped to src/*/index.ts, so adding a primitive folder needs no config change.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L9-L11",
+          "version": "repo-lines-v1:sha256:9ef916824dbc596dbb0c3aaa94429a9fbe50035da1d6f0e98b97e80275bb07db:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NhZjIyNzU1N2UzYTk5OWYyOTZjYzM1ZWIyYmNjNWU0NmIyNzMwN2I3MjYxNDM1Y2U4ODA4MWQ4NzBhMGZmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU1MDMyNDk2MjU2NTY4NWE1OWMzOTc1ZTFhNTQyNGE4MTc1YmE0MGY3ZGZhM2EwOTY1NzkxOWIyMWNkOTI2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjczNjUwOWZlMjE2Yjg4MzJiZTEzYWY4ZTRkOWViNzg1YzY1MDhjMGMxNWI1Yjk3YTgzYzhmZDM5MmM1MmRjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDRlZWUyNzNkMWNhMzkxNDc0ZWFmYmZmZmM2ZmVmMTU4YjA2ZTU4NDAyMGY3ZDQ2ODJhMzQxODlmZTkwOGFhMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f8dba6c7c324721ac7efd763b585ff8",
+      "statement": "pnpm-workspace.yaml disables verifyDepsBeforeRun because pnpm's pre-script auto-install run from this folder relinks a second @gpuix/solid; installs must run from the consumer's root to keep a single instance.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md#L16-L16",
+          "version": "repo-lines-v1:sha256:863392149fa17a68cbce167a584aed7bc2d9b391cf8772d98bfbd6147a506015:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODYzMzkyMTQ5ZmExN2E2OGNiY2UxNjdhNTg0YWVkN2JjMmQ5YjM5MWNmODc3MmQ5OGJmYmQ2MTQ3YTUwNjAxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODYzMzkyMTQ5ZmExN2E2OGNiY2UxNjdhNTg0YWVkN2JjMmQ5YjM5MWNmODc3MmQ5OGJmYmQ2MTQ3YTUwNjAxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ0NjdmOTdkOWFmZWZiNDlkZDZlNDY3N2NmZTY5NmFiZjExNWIwNjk2ZWQ3YWE3MGI4MGQ5OGM1YzdlNmZiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGE4MjllMTdlNmI0ZDRiMzIwNjBjODQ0OGI4OGIwYTFjZWExYmYzMzFjNWUzZjNhNWE5OWZlMjQwNzJhMzE5MiJ9"
+        },
+        {
+          "resource": "repo://pnpm-workspace.yaml",
+          "version": "repo-file-v1:sha256:fbad28bb559d0486da24c432c1b2079833fc9309d0a11d62c37393a1ab422c4d"
+        }
+      ]
+    },
+    {
+      "id": "claim_af1c31eae5d9487a856f0c65b3607abe",
+      "statement": "Source files use relative imports, never a #/ alias, because the consumer compiles this source with its own tsconfig.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md#L9-L9",
+          "version": "repo-lines-v1:sha256:c9731281747e17f5056f6753261cd013bba18e7a64e024e8cc9c93d54c3be357:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzEyODE3NDdlMTdmNTA1NmY2NzUzMjYxY2QwMTNiYmExOGU3YTY0ZTAyNGU4Y2M5YzkzZDU0YzNiZTM1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzEyODE3NDdlMTdmNTA1NmY2NzUzMjYxY2QwMTNiYmExOGU3YTY0ZTAyNGU4Y2M5YzkzZDU0YzNiZTM1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTg2ZDVkNWQyZGJmMjFjOTc5MDBjZTI1M2U3ZTdkYjc3MzA5M2NiOGU2ZDRkZmZiYThhZDlhNzcwN2I5NWE0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTA3MGM2NWZjNzllZWYwMjk1MjAyNWU5MjI4YWFiMmQ0ODRhMDU2ZmY2YjVmMTViNmI3YTFiZGQ1MzQ1OWExNCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-17T00:13:17.331Z"
+  }
+}

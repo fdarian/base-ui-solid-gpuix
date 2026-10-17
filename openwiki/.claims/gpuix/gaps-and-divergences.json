@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:68d001ef59136846e71cccb61c3a7bb02d0fd69e21dd6ede945c350bb6fb7040",
+  "claims": [
+    {
+      "id": "claim_1350cf3c272642b9a8040773b1670ced",
+      "statement": "Five audit rows are blocked by gpuix: the Select and Combobox popup scaleY entrance (no CSS transform), the exact safe polygon for tooltip and menu submenus (no pointer position over empty space), and a native range input under each slider thumb (no input type range).",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L313-L313",
+          "version": "repo-lines-v1:sha256:69a11139953033ad77821f82950e0b6f214d5ddeacbc89412ea0fbec5bda1fde:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjlhMTExMzk5NTMwMzNhZDc3ODIxZjgyOTUwZTBiNmYyMTRkNWRkZWFjYmM4OTQxMmVhMGZiZWM1YmRhMWZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjlhMTExMzk5NTMwMzNhZDc3ODIxZjgyOTUwZTBiNmYyMTRkNWRkZWFjYmM4OTQxMmVhMGZiZWM1YmRhMWZkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGNmNWVkZTM2NDBmZWIxZDAxZTJjMTM5OGYzY2ZkNTIzMWFhYWM5ZTI4YjVkOWRjZTJjNTMyZjk3YWI1OTNhNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmRkYzFjYzg0NjE5OWU4YTM0ZjVjOGI0NGY3NDU5OWM5NDA5ZTc0ZTY5YTJmMDZlZGMzNTQ2NDM2NjU2ZDFlMiJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L36-L41",
+          "version": "repo-lines-v1:sha256:62197de5685c06bf9af42e4da5acf891c9a7126b9ff1fd37602882aa8067b9a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTAyOGRjZTAwOWUzZjllMGJmZWIyZDZlZWEyNjMwZmFkYzdjZDdhNDdiMzM4ZTFlZmU0NWNlZDlhMGE3MDcxNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDRiZmU5MzE1NTEwNWY1MmQ4N2QxNmFlMjUyZDJlMzgyNzJhNjIxZTdmYWJkY2FhMjQ2NzIyNmRjNzA0ZjliNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTBhNDJiOWNjZWM0OTRjMzczYTVmM2JhMDZjZGQwNDM2NGYzMWJiM2Y1YjhlZGY5MGFlNzZiYTdmN2M3NDUyYSJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L529-L529",
+          "version": "repo-lines-v1:sha256:ad434ff00bbb2826b0439034b741ab9287c04249a1df1b820dc9d245cfa86b0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ0MzRmZjAwYmJiMjgyNmIwNDM5MDM0Yjc0MWFiOTI4N2MwNDI0OWExZGYxYjgyMGRjOWQyNDVjZmE4NmIwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ0MzRmZjAwYmJiMjgyNmIwNDM5MDM0Yjc0MWFiOTI4N2MwNDI0OWExZGYxYjgyMGRjOWQyNDVjZmE4NmIwYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzk1YWNlMmM2MjU1NTNlNTQ2ZGI1ZGZjY2Y3YTYyMDcyY2IwZWQyYWVkMjM4Mjk2NjU5MjRlMjI0MjcxOWZlNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU3YWYyYTE0NDU3MzU1ZjFhYjdlMjMxM2MwMzMxYWI5NTY5NWEyNzgwNjc3ZGIxNzBjMjc2MGExNjUxOGUyYyJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L735-L735",
+          "version": "repo-lines-v1:sha256:4fb5c28071a20cd5b4c5f06d52f294277bcc76650ca31b61221dddc5bc0b552b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZiNWMyODA3MWEyMGNkNWI0YzVmMDZkNTJmMjk0Mjc3YmNjNzY2NTBjYTMxYjYxMjIxZGRkYzViYzBiNTUyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZiNWMyODA3MWEyMGNkNWI0YzVmMDZkNTJmMjk0Mjc3YmNjNzY2NTBjYTMxYjYxMjIxZGRkYzViYzBiNTUyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQ3NWZlODhhNjQ5ZDM0NjQ1ZWVmODgzYWNhMjI4OGE5ZGJkNTdlZjZjODZlYzJlNGZjOGIyMDcyNTIxMzczOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDE5N2E4MTc3NDUwYTFmZmMwZDExNDQ1NmQ0ODdlMzk2Mzc3MDA5ZWYyOTNlNjYzODY2MzJkNjQ2MTNjNjdhMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a98620f804c0425599e70f267b31a51b",
+      "statement": "A gpuix capability the port has not adopted is recorded as a gap naming the API to use, such as <input disabled> for Combobox disabled, display: contents for the menu RadioGroup wrapper and absolute positioning for the dialog container.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L24-L33",
+          "version": "repo-lines-v1:sha256:019eed9bd60da02be1b1b86af901319c0f594e58e9ac59d148cd7392040929d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzZWYzYjkwNGM0ZjlmMjZjNjM5MWM3ZTY0MjAyMTBkOWY0OGNlN2IyNmY3OWMwOWE2OTg0NTg2OTMzM2VmZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNjM4OWYwZjA2MGNlZGIyM2RjOWEzZGRiZWNlMGEyNWQ1M2QzNDRjNzAzZTM2MjlmMmFmOGQ4ZWM3NDg1YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxOTgyNGQ0MzA1ODRiYmZhN2Q4YWU4NGVkNDY0OGM0ODU1NDFhMWRjZjkzZjkxY2YwODg2MTM3NjRlZDFkZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyNzdhNmNjMjE2MjdhY2NlMjhiYTBkN2M2Zjc2MDRiZDZjNTQ5ZjI5NzdhMDUzYTU4ZWYwMjdmMjljMTc2MzEifQ"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L406-L406",
+          "version": "repo-lines-v1:sha256:b190374d37b1188e50c156ec9da4a667fe6b2c225d0425dca4e2a0d5704a4450:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjE5MDM3NGQzN2IxMTg4ZTUwYzE1NmVjOWRhNGE2NjdmZTZiMmMyMjVkMDQyNWRjYTRlMmEwZDU3MDRhNDQ1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjE5MDM3NGQzN2IxMTg4ZTUwYzE1NmVjOWRhNGE2NjdmZTZiMmMyMjVkMDQyNWRjYTRlMmEwZDU3MDRhNDQ1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDIwZTc1YzZiMDgxNWRjYmE5YjY5MGFmMjAzY2E5YmJhMjY4NjEyOGVjMjljZjJiMjczYWMzYWIxMzkzMmY3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzIxYThlYmFmNzA4MWE5OGY0MDRmM2RmZWQ2NGRiMmQ3YjY2ZWJiNzNiODVjZTBlNzNlODQ3NzQ1MjlmMjFmZSJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L598-L598",
+          "version": "repo-lines-v1:sha256:667f5eea7545fb6d85cd3fbe2ca3cac68fdaca121b4ddd30de34f9974457cd8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY3ZjVlZWE3NTQ1ZmI2ZDg1Y2QzZmJlMmNhM2NhYzY4ZmRhY2ExMjFiNGRkZDMwZGUzNGY5OTc0NDU3Y2Q4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY3ZjVlZWE3NTQ1ZmI2ZDg1Y2QzZmJlMmNhM2NhYzY4ZmRhY2ExMjFiNGRkZDMwZGUzNGY5OTc0NDU3Y2Q4ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjBlYzY3MGI5ZmRjMzdiZDk2NGNhOTg4ZWUwOWJlNjY5YWZjMDZmOTQwZGJiY2M5YWQ0MTFhZjU0MTk3MmM0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQ0NGFkOWVjZWI5NjdkNGEwYjA5MTYwZjVjNjUwNjIyZjE3MzM4YmNkNGRkMWNjMzYzMGJiMTY5MTlmMzNkNCJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L687-L687",
+          "version": "repo-lines-v1:sha256:d374efefea7ec314fafee6b71bbe2651a9ea6844b04dd3abc1d4fda4f6f9cd5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDM3NGVmZWZlYTdlYzMxNGZhZmVlNmI3MWJiZTI2NTFhOWVhNjg0NGIwNGRkM2FiYzFkNGZkYTRmNmY5Y2Q1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDM3NGVmZWZlYTdlYzMxNGZhZmVlNmI3MWJiZTI2NTFhOWVhNjg0NGIwNGRkM2FiYzFkNGZkYTRmNmY5Y2Q1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzkyYmIzNTk4YzIxMWI2OTNmNWI1OTQ3ZGI4YWY5YTYzMzNjNThlOTFjMTJjNDk0ZmY2ZmQ4OTYzMzAwNmQ5YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDgwZjA1NzE2YzgwMTIyNTA3NjQwNDI2MzlkMjFmOWVkMTE1YmUxNTFiNzg2NTJjOWY2ZDc5OGQzNGI4MmNiZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba11392210f544bf881333bdc6e7b35b",
+      "statement": "gpuix captures a pointer only when asked, so drags in the slider control and switch thumb use the port-only createPointerCapture and must also end on lost pointer capture.",
+      "evidence": [
+        {
+          "resource": "repo://src/slider/control/slider-control.ts",
+          "version": "repo-file-v1:sha256:c47c3b38a3638675591ca88e6341d2bfda5cfc958f55c33d8aa3276449ce6c07"
+        },
+        {
+          "resource": "repo://src/switch/thumb/switch-thumb.ts",
+          "version": "repo-file-v1:sha256:b8df47f5fc17b23793b36b6e27743e65aa988e991c843d5868b3e3ae77ca606c"
+        },
+        {
+          "resource": "repo://src/utils/pointer-capture.ts#L3-L10",
+          "version": "repo-lines-v1:sha256:4a810c2d8ffbc881d4af836382a369c714807f1bfa9e9d7972a7d1bd0c84e654:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA3MmM0ZmUxYmM1N2NmNDNjYzY0MTdmMDU2MjRiZjNhN2MwYzkwNWY0ODVjOGE1MDZjNzMzNmNmNjIwOWY4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWZhODMxYWY1Njg5OWZjN2MyM2VjMDJkZGVhZjljYzk1ZjllYmZiY2U2NjcwNmI3NmNlMDFhOWRlMGFkM2I3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2NmMDZlMDQwY2VkMjEzOGYxMjI0ODNlN2FjYTZhMTkyOGEyZTcyNzcyZGM2MWVlZTIyZjdiOTI5ODJlZGQ1YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c77549900d945cfbc93651ee9130d3f",
+      "statement": "The composite root and the menu list stop propagation of the navigation keys they consume, while the row list deliberately does not.",
+      "evidence": [
+        {
+          "resource": "repo://src/internals/composite/root/row-list.ts#L8-L15",
+          "version": "repo-lines-v1:sha256:87a121deda06a0e37899d2a4bd26b45278d66428e1200080970cc19cc7c7dd9b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE5NjZiMmYwMDVlM2IzMjc3NTg3OGMxN2UxZjVmNjAzMGEyMjUwZWZkZWM5MjIyMzZiOTEyN2M1OTcwNzBjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBkMDc3OGNmNTk5ZjBjOWE1NTI1ODNhYTY5YmRhNjY0MTY3NWE1OGU0ZTNiMTBiY2NiNzU3ZmNlNWY0MjZjYyJ9"
+        },
+        {
+          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L94-L109",
+          "version": "repo-lines-v1:sha256:4ded78ac61b5d2bc8ef496d6326fb4f86e8d206a02f5830ef82c36e48ea2127c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzN2VkZTYxMzQ0ZDU2YWFlYTc2NzgzZTlhZTQzYzllMTIzMTY1MWVlMGVjOGU5YzQ4OGQyOWFiZDljNTlmOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2Nzc2YzE2ZjQ0NGY3MTQyOTZkNDlhMzc1NTFhOWU5YmEwMjFlNjliMWU3OWE3MzhlMzM0ZDZkMDhhZDUxN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmYzQyZGVmNTMwY2ZmZWVkZDQxMmI5YmI0MDE5OTNlNWY2OGZmYTliNmQxYTgzMTY5N2E2ZTZlYjRhYmQwNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwYTU5MDY3MWMzODQwNWViOWQxMTkyOGE4YjcxNDExYWViYTEwMzVjYTE5MzIzZjI4OWRhNGExY2IxYjIzYTQifQ"
+        },
+        {
+          "resource": "repo://src/menu/list/menu-list.ts#L215-L215",
+          "version": "repo-lines-v1:sha256:7f716e8ec4787fcfc00d58b917657099a97236b8bea9a2e70a16591eb78b9783:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y3MTZlOGVjNDc4N2ZjZmMwMGQ1OGI5MTc2NTcwOTlhOTcyMzZiOGJlYTlhMmU3MGExNjU5MWViNzhiOTc4MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y3MTZlOGVjNDc4N2ZjZmMwMGQ1OGI5MTc2NTcwOTlhOTcyMzZiOGJlYTlhMmU3MGExNjU5MWViNzhiOTc4MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmNhMWUzMDhhMTdlYzUyMTkyZGJiOWFjN2UwMDg4MTBiNDliNWZiYWFkNzNjM2I3N2E5OTZkNjg1MmI4OGY1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTk0NGM4YTMxOWY3NGQwOWFkMjIwZjYzNDY1MDgwYTFmMzQzNGU4ODhhZjVlNDFmNDFjMzVlNjg2MzE2ODQ4NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a49fd57d5e3438c8d0d8f96c010ca29",
+      "statement": "The test renderer's press sends key-down only, so key-up behaviour such as switch Space was verified with a temporary native script instead of a committed scenario.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L43-L45",
+          "version": "repo-lines-v1:sha256:dafb4368835f0839e11e9b837d54ca564ea33eefd881297d83c590d339550290:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJjNzA4NTk2MWZiZmE1NzdjYWFjNjkwODcxZDUyNzJlY2Q0NmFjNjUwMzMwMWIwYzNmMGMzMTg1ZTVhMzM2NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjNmNTVlNTM3MDIyOTY2N2JlNDI5MmMzNGQxZjFiMGZhNGFkNTQ2MjA2OWRhNjM4NDA5YjgwZTljODJlYzlhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjRjZDM3Y2QxYzUwNzQxZDEyY2ZkNWRhZmFlZDZkZmRkNGJiNjIwOWU2ZGFhOTk3ZDI0NjJlMmRlZmI2MDg0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzgzN2Y1M2E3ZThiN2MyYTQxN2MyMjllNjBlYTY0NzQ2NzE3M2ZlOTg2YzEzYTBmMWE2NjdlYjRmMTg2ZGI0YSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-17T00:13:17.331Z"
+  }
+}

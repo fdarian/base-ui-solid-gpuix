@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6c24168fcb24ea7762ce82074ec7181a7642f7800d9082a04c0201e0448f6222",
+  "claims": [
+    {
+      "id": "claim_5e21c484b6084f6882ae32578906e733",
+      "statement": "Dialog popups move focus from the popup element (which gpuix focuses) to the popup's first tab stop, as Base UI's focus manager does, and do it one tick after mount because gpuix's tab order exists only once the popup has painted.",
+      "evidence": [
+        {
+          "resource": "repo://src/dialog/popup/focus-first.tsx#L4-L18",
+          "version": "repo-lines-v1:sha256:fe1b495fb4f28fd30d5bef436c5803d83ac75c237bfc9074eb1bd5d7602c43dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMjU3ZDhiZDVhMzRmZTgzNTEyNDUyZjNjOTlmM2RkYzU5ZGU2M2IyNDJlYWZjZTM1Mjk4N2M5ZjNlNmE3MzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5MDcwMDQ4MDNhMDAzY2U1MjllZTZmNGE4NzhhZWY4MzRkMzFmNGU1NGJkYWM0M2ZhZTZjYTVmNTM3YjAzZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a4ee2f9653a24491808338902153f4d5",
+      "statement": "Menu rows are real focus targets with a roving tabIndex, so the highlighted row is the focused row.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L407-L407",
+          "version": "repo-lines-v1:sha256:90aa2425dc5744095f3d8696bf1f37f54ac0208a3853bf76f790b24e32d417c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTBhYTI0MjVkYzU3NDQwOTVmM2Q4Njk2YmYxZjM3ZjU0YWMwMjA4YTM4NTNiZjc2Zjc5MGIyNGUzMmQ0MTdjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTBhYTI0MjVkYzU3NDQwOTVmM2Q4Njk2YmYxZjM3ZjU0YWMwMjA4YTM4NTNiZjc2Zjc5MGIyNGUzMmQ0MTdjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU0ZTg5YTZhNTZiOWZlNGZiYjgzYmIzODVkZDUzYThmODI1MzVkN2NhZjBiOTE4N2RjMjA4ZGIzZDQyNDgwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTIxODc4ZDExYTQ5MjkyODVmYjViM2Q1M2E4N2EyMzc1NGY1NmM5YmM2ZjZmODNlN2FjZGMxZDMwYzZhNjgxNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8f89c50d660482c8eee4a2f7b48509f",
+      "statement": "A keyboard-opened menu focuses its first row (ArrowUp: the last); a pointer-opened top-level menu focuses its panel and then lights the first row after openFocusMs unless a row already took focus, following FF rather than Base UI.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L451-L451",
+          "version": "repo-lines-v1:sha256:b9084369b1a6b250c0ac730a24970c90d0bd432f40c540cb6ddfddff193a0352:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjkwODQzNjliMWE2YjI1MGMwYWM3MzBhMjQ5NzBjOTBkMGJkNDMyZjQwYzU0MGNiNmRkZmRkZmYxOTNhMDM1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjkwODQzNjliMWE2YjI1MGMwYWM3MzBhMjQ5NzBjOTBkMGJkNDMyZjQwYzU0MGNiNmRkZmRkZmYxOTNhMDM1MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODY3YzhmYTBiZjcyNjFiYmYwYWE5NzgyZDJjYWUwZjQzZjQ1NjgzYWNhNDgyNzFmYzA0MTI0MGE4Y2M0MWZhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDg2ZTZiNTE1YzM5ODY2MmMxM2Y4YzQzYTRhMWM5YTBiMGM5MTJmNWUyODVmN2JhOWFmYTdjOThiNDhkOWM0NyJ9"
+        },
+        {
+          "resource": "repo://src/menu/list/menu-list.ts#L330-L362",
+          "version": "repo-lines-v1:sha256:78b9504a6aaa7f3cf4abcbca0122509c182491c2d1f9db29ce83d8d278a2328d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiYzZmOWM1ZmUxNjMzNjk5MWRhMmIwMWE3MjVmNjgzYjY5YjhmY2UwMjZkMTI2ZWE2ZjI5YmVjMzJhN2U4N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyOWI5ZWIyZjk0MWQ2ZDExZTZiNzkyMDliNmUyNjkxMGQwZDcyZDA1NWZiODY0OTcxOWViZTY3Zjc2YTJmOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwZmZiMDU0NTM2ZWI5NTY0ZTFmOWFlYzQ4OTZkMWM5MTllOTE2NzBhZDRhODU3MDk3NTVkYmEyMjNkODNiNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyZjczMWU1YmQwOGNiNjFlNDE0MzQ5Mzg5ZWM0MDc1MzY2ZTA4ZDFiMzYwYTYxMzAxMmFjZmQ5NThiMDgzNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_38fcef93294a404885d59752987f3f32",
+      "statement": "Select's close returns focus to the trigger only when focus sat in the popup or nowhere, leaving a control that took focus alone.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L558-L558",
+          "version": "repo-lines-v1:sha256:49d8af21cdb363e9691a1bfeb8052286eb40a63255a21cf7f0dc1f6034759e90:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkOGFmMjFjZGIzNjNlOTY5MWExYmZlYjgwNTIyODZlYjQwYTYzMjU1YTIxY2Y3ZjBkYzFmNjAzNDc1OWU5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkOGFmMjFjZGIzNjNlOTY5MWExYmZlYjgwNTIyODZlYjQwYTYzMjU1YTIxY2Y3ZjBkYzFmNjAzNDc1OWU5MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzQyMzJjMjkxYmFiNjIyNmE1ZDQ5N2Q3ZjdhMWQ2YmY5ODQwNTA3YWYyNDY1YmIwMWM5MzM1YjAzYTg4OGZmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTgzNTRhYTFiZDIzMjIxNzhmYjYyODY0YjBkNmE3ODE5YWU4NGFmMTI0YzExMzRkYzY4NjRhYWIwMzdkMDg1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_522b63d600a74f7faf64468e70f387bf",
+      "statement": "Where FF and Base UI disagree the port follows FF, and each audit section lists those conflicts so a sync does not revert them; examples are accordion arrow keys from the Radix registry, checkbox Enter toggling, radio Home/End selecting and the tooltip provider's 200/300 ms delays.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L218-L219",
+          "version": "repo-lines-v1:sha256:07c0abfb7ffc0b0198fb995b2d52c7e66943926335507096f07b1cc5838156b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDA4MmZkMDdiMTBjM2E4ODAzZTVjZWNjNTk5NTViYWIwZmE2MzJiYmRhMGE3YTJjYjlkNTU1MTliOGIyZTQxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM3NGY2YWE4MGQ5NDJmNGU5YzMzYThkM2U4ZjQ2NmJmNWJlYjhlYTljYWM4OWEzNjRjNDZjZjgyYjFjMDc4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJlNWQwM2ZmYzhkMTE0ZThhMjU0NmVlODQ1OThhOWJlZGU3Y2NhMmIwODhhZGQ4OGZmMTc3NDI2YzQ2OTM1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRlNGRjMTU3NWQyYzI2MTYwZTc3Mzk3MzU4Yzc2NTQ2MmIwYTFhZGJmYzJmMDA3M2JlYzJlOGY0NWEwNGM5OSJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L253-L255",
+          "version": "repo-lines-v1:sha256:43d42731b779deb892e646f0d2a30f8d952ee294ffed0b28db028971fdf4f913:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ2MWVjMmM5ZDMxZjRkZTdmMzcyNjk5ZDJiOTJjMjM1YTMxNDRhMTNmN2Y4NTk5YjFmNGNmMTFiM2FmNGZjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDkxMmNjZTgxMWYxMjJhYWU4NTk2NmY3YTBhOGI2OGEwZmUxZTBiMjJmODFhOGMzMzViNTJmNmUyYjEzZjYxYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTNlMTFhOTA2ZTVmZThhMDNmMGY4MjUyNDEwNzYzMjdlODE5ZTIwMmE0YWI4YTVkYTNiZGM3Yjg2ZTc3MThkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDJkNDMwZjUyNTZjYTcyNDFjMDliMGQ3NjM0OTgyOGFhNmM0MWU2MzI0MmJhZmI5MWE2NzhjYzY3ZGM0MDFkZSJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L754-L754",
+          "version": "repo-lines-v1:sha256:44dfd0bc5f06b1f7a5cf307dcab3317668f87cb6972557a9ba3ab8776b539c13:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkZmQwYmM1ZjA2YjFmN2E1Y2YzMDdkY2FiMzMxNzY2OGY4N2NiNjk3MjU1N2E5YmEzYWI4Nzc2YjUzOWMxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkZmQwYmM1ZjA2YjFmN2E1Y2YzMDdkY2FiMzMxNzY2OGY4N2NiNjk3MjU1N2E5YmEzYWI4Nzc2YjUzOWMxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWU5Nzc2MGNjOWI4MGU1YTljMTM1ZDcyYzc0M2FjNzk0ZGFiZjA4OTQ0OWJmZjJiNzFhMjk2NTRkYjgzOWUyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMzNzQ5NTQ0OTM3NWIwMWU0ODE2Yjc2NTQ2YmYzZGQ3ZTgzMzdlMTJlNDkxZmE2YzFiYmY1NDM3MzdiN2RjOSJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L84-L84",
+          "version": "repo-lines-v1:sha256:5bb0a2e8e3aba8b916a65706798c28563573633a6ee679131f497f7a4244aad2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWJiMGEyZThlM2FiYThiOTE2YTY1NzA2Nzk4YzI4NTYzNTczNjMzYTZlZTY3OTEzMWY0OTdmN2E0MjQ0YWFkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWJiMGEyZThlM2FiYThiOTE2YTY1NzA2Nzk4YzI4NTYzNTczNjMzYTZlZTY3OTEzMWY0OTdmN2E0MjQ0YWFkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWU5Nzc2MGNjOWI4MGU1YTljMTM1ZDcyYzc0M2FjNzk0ZGFiZjA4OTQ0OWJmZjJiNzFhMjk2NTRkYjgzOWUyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzA3NmJhZmFkNWQ5NjlmNjdhNDY1YzY5ZTM4MjRmZjA1NTBhMmJkMTg0ZDBkZDdmZDlkYjVhM2QzMzQ3ZTZiYSJ9"
+        },
+        {
+          "resource": "repo://UPSTREAM.md#L193-L198",
+          "version": "repo-lines-v1:sha256:b96bb9af9b203a2e32e933130b8bf4ddbfe8ecdf42bf211d8592a972e8d201e6:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGJiMjJkMjFmZWM2OTcxMDA3ZTg2MmM5ZDhiNTExODIzOTA5YWQ5MTY0NjVkYTdiNjUwMDU0NzI0N2U4Y2VjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg3NTE4MWE2MzQ5YWQ5ZTViYjg3MDVkZWUyZTE5OTM4Nzk0NmM2YjJkN2E4NDZjYWZjOGEyMDg3MjAzNzBmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTk2ZjZlNTA1ZmY3NjI0ODUxZDdmYWQzY2RlNDViY2RiYjE2MWIyNmIzNjBkYzkxNmE1NmIwN2JjZDVkMGNkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTA5MjQ3MTZhM2M2MWM1NDQ4ZDZhODRmMTc2NzI0ODZmYmZjMjNmOGMxMjVkODc4ZWIxOWZkOTU1ZTFiZDQ0NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_953367890bae43e0ba930e9e9c1835be",
+      "statement": "Combobox keeps focus in the input with autoHighlight=\"always\": the first row is lit on open and arrows wrap without returning to the input.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L621-L621",
+          "version": "repo-lines-v1:sha256:7c4764803c938e1cf3550f7e24d2fc64d67183ed86d7aa0b89ded0ce660d813c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M0NzY0ODAzYzkzOGUxY2YzNTUwZjdlMjRkMmZjNjRkNjcxODNlZDg2ZDdhYTBiODlkZWQwY2U2NjBkODEzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M0NzY0ODAzYzkzOGUxY2YzNTUwZjdlMjRkMmZjNjRkNjcxODNlZDg2ZDdhYTBiODlkZWQwY2U2NjBkODEzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjZjMmE3NDNiNGYwNmQ1OThkMzc2N2VhMDYzNzMyZTA3YmVjOTk0Mjk3NWY2N2UwOWM0MWIxZTljM2Y4MzQzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdlODI4NDQwYmZlMDZlY2E5YzQ3ODlkZWZjMThjY2Q1OWRiZGRiY2NiZjE5ZjFkMzZhNWEzOGYzNTA1NjRmZiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-17T00:13:17.331Z"
+  }
+}

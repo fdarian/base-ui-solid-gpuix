@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c2805e6b5f50d93ad8096201582f345c9fd150d6133060a1a1c718bde0392f30",
+  "claims": [
+    {
+      "id": "claim_56b3ed46c9dd4c0e81bbd931cccec33b",
+      "statement": "Each primitive is a create* function returning state and prop objects for the consumer's gpuix elements, and the repo carries no styling, theme tokens or animation.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L3-L5",
+          "version": "repo-lines-v1:sha256:ac08274f16431a8b775651c77ccecd42a56d6b7ed08a34dba66f41c4061792af:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2E4YWI2ZTE0Njg5ZTcwY2MxZTRmYWIzZWMwMjhhNmMzN2FjZjFmOGIxZDI5YWQyYzkxZDNiNmFkYjIwYjQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjhhYmUwZWIzMWFlYWY5NGRkZDYzZmRlYzA3NWVhOThlNWRhMWM1MjU4MzEzNDlhMmFhOWMyOTM2NDBjMmFiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTU2NTM0NjIyMGM0MGE2MDNiZmE2MzJmNzNiYWVjN2YzODcyMGYwYzJhMGM4ZmVmNjQ2ZWM4ZWJiMWVjOTZlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTllMmU0ZWYxMzliYzVkOWM0NzZkZDgyMmFjMjM4Y2JjODc3YzAxMjM4MzlkNTdjYmQ0NDVhMzc5OWY4OWQzNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_369f7e840785439d9fdd3eed125fc0d1",
+      "statement": "Installs must run from the consumer's root; a bare pnpm install here links a second @gpuix/solid.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L29-L29",
+          "version": "repo-lines-v1:sha256:e7eda340f1060c241c8e617285020b1a2a77622eec7e0e532b486bfc760f1ea9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdlZGEzNDBmMTA2MGMyNDFjOGU2MTcyODUwMjBiMWEyYTc3NjIyZWVjN2UwZTUzMmI0ODZiZmM3NjBmMWVhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdlZGEzNDBmMTA2MGMyNDFjOGU2MTcyODUwMjBiMWEyYTc3NjIyZWVjN2UwZTUzMmI0ODZiZmM3NjBmMWVhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTYzOTRhYjNmNWMzMjY4YWY5N2EzNTVjYmRkOTcyOTk1NWJmODIyNGRkNTBhNzU4YTI2OWI2MDIzZWRkN2ZjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQzMzY4YTQzNjE5Yjc1NjY1MDNmNmFhMGYyN2JlMzk0YmQwMjBhNDcxYmZlNGZlNmJjYThkOWFhOTQ5NDYxZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-17T00:13:17.331Z"
+  }
+}

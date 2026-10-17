@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/decisions/api-and-layout.md": {
+      "pageVersion": "sha256:410ce206a02deb086fa4d6f90a2790c3c7330e505e5aa8c70ca5c8e2138c80eb",
+      "completedBy": "claude-code",
+      "completedRunId": "0bb221a3-515c-4bf4-a089-4a495a30a8ce",
+      "gitHead": "76ad1d2bf8a2462a4f2cf78304a8dc99fa1f5451",
+      "sourceFingerprint": "sha256:f3b015c27354d095a8f7e96ddda83987917a992c1676e426259836cbfce47932"
+    },
+    "/openwiki/decisions/focus-model-and-ff-conflicts.md": {
+      "pageVersion": "sha256:6c24168fcb24ea7762ce82074ec7181a7642f7800d9082a04c0201e0448f6222",
+      "completedBy": "claude-code",
+      "completedRunId": "0bb221a3-515c-4bf4-a089-4a495a30a8ce",
+      "gitHead": "76ad1d2bf8a2462a4f2cf78304a8dc99fa1f5451",
+      "sourceFingerprint": "sha256:f3b015c27354d095a8f7e96ddda83987917a992c1676e426259836cbfce47932"
+    },
+    "/openwiki/gpuix/gaps-and-divergences.md": {
+      "pageVersion": "sha256:68d001ef59136846e71cccb61c3a7bb02d0fd69e21dd6ede945c350bb6fb7040",
+      "completedBy": "claude-code",
+      "completedRunId": "0bb221a3-515c-4bf4-a089-4a495a30a8ce",
+      "gitHead": "76ad1d2bf8a2462a4f2cf78304a8dc99fa1f5451",
+      "sourceFingerprint": "sha256:f3b015c27354d095a8f7e96ddda83987917a992c1676e426259836cbfce47932"
+    },
+    "/openwiki/history/extraction.md": {
+      "pageVersion": "sha256:be2d4a29d3afa64c9d06c7d7be6170d0436cc5e942b1c2fa7bca4471b891ff20",
+      "completedBy": "claude-code",
+      "completedRunId": "0bb221a3-515c-4bf4-a089-4a495a30a8ce",
+      "gitHead": "76ad1d2bf8a2462a4f2cf78304a8dc99fa1f5451",
+      "sourceFingerprint": "sha256:f3b015c27354d095a8f7e96ddda83987917a992c1676e426259836cbfce47932"
+    },
+    "/openwiki/product/overview.md": {
+      "pageVersion": "sha256:0af2ba1d932d47907041425a56c06f323e6d4ad93ef8d03b239ff38999f9f623",
+      "completedBy": "claude-code",
+      "completedRunId": "0bb221a3-515c-4bf4-a089-4a495a30a8ce",
+      "gitHead": "76ad1d2bf8a2462a4f2cf78304a8dc99fa1f5451",
+      "sourceFingerprint": "sha256:f3b015c27354d095a8f7e96ddda83987917a992c1676e426259836cbfce47932"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:c2805e6b5f50d93ad8096201582f345c9fd150d6133060a1a1c718bde0392f30",
+      "completedBy": "claude-code",
+      "completedRunId": "0bb221a3-515c-4bf4-a089-4a495a30a8ce",
+      "gitHead": "76ad1d2bf8a2462a4f2cf78304a8dc99fa1f5451",
+      "sourceFingerprint": "sha256:f3b015c27354d095a8f7e96ddda83987917a992c1676e426259836cbfce47932"
+    }
+  }
+}
