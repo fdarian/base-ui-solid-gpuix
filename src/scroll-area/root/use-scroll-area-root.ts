@@ -130,11 +130,18 @@ export function createScrollAreaRoot(options: UseScrollAreaRootOptions) {
 			thumbInset: options.thumbInset,
 		});
 
+	/** The scroller's own integer range, as Base UI reads it. The thumb's `maxScroll` comes from fractional layout sizes and would sit above `scrollTop` at the end. */
+	const maxScrollOf = (axis: ScrollAreaAxis) => {
+		const element = mountedViewport();
+		return axis === 'x'
+			? element.scrollWidth - element.clientWidth
+			: element.scrollHeight - element.clientHeight;
+	};
+
 	/** Scrolls the viewport along `axis`; false when there is nothing to scroll or it is already there. */
 	const scrollAlong = (axis: ScrollAreaAxis, distance: number) => {
-		const span = thumb(axis);
-		if (span === null) return false;
-		const next = clamp(distance, 0, span.maxScroll);
+		if (thumb(axis) === null) return false;
+		const next = clamp(distance, 0, maxScrollOf(axis));
 		if (next === positionOf(axis)) return false;
 		mountedViewport().scrollTo(axis === 'x' ? { left: next } : { top: next });
 		return true;
