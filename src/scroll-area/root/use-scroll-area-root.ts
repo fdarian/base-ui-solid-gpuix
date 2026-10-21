@@ -130,7 +130,7 @@ export function createScrollAreaRoot(options: UseScrollAreaRootOptions) {
 			thumbInset: options.thumbInset,
 		});
 
-	/** The scroller's own integer range, as Base UI reads it. The thumb's `maxScroll` comes from fractional layout sizes and would sit above `scrollTop` at the end. */
+	/** The scroller's own integer range, as Base UI reads it. The thumb's `maxScroll` comes from fractional layout sizes and would sit above `scrollTop` at the end. It is an upper bound only: gpuix rounds `scrollHeight` and `clientHeight` half up, so it can sit one above the real end. */
 	const maxScrollOf = (axis: ScrollAreaAxis) => {
 		const element = mountedViewport();
 		return axis === 'x'
@@ -138,13 +138,14 @@ export function createScrollAreaRoot(options: UseScrollAreaRootOptions) {
 			: element.scrollHeight - element.clientHeight;
 	};
 
-	/** Scrolls the viewport along `axis`; false when there is nothing to scroll or it is already there. */
+	/** Scrolls the viewport along `axis`; false when there is nothing to scroll or the position did not change. The position is read back after `scrollTo` (gpuix applies it at once and reads it clamped to the real range), because the integer range can be one past the real end and a request there moves nothing. */
 	const scrollAlong = (axis: ScrollAreaAxis, distance: number) => {
 		if (thumb(axis) === null) return false;
+		const before = positionOf(axis);
 		const next = clamp(distance, 0, maxScrollOf(axis));
-		if (next === positionOf(axis)) return false;
+		if (next === before) return false;
 		mountedViewport().scrollTo(axis === 'x' ? { left: next } : { top: next });
-		return true;
+		return positionOf(axis) !== before;
 	};
 
 	// ── Dragging ────────────────────────────────────────────────────────────
