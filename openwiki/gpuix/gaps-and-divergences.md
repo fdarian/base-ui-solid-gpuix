@@ -14,6 +14,10 @@ sources:
     resource: repo://src/internals/composite/root/use-composite-root.ts
   - id: openwiki-source-f9664de5df0da5568df4fcea
     resource: repo://src/menu/list/menu-list.ts
+  - id: openwiki-source-79b702fb2c84220a5979ae59
+    resource: repo://src/scroll-area/root/use-scroll-area-root.test.ts
+  - id: openwiki-source-42dde63d015c4866f0828162
+    resource: repo://src/scroll-area/root/use-scroll-area-root.ts
   - id: openwiki-source-206c60a394d51b4a55786f42
     resource: repo://src/scroll-area/scrollbar/use-scroll-area-scrollbar.test.ts
   - id: openwiki-source-607590a00ea4f736c2f7f0b2
@@ -24,10 +28,10 @@ sources:
     resource: repo://src/switch/thumb/switch-thumb.ts
   - id: openwiki-source-b61569aa58d027fe6855060d
     resource: repo://src/utils/pointer-capture.ts
-generated: { by: "claude-code", at: "2026-10-17T05:21:17.049Z" }
+generated: { by: "claude-code", at: "2026-10-21T03:34:48.815Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-17T05:21:17.049Z
+    at: 2026-10-21T03:34:48.815Z
 ---
 
 # gpuix gaps and divergences that shape the primitives
@@ -68,6 +72,7 @@ These gpuix changes from the 2026-10-15 to 2026-10-17 fork reviews explain code 
 - **Focus timing.** Focus events from `focus()`, `blur()` and `focusNext` are delivered synchronously on macOS, in DOM order (pointerdown, mousedown, blur, focus). The press's own focus move, or blur when nothing focusable is under the pointer, runs after the `mousedown` handlers return, as in a browser; `preventDefault` on mousedown cancels it. Three consequences in the port: a popup-opening press toggle calls `preventDefault` so the press does not pull focus back from the popup it just focused; a scrollbar press calls it too, because native scrollbars never move focus and gpuix would otherwise blur the focused element; and an outside press that closes a popup needs `refocusAfterPress` to win focus back for the trigger (see [focus model](../decisions/focus-model-and-ff-conflicts.md)). On Windows and Linux the handler runs after native moved focus, where `preventDefault` changes nothing. Reading focus inside a press handler used to throw (`VIEW_BUSY`), which stopped any popup from opening by pointer; that is fixed. The tab order of a newly mounted popup exists only after it paints, which is why `FocusFirst` waits a tick.
 - **Event targets are elements.** Since Round 4, `target`, `currentTarget` and `relatedTarget` on every event are elements, not ids. Code from before that compared ids.
 - **The test renderer is not a live window.** It can disagree with a live macOS window on pointer opens. Its `press` now sends a key-down then a key-up, so Space-on-key-up (switch) fits a committed scenario; only a held Space still needs the native key-down alone, and `style.active` does not show for it. The audit's harness note has the details.
+- **A scroller's integer range is only an upper bound.** gpuix reports `scrollHeight` and `clientHeight` as integers rounded half up, while `scrollTop` is clamped to the real fractional range. With fractional content (29 rows of 19.5 px plus 16 px padding = 581.5 px) `scrollHeight - clientHeight` was 419 against a real end of 418, so a "clamp to the range and compare" check still claimed to have moved at the end and the scroll-area track wheel kept its event instead of chaining to the page. `scrollAlong` therefore reads the position back after `scrollTo` (gpuix applies it at once) and returns whether it changed. Any new "am I at the end" check on a gpuix scroller should do the same, not trust the integer range.
 - **appRegion** (window-drag regions, now one per line fragment for inline spans) matters to FF's frame bar, not to any primitive here. A primitive inside a drag region would lose its presses to the window drag.
 
 macOS only: Windows and Linux keep async dispatch and are out of scope.
