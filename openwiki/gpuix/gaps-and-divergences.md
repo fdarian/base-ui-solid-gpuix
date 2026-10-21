@@ -28,10 +28,10 @@ sources:
     resource: repo://src/switch/thumb/switch-thumb.ts
   - id: openwiki-source-b61569aa58d027fe6855060d
     resource: repo://src/utils/pointer-capture.ts
-generated: { by: "claude-code", at: "2026-10-21T03:34:48.815Z" }
+generated: { by: "claude-code", at: "2026-10-21T16:24:16.572Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-21T03:34:48.815Z
+    at: 2026-10-21T16:24:16.572Z
 ---
 
 # gpuix gaps and divergences that shape the primitives
@@ -72,7 +72,7 @@ These gpuix changes from the 2026-10-15 to 2026-10-17 fork reviews explain code 
 - **Focus timing.** Focus events from `focus()`, `blur()` and `focusNext` are delivered synchronously on macOS, in DOM order (pointerdown, mousedown, blur, focus). The press's own focus move, or blur when nothing focusable is under the pointer, runs after the `mousedown` handlers return, as in a browser; `preventDefault` on mousedown cancels it. Three consequences in the port: a popup-opening press toggle calls `preventDefault` so the press does not pull focus back from the popup it just focused; a scrollbar press calls it too, because native scrollbars never move focus and gpuix would otherwise blur the focused element; and an outside press that closes a popup needs `refocusAfterPress` to win focus back for the trigger (see [focus model](../decisions/focus-model-and-ff-conflicts.md)). On Windows and Linux the handler runs after native moved focus, where `preventDefault` changes nothing. Reading focus inside a press handler used to throw (`VIEW_BUSY`), which stopped any popup from opening by pointer; that is fixed. The tab order of a newly mounted popup exists only after it paints, which is why `FocusFirst` waits a tick.
 - **Event targets are elements.** Since Round 4, `target`, `currentTarget` and `relatedTarget` on every event are elements, not ids. Code from before that compared ids.
 - **The test renderer is not a live window.** It can disagree with a live macOS window on pointer opens. Its `press` now sends a key-down then a key-up, so Space-on-key-up (switch) fits a committed scenario; only a held Space still needs the native key-down alone, and `style.active` does not show for it. The audit's harness note has the details.
-- **A scroller's integer range is only an upper bound.** gpuix reports `scrollHeight` and `clientHeight` as integers rounded half up, while `scrollTop` is clamped to the real fractional range. With fractional content (29 rows of 19.5 px plus 16 px padding = 581.5 px) `scrollHeight - clientHeight` was 419 against a real end of 418, so a "clamp to the range and compare" check still claimed to have moved at the end and the scroll-area track wheel kept its event instead of chaining to the page. `scrollAlong` therefore reads the position back after `scrollTo` (gpuix applies it at once) and returns whether it changed. Any new "am I at the end" check on a gpuix scroller should do the same, not trust the integer range.
+- **A scroller's integer range is exact since gpuix f7b62f11.** Before it, gpuix rounded `scrollHeight` and `clientHeight` half up while `scrollTop` was clamped to the real fractional range, so with fractional content (29 rows of 19.5 px plus 16 px padding = 581.5 px) `scrollHeight - clientHeight` was 419 against a real end of 418. A "clamp to the range and compare" check then claimed to have moved at the end, and the scroll-area track wheel kept its event instead of chaining to the page. `scrollAlong` worked around it by reading the position back after `scrollTo`. That read-back is gone: the scroller's range now ends exactly at `scrollHeight - clientHeight`, so `scrollAlong` clamps to it, compares with the current position, and returns true after writing. Its test fakes a scroller that clamps `scrollTo` to that range, like Chrome. On a gpuix older than f7b62f11 the wheel sticks at the end again with fractional content.
 - **appRegion** (window-drag regions, now one per line fragment for inline spans) matters to FF's frame bar, not to any primitive here. A primitive inside a drag region would lose its presses to the window drag.
 
 macOS only: Windows and Linux keep async dispatch and are out of scope.

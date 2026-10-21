@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:2ffdc64e1441301614136ee7e3fcd0f9930dbdebd0a11203045bc975b23e9978",
+  "pageVersion": "sha256:76f0c4665929ffe35e2fcca465100c0e9c76594ec87d7bbae596850610fee674",
   "claims": [
     {
       "id": "claim_1350cf3c272642b9a8040773b1670ced",
@@ -130,21 +130,21 @@
     },
     {
       "id": "claim_4f0aa9a621294f9fb4c05a410a0c3f53",
-      "statement": "scrollAlong reads the viewport position back after scrollTo and returns whether it changed, because gpuix's half-up-rounded integer scroll range (scrollHeight - clientHeight) can sit one past the real end, where a request moves nothing.",
+      "statement": "scrollAlong clamps the request to the viewport's own scrollHeight - clientHeight range, returns false when already at the clamped position, and otherwise writes scrollTo and returns true without reading the position back, because gpuix's scroller range ends exactly at the real end.",
       "evidence": [
         {
-          "resource": "repo://src/scroll-area/root/use-scroll-area-root.test.ts#L47-L56",
-          "version": "repo-lines-v1:sha256:01a45711fee5de8040388633be42c8a34651d8500f2a3f58b34a400b5368efca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5ZmNlNzBhZGExNjIwYzRjYzhhZTI3MDJiMDI2YmI4ZDUxNzM3ZWI5MTMxZDI1YmFiZDE4ZmFiMTRlZWJkODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwZjVhZjAxZjNlYjQ2N2Q2ZDk3MGZlNjM5YzMwMmE1NjMzZTE0ZjI3OWUzOGNiOGE1OWQxMzA1ZTE2MzQ0YmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzMDUzYWQ4MmFhZjJhNjM1YmE2MDAzN2M1YmM5Zjg0Nzk1YmEyN2NhMWUzNGJlZjAzYWJmODc0MDI0OWJiNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMzYyZTk4MGExZDZlMGZmOWJlYWYyNzE3OWM4Nzg2OGMxOTNkMWY5Y2IwYTZkNTExNDM4MDgxMTdjMmVmMWYifQ"
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.test.ts#L44-L68",
+          "version": "repo-lines-v1:sha256:62b6714c3600cdbf0a8dc2fa08cb8ce19642443c6de0aacf7879f5c8a15d5c51:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5ZmNhYTUzOWVmODdkYzBiYzNlNzk0M2M0YmIyNTBiNjIxMjJkZTQ2ZGI1YWJhMzc4ZTEzNjJiZDU0YmU1MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4MzhiZjQzNGVhNDI2N2U0MTA0MmMzNGFhOWUwMzE0NzQ4Mjk0MjM5NzU3ODVmNDg1YTEzNmQwNjFlMzdlNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2MGYxOTcyZjFmMDQ2N2FjZmYwZmY4ZTAxMzZlZDRkZjBmNGJhNmFhZjMzNjViNjUxY2FiMDUyMDY5YzI2YWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhNGZjNzgyOWQ4YThjY2ZlZjMzODc0M2Q2ZGYyMzY0MDZiN2RhNTc4OWEwZWEzNTMzOTY4MGMxYTBjZDZiZTcifQ"
         },
         {
-          "resource": "repo://src/scroll-area/root/use-scroll-area-root.ts#L133-L150",
-          "version": "repo-lines-v1:sha256:0f4e6912ec1bb44451b470d8aaba3db024b552961b9313a2a0ec54217af670ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZTBiMTA4NTJiYzJkNGI1MzQ2ZDk1NjA1MWYwZmFiNWJmZWFjYzViNWNkMTgwMDU2ZTlmM2I3MmJiZjVjNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxMjI5MzEzMzliYTRhNGFkZjMwN2Q4ZWI4YzIwOWEyMzQ5OGNkZWVhMDg1YzNhYWNlODUxYTYwODEyYmU3ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1MmI1MTYzMGNjMWRhODA1MjZjNWZiODMzNDIxZTMzNWZiNGFlYTkzMGI4ODcyOWJiYTRhZDcyZWNkYTZiNDAifQ"
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.ts#L133-L147",
+          "version": "repo-lines-v1:sha256:16d0e3b58337abe2aca8e8e02897791f26430df32517f61448408dd2986b4551:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjY2QzMzM1OGVhMTE0YTk5OTk0MzEyNGJhYTUxYWFmODkzMmI0ZjU2ZTU4MzllMDU4YTE2ZDQ1NjlhYzM5NzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWMwM2VkNmRmNWE5NjNkMTcxZDdiOTk2Y2ZmNzg3MDZmN2YxZDJiZTExYzEzNWQwMWYzNmM1ZWYyMTY1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxMjI5MzEzMzliYTRhNGFkZjMwN2Q4ZWI4YzIwOWEyMzQ5OGNkZWVhMDg1YzNhYWNlODUxYTYwODEyYmU3ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3YmYxYjg1ZTNlNWEyNGRiYjJiYjc5Yzc3YWFhMjRjYzU3ZDEyYzZkYzBhMTFmMWEyNTRlZjMwMzk4M2U2Y2IifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-21T03:34:48.815Z"
+    "at": "2026-10-21T16:24:16.572Z"
   }
 }
