@@ -3,8 +3,8 @@ import type { DomEvent, HostElement } from '@gpuix/solid';
 import { createRoot } from 'solid-js';
 import { createScrollAreaRoot } from './use-scroll-area-root';
 
-/** A scroller as gpuix reports it: integer sizes, and a `scrollTop` clamped to the real range, which is `realMax` and can sit below `scrollHeight - clientHeight`. */
-function scroller(realMax: number, scrollHeight: number, clientHeight: number) {
+/** A scroller as gpuix reports it: integer sizes, and a `scrollTop` that `scrollTo` clamps to `[0, scrollHeight - clientHeight]`, like Chrome. */
+function scroller(scrollHeight: number, clientHeight: number) {
 	let top = 0;
 	const scrolls: number[] = [];
 	const element = {
@@ -18,14 +18,14 @@ function scroller(realMax: number, scrollHeight: number, clientHeight: number) {
 		},
 		scrollTo: (options: { top: number }) => {
 			scrolls.push(options.top);
-			top = Math.min(options.top, realMax);
+			top = Math.max(0, Math.min(options.top, scrollHeight - clientHeight));
 		},
 	} as unknown as HostElement;
 	return { element, scrolls };
 }
 
-function mount(realMax: number, scrollHeight: number, clientHeight: number) {
-	const fake = scroller(realMax, scrollHeight, clientHeight);
+function mount(scrollHeight: number, clientHeight: number) {
+	const fake = scroller(scrollHeight, clientHeight);
 	const root = createRoot(() =>
 		createScrollAreaRoot({
 			orientation: () => 'vertical',
@@ -43,28 +43,34 @@ function mount(realMax: number, scrollHeight: number, clientHeight: number) {
 
 describe('scrollAlong', () => {
 	test('moves and reports true inside the range', () => {
-		const { root } = mount(418, 582, 163);
+		const { root } = mount(582, 163);
 		expect(root.scrollAlong('y', 100)).toBe(true);
 		expect(root.positionOf('y')).toBe(100);
 	});
 
-	test('reports false when asked past the real end that the rounded range overshoots by one', () => {
-		const { root, scrolls } = mount(418, 582, 163);
-		root.scrollAlong('y', 418);
-		expect(root.positionOf('y')).toBe(418);
+	test('scrolling to the end reports true and lands on scrollHeight - clientHeight', () => {
+		const { root, scrolls } = mount(582, 163);
+		expect(root.scrollAlong('y', 419)).toBe(true);
+		expect(scrolls).toEqual([419]);
+		expect(root.positionOf('y')).toBe(419);
+	});
+
+	test('reports false and writes nothing when asked past the end while already there', () => {
+		const { root, scrolls } = mount(582, 163);
+		root.scrollAlong('y', 419);
 		expect(root.scrollAlong('y', 419 + 40)).toBe(false);
-		expect(scrolls.at(-1)).toBe(419);
-		expect(root.positionOf('y')).toBe(418);
+		expect(scrolls).toEqual([419]);
+		expect(root.positionOf('y')).toBe(419);
 	});
 
 	test('reports false at the start', () => {
-		const { root, scrolls } = mount(418, 582, 163);
+		const { root, scrolls } = mount(582, 163);
 		expect(root.scrollAlong('y', -5)).toBe(false);
 		expect(scrolls).toEqual([]);
 	});
 
 	test('reports false with nothing to scroll', () => {
-		const { root } = mount(0, 100, 163);
+		const { root } = mount(100, 163);
 		expect(root.scrollAlong('y', 10)).toBe(false);
 	});
 });
