@@ -191,6 +191,8 @@ export function createComboboxRoot<Item extends ComboboxRootItem>(
 				if (scroller !== undefined && scroller.mounted) {
 					scroller.scrollTo({ top: 0, left: 0 });
 				}
+				// The rects are measured after the next paint, so a reveal before then uses the pre-filter ones.
+				revealOnMeasure = true;
 				if (filtered().length === 0) {
 					options.onHighlightChange(null, 'reset');
 					return;
