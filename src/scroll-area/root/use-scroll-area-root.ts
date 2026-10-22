@@ -138,9 +138,8 @@ export function createScrollAreaRoot(options: UseScrollAreaRootOptions) {
 			: element.scrollHeight - element.clientHeight;
 	};
 
-	/** Scrolls the viewport along `axis`; false when there is nothing to scroll or it is already at the requested position, clamped to the scroller's own range. */
+	/** Scrolls the viewport along `axis`, clamped to the scroller's live range; false when that range is empty or it is already at the requested position. Not gated on the thumb: that is built from `onLayout` sizes, which arrive after the next painted frame. */
 	const scrollAlong = (axis: ScrollAreaAxis, distance: number) => {
-		if (thumb(axis) === null) return false;
 		const next = clamp(distance, 0, maxScrollOf(axis));
 		if (next === positionOf(axis)) return false;
 		mountedViewport().scrollTo(axis === 'x' ? { left: next } : { top: next });
@@ -195,7 +194,7 @@ export function createScrollAreaRoot(options: UseScrollAreaRootOptions) {
 		const size = view();
 		if (size === undefined) return;
 		const scroll = getKeyScroll(event, positionOf, size.h);
-		if (scroll === undefined || thumb(scroll.axis) === null) {
+		if (scroll === undefined || maxScrollOf(scroll.axis) === 0) {
 			return;
 		}
 		event.preventDefault();

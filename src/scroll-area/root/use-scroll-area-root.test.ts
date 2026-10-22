@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import type { DomEvent, HostElement } from '@gpuix/solid';
+import type { DomEvent, HostElement, KeyEvent } from '@gpuix/solid';
 import { createRoot } from 'solid-js';
 import { createScrollAreaRoot } from './use-scroll-area-root';
 
@@ -24,7 +24,12 @@ function scroller(scrollHeight: number, clientHeight: number) {
 	return { element, scrolls };
 }
 
-function mount(scrollHeight: number, clientHeight: number) {
+/** `reportedContentHeight` is what `onLayout` delivered, which lags the element's live `scrollHeight` after content grows. */
+function mount(
+	scrollHeight: number,
+	clientHeight: number,
+	reportedContentHeight = scrollHeight,
+) {
 	const fake = scroller(scrollHeight, clientHeight);
 	const root = createRoot(() =>
 		createScrollAreaRoot({
@@ -37,8 +42,21 @@ function mount(scrollHeight: number, clientHeight: number) {
 	const layout = (w: number, h: number) =>
 		({ width: w, height: h }) as DomEvent;
 	root.viewportProps.onLayout(layout(100, clientHeight));
-	root.contentProps.onLayout(layout(100, scrollHeight));
-	return { root, scrolls: fake.scrolls };
+	root.contentProps.onLayout(layout(100, reportedContentHeight));
+	return { root, element: fake.element, scrolls: fake.scrolls };
+}
+
+function keyDown(key: string, target: HostElement) {
+	let prevented = false;
+	const event = {
+		key,
+		target,
+		defaultPrevented: false,
+		preventDefault: () => {
+			prevented = true;
+		},
+	} as unknown as KeyEvent;
+	return { event, prevented: () => prevented };
 }
 
 describe('scrollAlong', () => {
@@ -70,7 +88,32 @@ describe('scrollAlong', () => {
 	});
 
 	test('reports false with nothing to scroll', () => {
-		const { root } = mount(100, 163);
+		const { root } = mount(163, 163);
 		expect(root.scrollAlong('y', 10)).toBe(false);
+	});
+
+	test('scrolls by the live range while the delivered content size still says it fits', () => {
+		const { root } = mount(582, 163, 100);
+		expect(root.thumb('y')).toBeNull();
+		expect(root.scrollAlong('y', 100)).toBe(true);
+		expect(root.positionOf('y')).toBe(100);
+	});
+});
+
+describe('onKeyDown', () => {
+	test('ArrowDown is prevented and scrolls while onLayout has not caught up with the content', () => {
+		const { root, element, scrolls } = mount(582, 163, 100);
+		const key = keyDown('ArrowDown', element);
+		root.viewportProps.onKeyDown(key.event);
+		expect(key.prevented()).toBe(true);
+		expect(scrolls).toEqual([40]);
+	});
+
+	test('a key is left alone when the element has nothing to scroll', () => {
+		const { root, element, scrolls } = mount(163, 163);
+		const key = keyDown('ArrowDown', element);
+		root.viewportProps.onKeyDown(key.event);
+		expect(key.prevented()).toBe(false);
+		expect(scrolls).toEqual([]);
 	});
 });
