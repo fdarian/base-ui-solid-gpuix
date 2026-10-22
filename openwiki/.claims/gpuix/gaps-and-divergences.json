@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:76f0c4665929ffe35e2fcca465100c0e9c76594ec87d7bbae596850610fee674",
+  "pageVersion": "sha256:520ad9a4bf7f668b179ea1d89f36ae7d9b379d63aaac134dc2e0462d7d4362fd",
   "claims": [
     {
       "id": "claim_1350cf3c272642b9a8040773b1670ced",
@@ -37,8 +37,8 @@
           "version": "repo-lines-v1:sha256:836b4300153b444bd2e4c4d94ec1e6fe4f8a9b29b0d667446c530feac4cd2d15:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODM2YjQzMDAxNTNiNDQ0YmQyZTRjNGQ5NGVjMWU2ZmU0ZjhhOWIyOWIwZDY2NzQ0NmM1MzBmZWFjNGNkMmQxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODM2YjQzMDAxNTNiNDQ0YmQyZTRjNGQ5NGVjMWU2ZmU0ZjhhOWIyOWIwZDY2NzQ0NmM1MzBmZWFjNGNkMmQxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzc5ZDA0NWZmZjM4YTFlMDNhZDcwOThkMzA1OTU1YTgxNDhhY2YyYmQzNjExMGVlOGE2NzczZGIzODNmNWM3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTkwNTI1Y2MxZmY2N2FiZjY4YTFiOWI4ODYxZjBmMDAxYTE3ZDVkZDcyZTc0NjlhM2EwNjNkODg5M2YwOWQ2ZSJ9"
         },
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L598-L598",
-          "version": "repo-lines-v1:sha256:6cbd1e936ab6529344d8f2b6e7d2cc6c63b51d6cafbe2d717a4b0155f97e95b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNiZDFlOTM2YWI2NTI5MzQ0ZDhmMmI2ZTdkMmNjNmM2M2I1MWQ2Y2FmYmUyZDcxN2E0YjAxNTVmOTdlOTViOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNiZDFlOTM2YWI2NTI5MzQ0ZDhmMmI2ZTdkMmNjNmM2M2I1MWQ2Y2FmYmUyZDcxN2E0YjAxNTVmOTdlOTViOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjBlYzY3MGI5ZmRjMzdiZDk2NGNhOTg4ZWUwOWJlNjY5YWZjMDZmOTQwZGJiY2M5YWQ0MTFhZjU0MTk3MmM0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWZkN2Y2NTc5M2Y1NjA3Y2ExYWI5YWMyZDQ4NjIzMGRlMWIyN2M0YjFlNDE5OTQzZjNiZGJlMGRmOGY5YmJkOCJ9"
+          "resource": "repo://BASE-UI-AUDIT.md#L598-L599",
+          "version": "repo-lines-v1:sha256:bb0e8f6bca8ab69455d1efa4bc719de1c582f1c97ed212f6b7e70f86d2179d77:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ4NzEwZWMwM2I3ZTYwZDM2OTI5ZjZiNjQ0NTFkNzhiYzkyMWRiNGJkNThjYTg4OGRmNjE1YzhlMzY5NmVjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRjNDg5MTlhMGQwZjFmZmY4ZDI1NTY3NWRlOTgxMWJjOGY4ZjE3MDczOTk1ZWRhYmFhY2Y3NDJlYWEwMzYyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjYwNDY1ODgzMjExMzU0YzNkOGZhODQ2ZDljZWY3NjdiZTNkZmRmNTIwMDU0OGJlNGVkMWM4YmQ4MzdiZWUxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjZiZDZjMDlmNWI4MTI4OTcwNzE3ZTY5NjYxNzRjODIyNWNmY2JkMWNlMmY5M2M5OTM5ZTAzMmIxMWZkZGU5NyJ9"
         }
       ]
     },
@@ -130,21 +130,45 @@
     },
     {
       "id": "claim_4f0aa9a621294f9fb4c05a410a0c3f53",
-      "statement": "scrollAlong clamps the request to the viewport's own scrollHeight - clientHeight range, returns false when already at the clamped position, and otherwise writes scrollTo and returns true without reading the position back, because gpuix's scroller range ends exactly at the real end.",
+      "statement": "scrollAlong clamps the request to the viewport's live scrollHeight - clientHeight range without consulting the thumb, returns false when that range is empty or the position is already the clamped one, and otherwise writes scrollTo and returns true without reading the position back, because gpuix's scroller range ends exactly at the real end.",
       "evidence": [
         {
           "resource": "repo://src/scroll-area/root/use-scroll-area-root.test.ts#L44-L68",
-          "version": "repo-lines-v1:sha256:62b6714c3600cdbf0a8dc2fa08cb8ce19642443c6de0aacf7879f5c8a15d5c51:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5ZmNhYTUzOWVmODdkYzBiYzNlNzk0M2M0YmIyNTBiNjIxMjJkZTQ2ZGI1YWJhMzc4ZTEzNjJiZDU0YmU1MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4MzhiZjQzNGVhNDI2N2U0MTA0MmMzNGFhOWUwMzE0NzQ4Mjk0MjM5NzU3ODVmNDg1YTEzNmQwNjFlMzdlNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2MGYxOTcyZjFmMDQ2N2FjZmYwZmY4ZTAxMzZlZDRkZjBmNGJhNmFhZjMzNjViNjUxY2FiMDUyMDY5YzI2YWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhNGZjNzgyOWQ4YThjY2ZlZjMzODc0M2Q2ZGYyMzY0MDZiN2RhNTc4OWEwZWEzNTMzOTY4MGMxYTBjZDZiZTcifQ"
+          "version": "repo-lines-v1:sha256:63dee49c4d627d61140e0189f397892860c146c94c1bdeb9c270d2180caecd2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiMWU5YjAxODg3ZjVkMzRiYjcyZTAwMzllNjVlMzc0ZmVhMjQ1ODYxN2QyODQwMDA0MDFkN2Y3OWJiMWU5MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ODZiNTNkMWQxOTUzZmFiMWY1NTJmM2U5ZDZiYWJkNmU4ZDYxYTg3ZGJiNjdhMGFmNzZlOGQ0MDlhYThhN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwM2VjMGM3YTE4ODY1ZmFiZmFkNGY5M2NiM2Q2ZTg5OWY0MDVkZWFlMTU4NTM1MDBmZmMyMjI2YzhkYmY5MWIifQ"
         },
         {
-          "resource": "repo://src/scroll-area/root/use-scroll-area-root.ts#L133-L147",
-          "version": "repo-lines-v1:sha256:16d0e3b58337abe2aca8e8e02897791f26430df32517f61448408dd2986b4551:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjY2QzMzM1OGVhMTE0YTk5OTk0MzEyNGJhYTUxYWFmODkzMmI0ZjU2ZTU4MzllMDU4YTE2ZDQ1NjlhYzM5NzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWMwM2VkNmRmNWE5NjNkMTcxZDdiOTk2Y2ZmNzg3MDZmN2YxZDJiZTExYzEzNWQwMWYzNmM1ZWYyMTY1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxMjI5MzEzMzliYTRhNGFkZjMwN2Q4ZWI4YzIwOWEyMzQ5OGNkZWVhMDg1YzNhYWNlODUxYTYwODEyYmU3ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3YmYxYjg1ZTNlNWEyNGRiYjJiYjc5Yzc3YWFhMjRjYzU3ZDEyYzZkYzBhMTFmMWEyNTRlZjMwMzk4M2U2Y2IifQ"
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.ts#L131-L146",
+          "version": "repo-lines-v1:sha256:745a744584ef2787576039012cce601c951b898085fa6368500c1f230b04e74e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMmEzYjc2ZTEyY2UxNTM3OWQwNWYyODY5ZGM0ODMyZGU3NTg5MDUzYjQ5YmZmMjM3ZTQyNWM3MjM3ODAxNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWMwM2VkNmRmNWE5NjNkMTcxZDdiOTk2Y2ZmNzg3MDZmN2YxZDJiZTExYzEzNWQwMWYzNmM1ZWYyMTY1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmYTY2NmNiNGJjOTVlNWQ4NWNhZDY1MDNkZGYzZjU0NDY4ODk2YjdlYzExNmYyMmM4YTYyOTlkOWI0MDAxYTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3YmYxYjg1ZTNlNWEyNGRiYjJiYjc5Yzc3YWFhMjRjYzU3ZDEyYzZkYzBhMTFmMWEyNTRlZjMwMzk4M2U2Y2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_606ad06aaa6645fe80da8975896364cc",
+      "statement": "Scroll-area key handling acts only when the viewport's live scroll range along the key's axis is above 0, instead of checking the onLayout-fed thumb, because since gpuix 8352e66c onLayout arrives after the next painted frame and lags content growth.",
+      "evidence": [
+        {
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.test.ts#L91-L118",
+          "version": "repo-lines-v1:sha256:f7e9207370756ad94a8f2cdc9ef7d343c0e060456024873d3d58b69339e730bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZGFiMDM2YWNhMGY1Y2MxZGM3NmY0Y2E0NGVmYjk4MjE1YmUxYWVjYjNjNGM4NTYzMjJjMTY5NzRmYzYyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNzM0OTJkODk0NmIxZDBmOWQ5YzA0YjcwNGE5MjBmMjRmODllZjdjN2Y3MzExYTg1OTlkMTBjN2Y2MzU4ZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkNzIzZmFiMjZjZmNjNTUzYWQ5OWJlZGNjODA2MzE3NGM2NWYwZTk3MGM2YzE0NDExODdiODA5MzBkMDY3ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIifQ"
+        },
+        {
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.ts#L187-L203",
+          "version": "repo-lines-v1:sha256:b1feaf83f7dadecaa0cf01134c58cf332bdfc515faa621574a45425cf50abf60:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjM2EyMDc3NGQ1YzJiYjRjNzkwYzE4ODkwYTljNDk0Y2NiNTEwZmM4ZThjMDllYzc0NTE5YmMxNjRmYzc4NGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMDU1MTI1NjQ2ZmFlNDUyZjhhNmU5NWU3NDY2M2U5ZTQ1ZTFlMjVhYzU1MWJhM2RhZDViMDYzZDQxZGFiNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzYjNiOTBkYjVlNzgyZTZlYzQ2NjExYzJkZmExOWQwZWU1NjA3MDgzZTYxZmRhYmYxMjI3ZjhlZjRlNjFlMzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d156da715b84b72a052f06a0b7a313c",
+      "statement": "The Combobox filter effect sets revealOnMeasure so the highlighted row is revealed again once the filtered rects are measured, since the rects are measured after the next paint and an earlier reveal would use pre-filter ones.",
+      "evidence": [
+        {
+          "resource": "repo://src/combobox/root/use-combobox-root.ts#L186-L215",
+          "version": "repo-lines-v1:sha256:c90fe8606a1f3db02508d8a17820a494830cdeaae8c47edac00f2dbebc322597:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0NmFlOTE1MjI2NmUwODg5YTUzMzFkMzE5ZGU0ODVkZTUyZWM4YmRjZTdkZGMyYzM2ZjQ4OGViNmRmNGE2OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYzQyYmFlNTQ5YTE5YmJkODllMjdjNjExYzI2MGE4OWJlODk1ZjA4YTQ0MmZiMWZjMjdiYTIyN2ZmODU5ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0Y2QzNmMxOTk0Y2JlMDc0ZTU4NGZiOGNjNjdlN2U3MDMwNDc0NTc5M2VkYmUyY2YwMTFjNWMzZDcwMjMyNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhMDQ2NmVhYWU0OWNjMDNkYjdmN2FkM2JiYmE5MjRlN2JiZTFmY2Y3MmRkMzhlOTJkODU3MDE3YzRmNTRiZTUifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-10-21T16:24:16.572Z"
+    "at": "2026-10-22T04:03:07.943Z"
   }
 }

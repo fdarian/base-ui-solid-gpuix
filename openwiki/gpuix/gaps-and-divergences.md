@@ -6,6 +6,8 @@ tags: [gpuix, constraints, events, focus, pointer-capture, audit]
 sources:
   - id: openwiki-source-e0c02c9e374a589840154900
     resource: repo://BASE-UI-AUDIT.md
+  - id: openwiki-source-c74d7cf794b9056931c0f8c8
+    resource: repo://src/combobox/root/use-combobox-root.ts
   - id: openwiki-source-aca8becc0eaa71ad36246041
     resource: repo://src/floating-ui-solid/hooks/use-hover-reference-interaction.ts
   - id: openwiki-source-697b5f0115297cf4278345dc
@@ -28,10 +30,10 @@ sources:
     resource: repo://src/switch/thumb/switch-thumb.ts
   - id: openwiki-source-b61569aa58d027fe6855060d
     resource: repo://src/utils/pointer-capture.ts
-generated: { by: "claude-code", at: "2026-10-21T16:24:16.572Z" }
+generated: { by: "claude-code", at: "2026-10-22T04:03:07.943Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-10-21T16:24:16.572Z
+    at: 2026-10-22T04:03:07.943Z
 ---
 
 # gpuix gaps and divergences that shape the primitives
@@ -73,6 +75,7 @@ These gpuix changes from the 2026-10-15 to 2026-10-17 fork reviews explain code 
 - **Event targets are elements.** Since Round 4, `target`, `currentTarget` and `relatedTarget` on every event are elements, not ids. Code from before that compared ids.
 - **The test renderer is not a live window.** It can disagree with a live macOS window on pointer opens. Its `press` now sends a key-down then a key-up, so Space-on-key-up (switch) fits a committed scenario; only a held Space still needs the native key-down alone, and `style.active` does not show for it. The audit's harness note has the details.
 - **A scroller's integer range is exact since gpuix f7b62f11.** Before it, gpuix rounded `scrollHeight` and `clientHeight` half up while `scrollTop` was clamped to the real fractional range, so with fractional content (29 rows of 19.5 px plus 16 px padding = 581.5 px) `scrollHeight - clientHeight` was 419 against a real end of 418. A "clamp to the range and compare" check then claimed to have moved at the end, and the scroll-area track wheel kept its event instead of chaining to the page. `scrollAlong` worked around it by reading the position back after `scrollTo`. That read-back is gone: the scroller's range now ends exactly at `scrollHeight - clientHeight`, so `scrollAlong` clamps to it, compares with the current position, and returns true after writing. Its test fakes a scroller that clamps `scrollTo` to that range, like Chrome. On a gpuix older than f7b62f11 the wheel sticks at the end again with fractional content.
+- **`onLayout` and `ResizeObserver` arrive after the painted frame (gpuix 8352e66c, Round 15a).** A forced layout, such as a bounds read or a `scrollTop` write, no longer delivers them, so state built from `onLayout` sizes lags the live element after content grows or is filtered. Two places had to stop trusting it. The scroll-area keys and the track wheel no longer check the thumb, which is built from `onLayout` sizes; `scrollAlong` clamps to the viewport's live `scrollHeight - clientHeight` range and a key is acted on only when that range along its axis is above 0, so a key or wheel right after the content grew still scrolls (bce5ba1). The test mounts a viewport whose reported content size still says it fits while the element's live range does not. The Combobox filter effect sets `revealOnMeasure`, so the highlighted row is revealed again once the filtered rects are measured; an ArrowDown right after typing would otherwise reveal against the pre-filter rect (a20251f).
 - **appRegion** (window-drag regions, now one per line fragment for inline spans) matters to FF's frame bar, not to any primitive here. A primitive inside a drag region would lose its presses to the window drag.
 
 macOS only: Windows and Linux keep async dispatch and are out of scope.

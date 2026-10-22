@@ -16,11 +16,11 @@
       "completedRunId": "9a6ed610-2be1-4408-8516-dd74ff5fc108"
     },
     "/openwiki/gpuix/gaps-and-divergences.md": {
-      "pageVersion": "sha256:76f0c4665929ffe35e2fcca465100c0e9c76594ec87d7bbae596850610fee674",
+      "pageVersion": "sha256:520ad9a4bf7f668b179ea1d89f36ae7d9b379d63aaac134dc2e0462d7d4362fd",
       "completedBy": "claude-code",
-      "completedRunId": "d4875a82-3d3f-44d9-9698-63fb35c6f44a",
-      "gitHead": "61c6f026579d0c7fbc6d67efd477db59b3b6250d",
-      "sourceFingerprint": "sha256:77442282234ca984fff4f307190a3c1f9c071ee3bc3c55894b5f0fa5e98536a8"
+      "completedRunId": "6f1e9a4c-6f02-4107-b6ec-d1beec48b965",
+      "gitHead": "be41049169ecfd82ee82ce02476aff55b201a568",
+      "sourceFingerprint": "sha256:b847b72605e172324ef521e7e16bb8d22032a872c15b0df4434dfa45ea262a1d"
     },
     "/openwiki/history/extraction.md": {
       "gitHead": "c8a5f939e7abd6a2570c019c05fb60d3ac91bcba",
