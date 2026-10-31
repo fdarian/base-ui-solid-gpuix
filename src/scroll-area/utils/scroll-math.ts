@@ -1,4 +1,4 @@
-import type { HostMouseEvent } from '@gpuix/solid';
+import type { HostMouseEvent } from '@ghia/solid';
 import type { ScrollAreaAxis } from '../viewport/get-thumb';
 
 export function clamp(value: number, min: number, max: number) {

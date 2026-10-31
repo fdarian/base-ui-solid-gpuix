@@ -1,4 +1,4 @@
-import type { HostElement, HostMouseEvent, KeyEvent } from '@gpuix/solid';
+import type { HostElement, HostMouseEvent, KeyEvent } from '@ghia/solid';
 import {
 	type Accessor,
 	createEffect,

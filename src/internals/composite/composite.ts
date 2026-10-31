@@ -1,4 +1,4 @@
-import type { HostElement, KeyEvent } from '@gpuix/solid';
+import type { HostElement, KeyEvent } from '@ghia/solid';
 
 /** Ctrl, alt or cmd is held: the key is a shortcut, not a list command or a typed character. */
 export function isChord(

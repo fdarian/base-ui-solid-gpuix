@@ -1,4 +1,4 @@
-import type { HostMouseEvent } from '@gpuix/solid';
+import type { HostMouseEvent } from '@ghia/solid';
 import { createSignal } from 'solid-js';
 import { createPointerCapture } from '../../utils/pointer-capture';
 

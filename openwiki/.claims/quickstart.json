@@ -14,7 +14,7 @@
     },
     {
       "id": "claim_369f7e840785439d9fdd3eed125fc0d1",
-      "statement": "Installs must run from the consumer's root; a bare pnpm install here links a second @gpuix/solid.",
+      "statement": "Installs must run from the consumer's root; a bare pnpm install here links a second @ghia/solid.",
       "evidence": [
         {
           "resource": "repo://README.md#L29-L29",

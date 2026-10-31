@@ -1,4 +1,4 @@
-import type { HostElement, HostMouseEvent, HostWheelEvent } from '@gpuix/solid';
+import type { HostElement, HostMouseEvent, HostWheelEvent } from '@ghia/solid';
 import type { ScrollAreaRootState } from '../root/use-scroll-area-root';
 import { clamp, pointerAlong } from '../utils/scroll-math';
 import type { ScrollAreaAxis } from '../viewport/get-thumb';

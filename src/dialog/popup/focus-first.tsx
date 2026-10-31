@@ -1,4 +1,4 @@
-import { type HostElement, useGpuixRequired } from '@gpuix/solid';
+import { type HostElement, useGpuixRequired } from '@ghia/solid';
 import { onCleanup, onMount } from 'solid-js';
 
 /**

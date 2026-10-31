@@ -1,4 +1,4 @@
-import type { KeyEvent } from '@gpuix/solid';
+import type { KeyEvent } from '@ghia/solid';
 import type { PopoverRoot } from '../root/popover-root';
 
 /**

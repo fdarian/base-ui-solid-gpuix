@@ -2,7 +2,7 @@ import {
 	type HostElement,
 	type KeyEvent,
 	useGpuixRequired,
-} from '@gpuix/solid';
+} from '@ghia/solid';
 import { onCleanup } from 'solid-js';
 
 /**

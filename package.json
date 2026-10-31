@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.1.0",
 	"type": "module",
-	"description": "Headless Base UI primitives for Solid on @gpuix/solid, ported from @base-ui/react 1.9.0.",
+	"description": "Headless Base UI primitives for Solid on @ghia/solid, ported from @base-ui/react 1.9.0.",
 	"license": "MIT",
 	"packageManager": "pnpm@12.11.2",
 	"exports": {
@@ -16,13 +16,13 @@
 		"format": "biome check --write"
 	},
 	"peerDependencies": {
-		"@gpuix/solid": "*",
+		"@ghia/solid": "*",
 		"solid-js": "1.9.15"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "latest",
-		"@gpuix/native": "link:../gpuix/packages/native",
-		"@gpuix/solid": "file:../gpuix/packages/solid",
+		"@ghia/native": "link:../gpuix/packages/native",
+		"@ghia/solid": "file:../gpuix/packages/solid",
 		"@total-typescript/tsconfig": "latest",
 		"@types/bun": "^1.4.2",
 		"solid-js": "1.9.15",

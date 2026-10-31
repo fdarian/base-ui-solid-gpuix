@@ -1,6 +1,6 @@
 enableGlobalVirtualStore: true
 packageImportMethod: clone-or-copy
 overrides:
-  "@gpuix/native": link:../gpuix/packages/native
-# pnpm's pre-script auto-install would run from this folder and relink a second @gpuix/solid (see AGENTS.md).
+  "@ghia/native": link:../gpuix/packages/native
+# pnpm's pre-script auto-install would run from this folder and relink a second @ghia/solid (see AGENTS.md).
 verifyDepsBeforeRun: false

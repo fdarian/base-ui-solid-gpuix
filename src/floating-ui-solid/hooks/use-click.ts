@@ -1,4 +1,4 @@
-import { document, type HostElement, type HostMouseEvent } from '@gpuix/solid';
+import { document, type HostElement, type HostMouseEvent } from '@ghia/solid';
 
 /**
  * After an outside press has closed a popup, the trigger takes focus back, as in

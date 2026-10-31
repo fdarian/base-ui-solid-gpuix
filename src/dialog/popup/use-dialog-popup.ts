@@ -1,4 +1,4 @@
-import type { KeyEvent } from '@gpuix/solid';
+import type { KeyEvent } from '@ghia/solid';
 import type { DialogRootState } from '../root/use-dialog-root';
 
 /** Props for gpuix's `DialogPopup`. Merge `ref` and the rest yourself. */

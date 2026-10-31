@@ -163,7 +163,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@gpuix/native': link:../gpuix/packages/native
+  '@ghia/native': link:../gpuix/packages/native
 
 importers:
 
@@ -172,10 +172,10 @@ importers:
       '@biomejs/biome':
         specifier: latest
         version: 2.5.15
-      '@gpuix/native':
+      '@ghia/native':
         specifier: link:../gpuix/packages/native
         version: link:../gpuix/packages/native
-      '@gpuix/solid':
+      '@ghia/solid':
         specifier: file:../gpuix/packages/solid
         version: file:../gpuix/packages/solid(solid-js@1.9.15)
       '@total-typescript/tsconfig':
@@ -383,7 +383,7 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@gpuix/solid@file:../gpuix/packages/solid':
+  '@ghia/solid@file:../gpuix/packages/solid':
     resolution: {directory: ../gpuix/packages/solid, type: directory}
     peerDependencies:
       solid-js: '>=1.9 <2'
@@ -889,11 +889,11 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.15':
     optional: true
 
-  '@gpuix/solid@file:../gpuix/packages/solid(solid-js@1.9.15)':
+  '@ghia/solid@file:../gpuix/packages/solid(solid-js@1.9.15)':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/preset-typescript': 7.29.7(@babel/core@7.29.7)
-      '@gpuix/native': link:../gpuix/packages/native
+      '@ghia/native': link:../gpuix/packages/native
       babel-preset-solid: 1.9.15(@babel/core@7.29.7)(solid-js@1.9.15)
       solid-js: 1.9.15
     transitivePeerDependencies:

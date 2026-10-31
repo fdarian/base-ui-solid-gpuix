@@ -1,4 +1,4 @@
-import type { AnchoredPlacementEvent } from '@gpuix/solid';
+import type { AnchoredPlacementEvent } from '@ghia/solid';
 import { createPlacementState, POPUP_MARGIN } from '../../internals';
 import type { PopoverRoot } from '../root/popover-root';
 

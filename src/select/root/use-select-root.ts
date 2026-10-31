@@ -3,7 +3,7 @@ import {
 	type HostElement,
 	type HostMouseEvent,
 	type KeyEvent,
-} from '@gpuix/solid';
+} from '@ghia/solid';
 import {
 	type Accessor,
 	createEffect,

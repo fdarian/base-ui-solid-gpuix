@@ -1,6 +1,6 @@
 # base-ui-solid-gpuix
 
-Headless [Base UI](https://github.com/mui/base-ui) primitives for Solid on [`@gpuix/solid`](https://github.com/remorses/gpuix), ported from `@base-ui/react` 1.9.0.
+Headless [Base UI](https://github.com/mui/base-ui) primitives for Solid on [`@ghia/solid`](https://github.com/remorses/gpuix), ported from `@base-ui/react` 1.9.0.
 
 Each primitive is a `create*` function that returns state and prop objects to spread on your own gpuix elements. There is no styling, no theme tokens and no animation in here; timings and sizes arrive as options.
 
@@ -26,7 +26,7 @@ packages:
 "base-ui-solid-gpuix": "link:../base-ui-solid-gpuix"
 ```
 
-Peer dependencies are `solid-js` 1.9.15 and `@gpuix/solid`. Exactly one runtime instance of each may exist across this repo and the consumer, so **run `pnpm install` from the consumer's root**; a bare `pnpm install` here links a second `@gpuix/solid` (the consumer's `scripts/check-single-instance.ts` catches it).
+Peer dependencies are `solid-js` 1.9.15 and `@ghia/solid`. Exactly one runtime instance of each may exist across this repo and the consumer, so **run `pnpm install` from the consumer's root**; a bare `pnpm install` here links a second `@ghia/solid` (the consumer's `scripts/check-single-instance.ts` catches it).
 
 Import by folder:
 

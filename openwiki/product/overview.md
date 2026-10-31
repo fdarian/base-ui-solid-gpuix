@@ -18,7 +18,7 @@ verified:
 
 # What base-ui-solid-gpuix is
 
-A port of the [Base UI](https://github.com/mui/base-ui) primitives to Solid on gpuix (`@gpuix/solid`), a GPU-rendered UI runtime with a DOM-like API. It serves one consumer: **Fluid Functionalism (FF)**, the gpuix port of the Fluid Functionalism component library (`fluid-functionalism-gpuix`), which renders all the visuals and takes its behaviour (keyboard, focus, ARIA, popups, list navigation, typeahead, presence) from here.
+A port of the [Base UI](https://github.com/mui/base-ui) primitives to Solid on gpuix (`@ghia/solid`), a GPU-rendered UI runtime with a DOM-like API. It serves one consumer: **Fluid Functionalism (FF)**, the gpuix port of the Fluid Functionalism component library (`fluid-functionalism-gpuix`), which renders all the visuals and takes its behaviour (keyboard, focus, ARIA, popups, list navigation, typeahead, presence) from here.
 
 Setup, commands and imports are in the [README](../../README.md). This page covers scope and the pin, which the code does not explain.
 

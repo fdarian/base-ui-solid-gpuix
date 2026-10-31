@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import type { KeyEvent } from '@gpuix/solid';
+import type { KeyEvent } from '@ghia/solid';
 import { createRoot, createSignal } from 'solid-js';
 import { MENU_TYPEAHEAD_RESET_MS } from '../../floating-ui-solid/hooks';
 import { createMenuList } from './menu-list';

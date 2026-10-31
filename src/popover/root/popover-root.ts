@@ -1,4 +1,4 @@
-import type { KeyEvent } from '@gpuix/solid';
+import type { KeyEvent } from '@ghia/solid';
 import { createUniqueId } from 'solid-js';
 import { createPresence } from '../../internals';
 

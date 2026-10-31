@@ -4,7 +4,7 @@ import {
 	type HostMouseEvent,
 	type KeyEvent,
 	useGpuixRequired,
-} from '@gpuix/solid';
+} from '@ghia/solid';
 import {
 	type Accessor,
 	createEffect,

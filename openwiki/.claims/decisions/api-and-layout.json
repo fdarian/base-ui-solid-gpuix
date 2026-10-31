@@ -84,7 +84,7 @@
     },
     {
       "id": "claim_1f8dba6c7c324721ac7efd763b585ff8",
-      "statement": "pnpm-workspace.yaml disables verifyDepsBeforeRun because pnpm's pre-script auto-install run from this folder relinks a second @gpuix/solid; installs must run from the consumer's root to keep a single instance.",
+      "statement": "pnpm-workspace.yaml disables verifyDepsBeforeRun because pnpm's pre-script auto-install run from this folder relinks a second @ghia/solid; installs must run from the consumer's root to keep a single instance.",
       "evidence": [
         {
           "resource": "repo://AGENTS.md#L16-L16",

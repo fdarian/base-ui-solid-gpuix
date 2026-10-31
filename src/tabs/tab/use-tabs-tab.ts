@@ -3,7 +3,7 @@ import {
 	type HostElement,
 	type KeyEvent,
 	useGpuixRequired,
-} from '@gpuix/solid';
+} from '@ghia/solid';
 import { mergeProps } from 'solid-js';
 import type { TabsList } from '../list/use-tabs-list';
 import type { TabsRoot } from '../root/use-tabs-root';

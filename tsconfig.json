@@ -4,7 +4,7 @@
 		"allowImportingTsExtensions": true,
 		"noErrorTruncation": true,
 		"jsx": "preserve",
-		"jsxImportSource": "@gpuix/solid",
+		"jsxImportSource": "@ghia/solid",
 		"types": ["bun"]
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx"]

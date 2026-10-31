@@ -1,4 +1,4 @@
-import { buttonProps, type KeyEvent, useGpuixRequired } from '@gpuix/solid';
+import { buttonProps, type KeyEvent, useGpuixRequired } from '@ghia/solid';
 import { mergeProps } from 'solid-js';
 import type { CollapsibleRoot } from '../root/use-collapsible-root';
 
