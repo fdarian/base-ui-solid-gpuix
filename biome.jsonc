@@ -1,9 +1,10 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
 	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
 	"files": { "includes": ["**", "!openwiki"] },
 	"formatter": { "indentStyle": "tab" },
 	"javascript": { "formatter": { "quoteStyle": "single" } },
+	"markdown": { "parser": { "frontmatter": true } },
 	"linter": {
 		"enabled": true,
 		"rules": { "preset": "recommended", "a11y": "off" }

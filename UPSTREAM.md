@@ -8,12 +8,12 @@ still differs; this file is how to keep it in step.
 
 ## The pin
 
-| | |
-|---|---|
-| Repository | `github.com/mui/base-ui` |
-| Package | `@base-ui/react` 1.9.0 |
-| Tag | `v1.9.0` |
-| Commit | `ad7ecda5296b0295b41a51ecb01fce6204acd099` |
+|            |                                            |
+| ---------- | ------------------------------------------ |
+| Repository | `github.com/mui/base-ui`                   |
+| Package    | `@base-ui/react` 1.9.0                     |
+| Tag        | `v1.9.0`                                   |
+| Commit     | `ad7ecda5296b0295b41a51ecb01fce6204acd099` |
 
 The version is not a choice: it is what FF's upstream, [mickadesign/fluid-functionalism](https://github.com/mickadesign/fluid-functionalism),
 pins in its `package-lock.json`, and the port exists to match that behaviour. Move the pin only when FF's upstream does.
@@ -60,60 +60,60 @@ Upstream paths are relative to `packages/react/src/`; port paths to `src/`. A gr
 left lands in the matching file on the right". Upstream names are PascalCase (`AccordionRoot.tsx`); the port's are
 kebab-case, `use-*.ts` where upstream has a `use*` hook and `create*` is the exported function.
 
-| Upstream | Port |
-|---|---|
-| `accordion/root/AccordionRoot.tsx` | `accordion/root/use-accordion-root.ts` (and its test) |
-| `accordion/item/AccordionItem.tsx` | `accordion/item/use-accordion-item.ts` |
-| `accordion/trigger/AccordionTrigger.tsx` | `accordion/trigger/use-accordion-trigger.ts` |
-| `accordion/panel/AccordionPanel.tsx` | `accordion/panel/use-accordion-panel.ts` |
-| `collapsible/root/useCollapsibleRoot.ts` | `collapsible/root/use-collapsible-root.ts` (and its test) |
-| `collapsible/trigger/CollapsibleTrigger.tsx` | `collapsible/trigger/use-collapsible-trigger.ts` |
-| `collapsible/panel/useCollapsiblePanel.ts` | `collapsible/panel/use-collapsible-panel.ts` |
-| `tabs/root/TabsRoot.tsx` | `tabs/root/use-tabs-root.ts` (and its test) |
-| `tabs/{list/TabsList,tab/TabsTab,panel/TabsPanel}.tsx` | `tabs/{list/use-tabs-list,tab/use-tabs-tab,panel/use-tabs-panel}.ts` |
-| `checkbox/root/CheckboxRoot.tsx` | `checkbox/root/checkbox-root.ts` |
-| `checkbox-group/CheckboxGroup.tsx` | `checkbox-group/checkbox-group.ts` (rows from `createRowList`; no `useCheckboxGroupParent`) |
-| `radio/root/RadioRoot.tsx` | `radio/root/radio-root.ts` |
-| `radio-group/RadioGroup.tsx` | `radio-group/radio-group.ts` |
-| `switch/root/SwitchRoot.tsx` | `switch/root/switch-root.ts` |
-| `switch/thumb/SwitchThumb.tsx` | `switch/thumb/switch-thumb.ts` (plus the port-only thumb drag) |
-| `slider/{root/SliderRoot,control/SliderControl,thumb/SliderThumb,value/SliderValue}.tsx` | `slider/{root/slider-root,control/slider-control,thumb/slider-thumb,value/slider-value}.ts` |
-| `slider/utils/roundValueToStep.ts` | `slider/utils/round-value-to-step.ts` (and its test) |
-| `slider/utils/getSliderValue.ts`, `utils/valueToPercent.ts` | `slider/utils/value-pixel.ts` (partly port-only, see below) |
-| `menu/root/MenuRoot.tsx` | `menu/root/menu-root.ts` |
-| `menu/trigger/MenuTrigger.tsx` | `menu/trigger/menu-trigger.ts` |
-| `menu/list/MenuList.tsx` | `menu/list/menu-list.ts` |
-| `menu/item/{MenuItem.tsx,useMenuItem.ts}` | `menu/item/menu-item.ts` |
-| `menu/submenu-root/MenuSubmenuRoot.tsx` | `menu/submenu-root/menu-submenu-root.ts` |
-| `menu/submenu-trigger/MenuSubmenuTrigger.tsx` | `menu/submenu-trigger/menu-submenu-trigger.ts` |
-| `select/root/SelectRoot.tsx` (with the behaviour of `SelectTrigger`, `SelectItem`, `SelectList`) | `select/root/use-select-root.ts` |
-| `combobox/root/{ComboboxRoot,AriaCombobox}.tsx` (with `ComboboxInput`, `ComboboxItem`, `ComboboxList`) | `combobox/root/use-combobox-root.ts` |
-| `dialog/root/{DialogRoot.tsx,useDialogRoot.ts,DialogRootContext.ts}` | `dialog/root/{use-dialog-root,dialog-root-context}.ts` |
-| `dialog/{popup/DialogPopup,title/DialogTitle,description/DialogDescription,trigger/DialogTrigger}.tsx` | `dialog/{popup/use-dialog-popup,title/use-dialog-title,description/use-dialog-description,trigger/use-dialog-trigger}.ts` |
-| `drawer/root/DrawerRoot.tsx` | `drawer/root/use-drawer-root.ts` |
-| `tooltip/root/TooltipRoot.tsx` | `tooltip/root/tooltip-root.ts` |
-| `tooltip/trigger/TooltipTrigger.tsx`, `tooltip/popup/TooltipPopup.tsx` | `tooltip/trigger/tooltip-trigger.ts`, `tooltip/popup/tooltip-popup.ts` |
-| `tooltip/provider/TooltipProvider.tsx` | `tooltip/provider/tooltip-provider.ts` (and its test) |
-| `popover/root/PopoverRoot.tsx` (with `useDismiss`'s outside press and Escape) | `popover/root/popover-root.ts` |
-| `popover/trigger/PopoverTrigger.tsx` | `popover/trigger/popover-trigger.ts` |
-| `popover/{popup/PopoverPopup,positioner/PopoverPositioner}.tsx` | `popover/popup/popover-popup.ts` (the positioner's side, align and offset fold in) |
-| `scroll-area/constants.ts` | `scroll-area/constants.ts` (`ARROW_PX`, `PAGE_SHARE`, `USER_SCROLL_MS` are port-only) |
-| `scroll-area/root/ScrollAreaRoot.tsx` | `scroll-area/root/use-scroll-area-root.ts` |
-| `scroll-area/scrollbar/ScrollAreaScrollbar.tsx` | `scroll-area/scrollbar/use-scroll-area-scrollbar.ts` |
-| `scroll-area/viewport/ScrollAreaViewport.tsx` (thumb sizing and position) | `scroll-area/viewport/get-thumb.ts` (and its test) |
-| `internals/composite/composite.ts` | `internals/composite/composite.ts` (and its test) |
-| `internals/composite/root/useCompositeRoot.ts` | `internals/composite/root/use-composite-root.ts` |
-| `internals/filter.ts` | `internals/filter.ts` (`contains` only; and its test) |
-| `internals/useTransitionStatus.ts` | `internals/use-transition-status.ts` (`createPresence`: a timed exit, not CSS animations) |
-| `internals/useAnchorPositioning.ts` | `internals/use-anchor-positioning.ts` (placement state; the flip itself is gpuix's `<anchored>`) |
-| `floating-ui-react/hooks/useClick.ts` | `floating-ui-solid/hooks/use-click.ts` |
-| `floating-ui-react/hooks/useTypeahead.ts` | `floating-ui-solid/hooks/use-typeahead.ts` (and its test) |
-| `floating-ui-react/utils/markOthers.ts` | `floating-ui-solid/utils/mark-others.ts` |
-| `floating-ui-react/safePolygon.ts` | `floating-ui-solid/safe-polygon.ts` (and its test; boxes and containment come from `getBoundingClientRect` and the element tree, `hasOpenChild` replaces the floating tree) |
-| `floating-ui-react/hooks/useHoverReferenceInteraction.ts` (the `handleClose` part of `onMouseLeave`), `useHoverFloatingInteraction.ts` (the popup's enter and leave, `blockPointerEvents`) | `floating-ui-solid/hooks/use-hover-reference-interaction.ts` (`createHoverHandleClose`; the open delays stay in each trigger) |
-| `floating-ui-react/hooks/useHoverShared.ts` (`HandleClose` types) | `floating-ui-solid/hooks/use-hover-shared.ts` |
-| `floating-ui-react/utils/element.ts` (`contains`) | `floating-ui-solid/utils/element.ts` |
-| the hidden `<input>` inside `CheckboxRoot`, `SwitchRoot`, `RadioRoot` | `utils/form-value.tsx` |
+| Upstream                                                                                                                                                                                   | Port                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accordion/root/AccordionRoot.tsx`                                                                                                                                                         | `accordion/root/use-accordion-root.ts` (and its test)                                                                                                                       |
+| `accordion/item/AccordionItem.tsx`                                                                                                                                                         | `accordion/item/use-accordion-item.ts`                                                                                                                                      |
+| `accordion/trigger/AccordionTrigger.tsx`                                                                                                                                                   | `accordion/trigger/use-accordion-trigger.ts`                                                                                                                                |
+| `accordion/panel/AccordionPanel.tsx`                                                                                                                                                       | `accordion/panel/use-accordion-panel.ts`                                                                                                                                    |
+| `collapsible/root/useCollapsibleRoot.ts`                                                                                                                                                   | `collapsible/root/use-collapsible-root.ts` (and its test)                                                                                                                   |
+| `collapsible/trigger/CollapsibleTrigger.tsx`                                                                                                                                               | `collapsible/trigger/use-collapsible-trigger.ts`                                                                                                                            |
+| `collapsible/panel/useCollapsiblePanel.ts`                                                                                                                                                 | `collapsible/panel/use-collapsible-panel.ts`                                                                                                                                |
+| `tabs/root/TabsRoot.tsx`                                                                                                                                                                   | `tabs/root/use-tabs-root.ts` (and its test)                                                                                                                                 |
+| `tabs/{list/TabsList,tab/TabsTab,panel/TabsPanel}.tsx`                                                                                                                                     | `tabs/{list/use-tabs-list,tab/use-tabs-tab,panel/use-tabs-panel}.ts`                                                                                                        |
+| `checkbox/root/CheckboxRoot.tsx`                                                                                                                                                           | `checkbox/root/checkbox-root.ts`                                                                                                                                            |
+| `checkbox-group/CheckboxGroup.tsx`                                                                                                                                                         | `checkbox-group/checkbox-group.ts` (rows from `createRowList`; no `useCheckboxGroupParent`)                                                                                 |
+| `radio/root/RadioRoot.tsx`                                                                                                                                                                 | `radio/root/radio-root.ts`                                                                                                                                                  |
+| `radio-group/RadioGroup.tsx`                                                                                                                                                               | `radio-group/radio-group.ts`                                                                                                                                                |
+| `switch/root/SwitchRoot.tsx`                                                                                                                                                               | `switch/root/switch-root.ts`                                                                                                                                                |
+| `switch/thumb/SwitchThumb.tsx`                                                                                                                                                             | `switch/thumb/switch-thumb.ts` (plus the port-only thumb drag)                                                                                                              |
+| `slider/{root/SliderRoot,control/SliderControl,thumb/SliderThumb,value/SliderValue}.tsx`                                                                                                   | `slider/{root/slider-root,control/slider-control,thumb/slider-thumb,value/slider-value}.ts`                                                                                 |
+| `slider/utils/roundValueToStep.ts`                                                                                                                                                         | `slider/utils/round-value-to-step.ts` (and its test)                                                                                                                        |
+| `slider/utils/getSliderValue.ts`, `utils/valueToPercent.ts`                                                                                                                                | `slider/utils/value-pixel.ts` (partly port-only, see below)                                                                                                                 |
+| `menu/root/MenuRoot.tsx`                                                                                                                                                                   | `menu/root/menu-root.ts`                                                                                                                                                    |
+| `menu/trigger/MenuTrigger.tsx`                                                                                                                                                             | `menu/trigger/menu-trigger.ts`                                                                                                                                              |
+| `menu/list/MenuList.tsx`                                                                                                                                                                   | `menu/list/menu-list.ts`                                                                                                                                                    |
+| `menu/item/{MenuItem.tsx,useMenuItem.ts}`                                                                                                                                                  | `menu/item/menu-item.ts`                                                                                                                                                    |
+| `menu/submenu-root/MenuSubmenuRoot.tsx`                                                                                                                                                    | `menu/submenu-root/menu-submenu-root.ts`                                                                                                                                    |
+| `menu/submenu-trigger/MenuSubmenuTrigger.tsx`                                                                                                                                              | `menu/submenu-trigger/menu-submenu-trigger.ts`                                                                                                                              |
+| `select/root/SelectRoot.tsx` (with the behaviour of `SelectTrigger`, `SelectItem`, `SelectList`)                                                                                           | `select/root/use-select-root.ts`                                                                                                                                            |
+| `combobox/root/{ComboboxRoot,AriaCombobox}.tsx` (with `ComboboxInput`, `ComboboxItem`, `ComboboxList`)                                                                                     | `combobox/root/use-combobox-root.ts`                                                                                                                                        |
+| `dialog/root/{DialogRoot.tsx,useDialogRoot.ts,DialogRootContext.ts}`                                                                                                                       | `dialog/root/{use-dialog-root,dialog-root-context}.ts`                                                                                                                      |
+| `dialog/{popup/DialogPopup,title/DialogTitle,description/DialogDescription,trigger/DialogTrigger}.tsx`                                                                                     | `dialog/{popup/use-dialog-popup,title/use-dialog-title,description/use-dialog-description,trigger/use-dialog-trigger}.ts`                                                   |
+| `drawer/root/DrawerRoot.tsx`                                                                                                                                                               | `drawer/root/use-drawer-root.ts`                                                                                                                                            |
+| `tooltip/root/TooltipRoot.tsx`                                                                                                                                                             | `tooltip/root/tooltip-root.ts`                                                                                                                                              |
+| `tooltip/trigger/TooltipTrigger.tsx`, `tooltip/popup/TooltipPopup.tsx`                                                                                                                     | `tooltip/trigger/tooltip-trigger.ts`, `tooltip/popup/tooltip-popup.ts`                                                                                                      |
+| `tooltip/provider/TooltipProvider.tsx`                                                                                                                                                     | `tooltip/provider/tooltip-provider.ts` (and its test)                                                                                                                       |
+| `popover/root/PopoverRoot.tsx` (with `useDismiss`'s outside press and Escape)                                                                                                              | `popover/root/popover-root.ts`                                                                                                                                              |
+| `popover/trigger/PopoverTrigger.tsx`                                                                                                                                                       | `popover/trigger/popover-trigger.ts`                                                                                                                                        |
+| `popover/{popup/PopoverPopup,positioner/PopoverPositioner}.tsx`                                                                                                                            | `popover/popup/popover-popup.ts` (the positioner's side, align and offset fold in)                                                                                          |
+| `scroll-area/constants.ts`                                                                                                                                                                 | `scroll-area/constants.ts` (`ARROW_PX`, `PAGE_SHARE`, `USER_SCROLL_MS` are port-only)                                                                                       |
+| `scroll-area/root/ScrollAreaRoot.tsx`                                                                                                                                                      | `scroll-area/root/use-scroll-area-root.ts`                                                                                                                                  |
+| `scroll-area/scrollbar/ScrollAreaScrollbar.tsx`                                                                                                                                            | `scroll-area/scrollbar/use-scroll-area-scrollbar.ts`                                                                                                                        |
+| `scroll-area/viewport/ScrollAreaViewport.tsx` (thumb sizing and position)                                                                                                                  | `scroll-area/viewport/get-thumb.ts` (and its test)                                                                                                                          |
+| `internals/composite/composite.ts`                                                                                                                                                         | `internals/composite/composite.ts` (and its test)                                                                                                                           |
+| `internals/composite/root/useCompositeRoot.ts`                                                                                                                                             | `internals/composite/root/use-composite-root.ts`                                                                                                                            |
+| `internals/filter.ts`                                                                                                                                                                      | `internals/filter.ts` (`contains` only; and its test)                                                                                                                       |
+| `internals/useTransitionStatus.ts`                                                                                                                                                         | `internals/use-transition-status.ts` (`createPresence`: a timed exit, not CSS animations)                                                                                   |
+| `internals/useAnchorPositioning.ts`                                                                                                                                                        | `internals/use-anchor-positioning.ts` (placement state; the flip itself is gpuix's `<anchored>`)                                                                            |
+| `floating-ui-react/hooks/useClick.ts`                                                                                                                                                      | `floating-ui-solid/hooks/use-click.ts`                                                                                                                                      |
+| `floating-ui-react/hooks/useTypeahead.ts`                                                                                                                                                  | `floating-ui-solid/hooks/use-typeahead.ts` (and its test)                                                                                                                   |
+| `floating-ui-react/utils/markOthers.ts`                                                                                                                                                    | `floating-ui-solid/utils/mark-others.ts`                                                                                                                                    |
+| `floating-ui-react/safePolygon.ts`                                                                                                                                                         | `floating-ui-solid/safe-polygon.ts` (and its test; boxes and containment come from `getBoundingClientRect` and the element tree, `hasOpenChild` replaces the floating tree) |
+| `floating-ui-react/hooks/useHoverReferenceInteraction.ts` (the `handleClose` part of `onMouseLeave`), `useHoverFloatingInteraction.ts` (the popup's enter and leave, `blockPointerEvents`) | `floating-ui-solid/hooks/use-hover-reference-interaction.ts` (`createHoverHandleClose`; the open delays stay in each trigger)                                               |
+| `floating-ui-react/hooks/useHoverShared.ts` (`HandleClose` types)                                                                                                                          | `floating-ui-solid/hooks/use-hover-shared.ts`                                                                                                                               |
+| `floating-ui-react/utils/element.ts` (`contains`)                                                                                                                                          | `floating-ui-solid/utils/element.ts`                                                                                                                                        |
+| the hidden `<input>` inside `CheckboxRoot`, `SwitchRoot`, `RadioRoot`                                                                                                                      | `utils/form-value.tsx`                                                                                                                                                      |
 
 Each folder also has an `index.ts`, which is what `base-ui-solid-gpuix/<folder>` resolves to. Upstream parts with no
 counterpart are not ported because FF styles them itself or never uses them: every `*DataAttributes.ts`, `*CssVars.ts`
@@ -125,17 +125,17 @@ hook folds in.
 
 No upstream file; each exists because gpuix or FF needs it.
 
-| Port file | Why |
-|---|---|
-| `utils/pointer-capture.ts` | gpuix captures a pointer only when asked, so a drag calls `createPointerCapture`; React uses `setPointerCapture` inline in `SliderControl` and the scroll bar. |
-| `internals/composite/root/row-list.ts` | `createRowList` stands in for `CompositeRoot`'s key handling over a list of rows that radio-group and checkbox-group share (ordered by index, Space and Enter activate). Kept apart from `use-composite-root.ts`: different ordering, modifier and `preventDefault` rules. |
-| `menu/input/menu-search.ts` | A search field woven into the menu's list keys. It is FF's layer (`dropdown-search`), not `Menu.Input`, which is Base UI's virtual-focus filter. |
-| `slider/utils/value-pixel.ts` | Value to pixel mapping for a thumb that stays inside the track, with the `steps` list FF's slider adds (Base UI works on indices). |
-| `switch/thumb/switch-thumb.ts` (the drag part) | FF's switch thumb can be dragged; Base UI's cannot. |
-| `scroll-area/viewport/get-key-scroll.ts` | What a browser does for a focused scroller (arrows, pages, Home and End); gpuix has no native keyboard scrolling. |
-| `scroll-area/utils/scroll-math.ts` | `clamp` (Base UI imports it from `@base-ui/utils`) and `pointerAlong`. |
-| `dialog/popup/focus-first.tsx` | Moves focus from the popup to its first tab stop, as Base UI's focus manager does; gpuix focuses the popup itself. |
-| `dialog/root/dialog-root-context.ts` | The dialog parts share state through a context; upstream's store classes are not ported. |
+| Port file                                      | Why                                                                                                                                                                                                                                                                        |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `utils/pointer-capture.ts`                     | gpuix captures a pointer only when asked, so a drag calls `createPointerCapture`; React uses `setPointerCapture` inline in `SliderControl` and the scroll bar.                                                                                                             |
+| `internals/composite/root/row-list.ts`         | `createRowList` stands in for `CompositeRoot`'s key handling over a list of rows that radio-group and checkbox-group share (ordered by index, Space and Enter activate). Kept apart from `use-composite-root.ts`: different ordering, modifier and `preventDefault` rules. |
+| `menu/input/menu-search.ts`                    | A search field woven into the menu's list keys. It is FF's layer (`dropdown-search`), not `Menu.Input`, which is Base UI's virtual-focus filter.                                                                                                                           |
+| `slider/utils/value-pixel.ts`                  | Value to pixel mapping for a thumb that stays inside the track, with the `steps` list FF's slider adds (Base UI works on indices).                                                                                                                                         |
+| `switch/thumb/switch-thumb.ts` (the drag part) | FF's switch thumb can be dragged; Base UI's cannot.                                                                                                                                                                                                                        |
+| `scroll-area/viewport/get-key-scroll.ts`       | What a browser does for a focused scroller (arrows, pages, Home and End); gpuix has no native keyboard scrolling.                                                                                                                                                          |
+| `scroll-area/utils/scroll-math.ts`             | `clamp` (Base UI imports it from `@base-ui/utils`) and `pointerAlong`.                                                                                                                                                                                                     |
+| `dialog/popup/focus-first.tsx`                 | Moves focus from the popup to its first tab stop, as Base UI's focus manager does; gpuix focuses the popup itself.                                                                                                                                                         |
+| `dialog/root/dialog-root-context.ts`           | The dialog parts share state through a context; upstream's store classes are not ported.                                                                                                                                                                                   |
 
 ## API shape
 
@@ -178,25 +178,25 @@ Base UI 1.9.0's source and this port, row by row. Port refs read `src/...:lines`
   `asChild` button props, the inline `Dropdown` panel, which is FF's own code, the popover's modal mode, portal,
   trigger id and Title / Description names, nested submenus).
 
-| Section | Rows | ported | gap | fixed | blocked | n/a |
-|---|---|---|---|---|---|---|
-| [Accordion](BASE-UI-AUDIT.md#accordion-base-uireactaccordion) | 20 | 9 | 1 | 8 | 0 | 2 |
-| [Collapsible](BASE-UI-AUDIT.md#collapsible-base-uireactcollapsible) | 11 | 7 | 0 | 3 | 0 | 1 |
-| [Tabs](BASE-UI-AUDIT.md#tabs-base-uireacttabs) | 25 | 12 | 2 | 9 | 0 | 2 |
-| [Button](BASE-UI-AUDIT.md#button-base-uireactbutton) | 11 | 7 | 0 | 2 | 0 | 2 |
-| [Checkbox](BASE-UI-AUDIT.md#checkbox-base-uireactcheckbox) | 21 | 12 | 0 | 6 | 0 | 3 |
-| [RadioGroup + Radio](BASE-UI-AUDIT.md#radiogroup--radio-base-uireactradio-group-base-uireactradio) | 18 | 10 | 0 | 5 | 0 | 3 |
-| [Switch](BASE-UI-AUDIT.md#switch-base-uireactswitch) | 17 | 10 | 1 | 4 | 0 | 2 |
-| [Slider](BASE-UI-AUDIT.md#slider-base-uireactslider) | 29 | 14 | 0 | 13 | 1 | 1 |
-| [Menu](BASE-UI-AUDIT.md#menu-base-uireactmenu) (with the inline Dropdown and the color picker format menu) | 73 | 33 | 1 | 35 | 0 | 4 |
-| [DirectionProvider](BASE-UI-AUDIT.md#directionprovider-base-uireactdirection-provider) | 5 | 1 | 0 | 0 | 0 | 4 |
-| [Select](BASE-UI-AUDIT.md#select-base-uireactselect) | 44 | 13 | 2 | 26 | 1 | 2 |
-| [Combobox](BASE-UI-AUDIT.md#combobox-base-uireactcombobox) | 47 | 14 | 4 | 27 | 1 | 1 |
-| [Dialog](BASE-UI-AUDIT.md#dialog-base-uireactdialog) (with the mobile drawer) | 32 | 17 | 0 | 15 | 0 | 0 |
-| [Tooltip](BASE-UI-AUDIT.md#tooltip-base-uireacttooltip) | 23 | 11 | 0 | 11 | 0 | 1 |
-| [ScrollArea](BASE-UI-AUDIT.md#scrollarea-base-uireactscroll-area) | 31 | 11 | 0 | 18 | 0 | 2 |
-| [Popover](BASE-UI-AUDIT.md#popover-base-uireactpopover) | 19 | 9 | 6 | 0 | 0 | 4 |
-| **Total** | **426** | **190** | **17** | **182** | **3** | **34** |
+| Section                                                                                                    | Rows    | ported  | gap    | fixed   | blocked | n/a    |
+| ---------------------------------------------------------------------------------------------------------- | ------- | ------- | ------ | ------- | ------- | ------ |
+| [Accordion](BASE-UI-AUDIT.md#accordion-base-uireactaccordion)                                              | 20      | 9       | 1      | 8       | 0       | 2      |
+| [Collapsible](BASE-UI-AUDIT.md#collapsible-base-uireactcollapsible)                                        | 11      | 7       | 0      | 3       | 0       | 1      |
+| [Tabs](BASE-UI-AUDIT.md#tabs-base-uireacttabs)                                                             | 25      | 12      | 2      | 9       | 0       | 2      |
+| [Button](BASE-UI-AUDIT.md#button-base-uireactbutton)                                                       | 11      | 7       | 0      | 2       | 0       | 2      |
+| [Checkbox](BASE-UI-AUDIT.md#checkbox-base-uireactcheckbox)                                                 | 21      | 12      | 0      | 6       | 0       | 3      |
+| [RadioGroup + Radio](BASE-UI-AUDIT.md#radiogroup--radio-base-uireactradio-group-base-uireactradio)         | 18      | 10      | 0      | 5       | 0       | 3      |
+| [Switch](BASE-UI-AUDIT.md#switch-base-uireactswitch)                                                       | 17      | 10      | 1      | 4       | 0       | 2      |
+| [Slider](BASE-UI-AUDIT.md#slider-base-uireactslider)                                                       | 29      | 14      | 0      | 13      | 1       | 1      |
+| [Menu](BASE-UI-AUDIT.md#menu-base-uireactmenu) (with the inline Dropdown and the color picker format menu) | 73      | 33      | 1      | 35      | 0       | 4      |
+| [DirectionProvider](BASE-UI-AUDIT.md#directionprovider-base-uireactdirection-provider)                     | 5       | 1       | 0      | 0       | 0       | 4      |
+| [Select](BASE-UI-AUDIT.md#select-base-uireactselect)                                                       | 44      | 13      | 2      | 26      | 1       | 2      |
+| [Combobox](BASE-UI-AUDIT.md#combobox-base-uireactcombobox)                                                 | 47      | 14      | 4      | 27      | 1       | 1      |
+| [Dialog](BASE-UI-AUDIT.md#dialog-base-uireactdialog) (with the mobile drawer)                              | 32      | 17      | 0      | 15      | 0       | 0      |
+| [Tooltip](BASE-UI-AUDIT.md#tooltip-base-uireacttooltip)                                                    | 23      | 11      | 0      | 11      | 0       | 1      |
+| [ScrollArea](BASE-UI-AUDIT.md#scrollarea-base-uireactscroll-area)                                          | 31      | 11      | 0      | 18      | 0       | 2      |
+| [Popover](BASE-UI-AUDIT.md#popover-base-uireactpopover)                                                    | 19      | 9       | 6      | 0       | 0       | 4      |
+| **Total**                                                                                                  | **426** | **190** | **17** | **182** | **3**   | **34** |
 
 The audit's [Summary](BASE-UI-AUDIT.md#summary) groups what is left by cause.
 

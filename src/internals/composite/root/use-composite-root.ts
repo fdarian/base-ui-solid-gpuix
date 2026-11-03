@@ -1,8 +1,4 @@
-import {
-	type HostElement,
-	type KeyEvent,
-	useGpuixRequired,
-} from '@ghia/solid';
+import { type HostElement, type KeyEvent, useGpuixRequired } from '@ghia/solid';
 
 // Stands in for Base UI's `internals/composite/root/useCompositeRoot.ts`: the
 // key handling Tabs and Accordion (an FF extra) share. Radio and checkbox
