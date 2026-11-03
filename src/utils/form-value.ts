@@ -1,4 +1,5 @@
 import { type HostElement, useGpuixRequired } from '@ghia/solid';
+import { jsx } from '@ghia/solid/jsx-runtime';
 
 /**
  * Base UI's hidden input: what a form submits for a control that is not an
@@ -15,29 +16,36 @@ export function FormValue(props: {
 	focusTarget: () => HostElement | undefined;
 }) {
 	const renderer = useGpuixRequired();
-	return (
-		<input
-			name={props.name}
-			value={props.value}
-			required={props.required}
-			disabled={props.disabled}
-			tabIndex={-1}
-			aria-hidden
-			onFocus={() => {
-				const target = props.focusTarget();
-				if (target === undefined) throw new Error('Form value has no control');
-				renderer.focusElement?.(target.id);
-			}}
-			style={{
-				position: 'absolute',
-				top: 0,
-				left: 0,
-				width: 1,
-				height: 1,
-				opacity: 0,
-				pointerEvents: 'none',
-				keyboardFocusDim: false,
-			}}
-		/>
-	);
+	// Getters, not values: jsx spreads them as live bindings, like the JSX attributes they replace.
+	return jsx('input', {
+		get name() {
+			return props.name;
+		},
+		get value() {
+			return props.value;
+		},
+		get required() {
+			return props.required;
+		},
+		get disabled() {
+			return props.disabled;
+		},
+		tabIndex: -1,
+		'aria-hidden': true,
+		onFocus: () => {
+			const target = props.focusTarget();
+			if (target === undefined) throw new Error('Form value has no control');
+			renderer.focusElement?.(target.id);
+		},
+		style: {
+			position: 'absolute',
+			top: 0,
+			left: 0,
+			width: 1,
+			height: 1,
+			opacity: 0,
+			pointerEvents: 'none',
+			keyboardFocusDim: false,
+		},
+	});
 }
