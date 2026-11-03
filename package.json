@@ -1,19 +1,41 @@
 {
-	"name": "base-ui-solid-gpuix",
-	"private": true,
-	"version": "0.1.0",
+	"name": "ghia-base-ui",
+	"version": "0.0.0",
 	"type": "module",
 	"description": "Headless Base UI primitives for Solid on @ghia/solid, ported from @base-ui/react 1.9.0.",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fdarian/ghia-base-ui.git"
+	},
 	"packageManager": "pnpm@12.16.1",
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
 	"exports": {
 		"./*": "./src/*/index.ts"
 	},
+	"publishConfig": {
+		"access": "public",
+		"exports": {
+			"./*": {
+				"types": "./dist/*/index.d.ts",
+				"import": "./dist/*/index.js"
+			}
+		}
+	},
 	"scripts": {
+		"build": "tsdown",
 		"check": "pnpm check:type && pnpm check:test",
 		"check:type": "tsc",
 		"check:test": "bun test",
-		"format": "biome check --write"
+		"format": "biome check --write",
+		"changeset": "changeset",
+		"ci:version": "changeset version",
+		"ci:release": "pnpm run build && changeset publish",
+		"prepublishOnly": "node -e \"if (!process.env.CI) { console.error('Never publish ghia-base-ui locally. CI is the only release path.'); process.exit(1) }\""
 	},
 	"peerDependencies": {
 		"@ghia/solid": "*",
@@ -21,11 +43,12 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "latest",
-		"@ghia/native": "link:../ghia/packages/native",
-		"@ghia/solid": "file:../ghia/packages/solid",
+		"@changesets/cli": "^3.0.3",
+		"@ghia/solid": "0.11.1",
 		"@total-typescript/tsconfig": "latest",
 		"@types/bun": "^1.4.2",
 		"solid-js": "1.9.15",
+		"tsdown": "^0.23.4",
 		"typescript": "^7.0.2"
 	}
 }

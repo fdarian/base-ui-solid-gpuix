@@ -1,6 +1,7 @@
 enableGlobalVirtualStore: true
+minimumReleaseAgeExclude:
+  - "@ghia/native@0.11.1"
+  - "@ghia/solid@0.11.1"
 packageImportMethod: clone-or-copy
-overrides:
-  "@ghia/native": link:../ghia/packages/native
 # pnpm's pre-script auto-install would run from this folder and relink a second @ghia/solid (see AGENTS.md).
 verifyDepsBeforeRun: false
