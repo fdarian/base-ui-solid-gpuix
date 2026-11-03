@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:085d4f092ffa06074d61ef99d9e7dce5a4ac8a35208baf0e159f27783b4ebaef",
+  "pageVersion": "sha256:6d4161b397885dafc72ed26bd4bcb4fb1754b5b00021048a566e484d70b25025",
   "claims": [
     {
       "id": "claim_f01f8826afee41abaefdae340b24dd34",
       "statement": "The two key-navigation helpers were consolidated under internals/composite/root but kept separate, createCompositeRoot for Tabs and Accordion and createRowList for radio and checkbox groups.",
       "evidence": [
         {
-          "resource": "repo://src/internals/composite/root/row-list.ts#L8-L15",
+          "resource": "repo://src/internals/composite/root/row-list.ts#L4-L11",
           "version": "repo-lines-v1:sha256:87a121deda06a0e37899d2a4bd26b45278d66428e1200080970cc19cc7c7dd9b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE5NjZiMmYwMDVlM2IzMjc3NTg3OGMxN2UxZjVmNjAzMGEyMjUwZWZkZWM5MjIyMzZiOTEyN2M1OTcwNzBjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBkMDc3OGNmNTk5ZjBjOWE1NTI1ODNhYTY5YmRhNjY0MTY3NWE1OGU0ZTNiMTBiY2NiNzU3ZmNlNWY0MjZjYyJ9"
         },
         {
-          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L7-L9",
+          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L3-L5",
           "version": "repo-lines-v1:sha256:38499008c81cf708a20fd7d685ff5b2babb2cba969935def19e3f91bc0c95064:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTgzNGFmMWJlYTUxNDc4OTQyNjBkNjhhNmUzYjY3ZTVmYmYwZmFhNmY0MWI5ZjUyNDk4NmJkNjdjYjliNGZiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiMzUzOGJiNWNkY2Q5YzhhMWE5NDU4MzM3NjEwNTk3NmE4ODg5YjE2N2FiYjY2MzczZTY5YTBjOTM5NWFiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDcyMDE4ZjVhYTViNGIyMjMwNmI4M2IwZjllZjI5NTU4ZjVlNTliNTM5MzM2ZjZkZDVjYzcyMDE0MTk3MWM1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM4MTFkMGYzM2JiOWFhNTFiMWU3ZTRiYjBjNDQzNWI0MmViOTM5OGMzYWQ2NTg1NzIwOGU0ZTY2YzJmMWJmZSJ9"
         }
       ]
@@ -31,7 +31,7 @@
       "statement": "The tooltip provider's delays follow FF at 200 and 300 ms instead of Base UI's 600 and 400 ms, a mismatch kept on purpose.",
       "evidence": [
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L756-L756",
+          "resource": "repo://BASE-UI-AUDIT.md#L768-L768",
           "version": "repo-lines-v1:sha256:44dfd0bc5f06b1f7a5cf307dcab3317668f87cb6972557a9ba3ab8776b539c13:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkZmQwYmM1ZjA2YjFmN2E1Y2YzMDdkY2FiMzMxNzY2OGY4N2NiNjk3MjU1N2E5YmEzYWI4Nzc2YjUzOWMxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkZmQwYmM1ZjA2YjFmN2E1Y2YzMDdkY2FiMzMxNzY2OGY4N2NiNjk3MjU1N2E5YmEzYWI4Nzc2YjUzOWMxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWU5Nzc2MGNjOWI4MGU1YTljMTM1ZDcyYzc0M2FjNzk0ZGFiZjA4OTQ0OWJmZjJiNzFhMjk2NTRkYjgzOWUyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMzNzQ5NTQ0OTM3NWIwMWU0ODE2Yjc2NTQ2YmYzZGQ3ZTgzMzdlMTJlNDkxZmE2YzFiYmY1NDM3MzdiN2RjOSJ9"
         }
       ]
@@ -41,11 +41,11 @@
       "statement": "Radio selects on Enter and on Home/End and checkbox acts on Space keydown and toggles on Enter, following FF rather than Base UI.",
       "evidence": [
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L216-L217",
+          "resource": "repo://BASE-UI-AUDIT.md#L217-L218",
           "version": "repo-lines-v1:sha256:ec1f783e6c18855332b2cd0d794f5f730f6d5e1cc4f461c027bc8e84008ca20e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDY0OWJkMmM4MjU0M2MzMTE4N2MxZjI2ODQzMmI3NWY3ZTQ1OWRkNWJjYmM3OGUzZDM3OTk1MDUwMjQ1MDQxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM3NGY2YWE4MGQ5NDJmNGU5YzMzYThkM2U4ZjQ2NmJmNWJlYjhlYTljYWM4OWEzNjRjNDZjZjgyYjFjMDc4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJlNDRhZDEzYWQxYjIwYzJjNDMzOTJkY2MxNWM0ZDEyYmFiNTU3MDE1OTdiYjRhMjA4NzVlY2YwODdiNThlNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRlNGRjMTU3NWQyYzI2MTYwZTc3Mzk3MzU4Yzc2NTQ2MmIwYTFhZGJmYzJmMDA3M2JlYzJlOGY0NWEwNGM5OSJ9"
         },
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L251-L252",
+          "resource": "repo://BASE-UI-AUDIT.md#L254-L255",
           "version": "repo-lines-v1:sha256:a4ee9717395a7e021c803211d5219ad606208608212631b080d54dc598312cd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ2MWVjMmM5ZDMxZjRkZTdmMzcyNjk5ZDJiOTJjMjM1YTMxNDRhMTNmN2Y4NTk5YjFmNGNmMTFiM2FmNGZjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDU2OTNhOGYyNThiYTYxMDdlZTc3NzAwNTIzNjE3MmJlNTNiOWM1MjlmYmZkMGRkZTVkN2VjODhmOWIxNDk3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTNlMTFhOTA2ZTVmZThhMDNmMGY4MjUyNDEwNzYzMjdlODE5ZTIwMmE0YWI4YTVkYTNiZGM3Yjg2ZTc3MThkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjg2MjI3ZmYyYzUzZDY4YjJiZmJiODIxMzc4NGU5ZTY1YmRhZWJiMmJmMDgyNzNlYjRkMzRlMjIwZTZkOTU0OSJ9"
         }
       ]
@@ -55,18 +55,18 @@
       "statement": "The audit rows for switch key-repeat and for nested dialogs ignoring Escape were brought up to date in the Round 5 refresh: the switch row reads fixed and the dialog rows read ported.",
       "evidence": [
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L273-L273",
-          "version": "repo-lines-v1:sha256:0bb0688c2ecf7a9161124474dfa93e2fd8a926efe433de81a515b42aac8511d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJiMDY4OGMyZWNmN2E5MTYxMTI0NDc0ZGZhOTNlMmZkOGE5MjZlZmU0MzNkZTgxYTUxNWI0MmFhYzg1MTFkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJiMDY4OGMyZWNmN2E5MTYxMTI0NDc0ZGZhOTNlMmZkOGE5MjZlZmU0MzNkZTgxYTUxNWI0MmFhYzg1MTFkMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTc0NWFkZGNmMjc1MjRkNWJhMTVmNjA4MjViNjBhMzlhYWMyYjY5ODg1ZGY0OTQ0MjBkY2U1ZmMwZThmZGUzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTE4OTc0NmQ4ODgxZmQ4NTA3YzNjN2EyOTI2MTFmZTViNDY4YTRkMmQ0MmE0YTMyNDUxOTM3YmEwYTU3MGE1NyJ9"
+          "resource": "repo://BASE-UI-AUDIT.md#L277-L277",
+          "version": "repo-lines-v1:sha256:f0f9194d8117e9b1c8d51a9551f449ecd3e85a85065701fa06860d7b32fa082c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjBmOTE5NGQ4MTE3ZTliMWM4ZDUxYTk1NTFmNDQ5ZWNkM2U4NWE4NTA2NTcwMWZhMDY4NjBkN2IzMmZhMDgyYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjBmOTE5NGQ4MTE3ZTliMWM4ZDUxYTk1NTFmNDQ5ZWNkM2U4NWE4NTA2NTcwMWZhMDY4NjBkN2IzMmZhMDgyYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTYzN2Q5ZjBjYWFjODEyMjI4Zjg0ZTVhZDAwMTc5MjA0NWQzZWI0NGFkOWYwNmVlMTAxMjY2MzQzNzlkZjZmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDhkYmM0OWVhZTU2MDNmZmEyZmJmOTM4MGE1ZTE0MGIzZGFkOTU1MmFjMzI4ZDg1ZjhjZDhlMDY3MzAzYTBhYSJ9"
         },
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L686-L686",
-          "version": "repo-lines-v1:sha256:692383224c107c6c2fd4e09128b024513e0abab2b6daf3336627bde2d074590e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjkyMzgzMjI0YzEwN2M2YzJmZDRlMDkxMjhiMDI0NTEzZTBhYmFiMmI2ZGFmMzMzNjYyN2JkZTJkMDc0NTkwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjkyMzgzMjI0YzEwN2M2YzJmZDRlMDkxMjhiMDI0NTEzZTBhYmFiMmI2ZGFmMzMzNjYyN2JkZTJkMDc0NTkwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNiNTVlNTU1OTY2OTRiNjZlNjY4MTNiMTU3NWVhODVhNWEyYjlmNjllMjg2Yjc5ZDYyOWZiMDc0Y2RkYTNkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWY1MzNjMTU1YjYwMmNkYzMyY2M4NWFkYThlZTBhMGE2MTgyYzAwZTc2YjUyZTVlNzkyZGQ4OWIzZjhhZTI0MyJ9"
+          "resource": "repo://BASE-UI-AUDIT.md#L694-L698",
+          "version": "repo-lines-v1:sha256:62c727be8bca6969cc2d892c736478931cd39f22f7d04dd06b5937cbe18552bd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2IwNjI4MjNiMmE0MDlhMmE2MjNkYmM3YzdhMGE2MDM2YWEzNWNjMGJlNjBkNjAyMWMyNTg4ZDBiOTMzN2U4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZlOTA1NDhhMjcwMDMxNTRkZGUyMmU0MWQ4ZTk5ZTA4N2Q0MWFlMDE0MGY0Yjc2MTYwY2U1Zjk5NDBhMTMwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDdlNzNlMjNiYTVhYjU1NTRiYjdiZTYwZTdjN2RjM2M0ZTI1ZWQ1OWRiZDhiNDliOWE3NmVlMWEwZWEzMWQ3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDg0MTgyMDU5ODE3MzJlMjA2ZjlmOWI4MzNiMGE5N2U5Nzg4ZDBiMWU4Nzg2OWFhNzMzNmNlNDY5YTA0ZGU5NSJ9"
         }
       ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.7.2",
-    "at": "2026-10-17T05:21:17.049Z"
+    "by": "openwiki/0.7.3",
+    "at": "2026-11-03T23:38:47.409Z"
   }
 }

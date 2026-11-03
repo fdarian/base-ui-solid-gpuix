@@ -1,24 +1,26 @@
 ---
 type: product
-title: What base-ui-solid-gpuix is
-description: A private Solid + gpuix port of the @base-ui/react 1.9.0 primitives that Fluid Functionalism uses, pinned to mui/base-ui v1.9.0 and consumed as source by FF; only what FF uses is ported.
-tags: [product, base-ui, gpuix, solid, fluid-functionalism, scope]
+title: What ghia-base-ui is
+description: The Solid + @ghia/solid port of the @base-ui/react 1.9.0 primitives that Fluid Functionalism uses, published to npm as ghia-base-ui, pinned to mui/base-ui v1.9.0 and consumed as source by FF; only what FF uses is ported.
+tags: [product, base-ui, ghia, solid, fluid-functionalism, scope]
 sources:
+  - id: openwiki-source-4d1d392666be6dfdd7a91a2e
+    resource: repo://.github/workflows/release.yml
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
   - id: openwiki-source-ff18555ad70362de0f452788
     resource: repo://UPSTREAM.md
-generated: { by: "claude-code", at: "2026-10-17T05:21:17.049Z" }
+generated: { by: "claude-code", at: "2026-11-03T23:38:47.409Z" }
 verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-17T05:21:17.049Z
+  - by: openwiki/0.7.3
+    at: 2026-11-03T23:38:47.409Z
 ---
 
-# What base-ui-solid-gpuix is
+# What ghia-base-ui is
 
-A port of the [Base UI](https://github.com/mui/base-ui) primitives to Solid on gpuix (`@gpuix/solid`), a GPU-rendered UI runtime with a DOM-like API. It serves one consumer: **Fluid Functionalism (FF)**, the gpuix port of the Fluid Functionalism component library (`fluid-functionalism-gpuix`), which renders all the visuals and takes its behaviour (keyboard, focus, ARIA, popups, list navigation, typeahead, presence) from here.
+A port of the [Base UI](https://github.com/mui/base-ui) primitives to Solid on ghia (`@ghia/solid` over the `@ghia/native` renderer), a GPU-rendered UI runtime with a DOM-like API. It is built for one consumer: **Fluid Functionalism (FF)**, the ghia port of the Fluid Functionalism component library (`fluid-functionalism-gpuix`), which renders all the visuals and takes its behaviour (keyboard, focus, ARIA, popups, list navigation, typeahead, presence) from here.
 
 Setup, commands and imports are in the [README](../../README.md). This page covers scope and the pin, which the code does not explain.
 
@@ -41,10 +43,10 @@ FF-only layers that are not Base UI stay in FF (fluid hover, focus-ring visuals,
 
 ## Status
 
-Private and unpublished: local only, with no remote and no build step. FF consumes the TypeScript source through a `link:` dependency and a shared pnpm workspace. How closely the port matches Base UI is tracked row by row in [BASE-UI-AUDIT.md](../../BASE-UI-AUDIT.md). At the time of writing that is 426 rows: 190 ported, 182 fixed, 17 gap, 3 blocked by gpuix and 34 n/a ([tally](../../UPSTREAM.md#deviations)).
+Published to npm as `ghia-base-ui` (public, MIT), released only from CI: a Changesets version PR, then publish on merge to `main`. Published consumers get the tsdown build in `dist/`, with `solid-js` and `@ghia/solid` as peer dependencies. FF does not use the build: it consumes the TypeScript source through a `link:` dependency and a shared pnpm workspace. The scope is still FF's, so "published" does not mean a general-purpose Base UI port. How closely the port matches Base UI is tracked row by row in [BASE-UI-AUDIT.md](../../BASE-UI-AUDIT.md). At the time of writing that is 426 rows: 190 ported, 182 fixed, 17 gap, 3 blocked by ghia and 34 n/a ([tally](../../UPSTREAM.md#deviations)).
 
 ## Related
 
 - [Extraction history (2026-10-17)](../history/extraction.md): how this repo split off from FF.
-- [gpuix gaps and divergences](../gpuix/gaps-and-divergences.md)
+- [@ghia/solid gaps and divergences](../ghia/gaps-and-divergences.md)
 - [Focus model and FF-vs-Base-UI conflicts](../decisions/focus-model-and-ff-conflicts.md)

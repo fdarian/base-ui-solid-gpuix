@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:15bbcd9febd944b6d0c84d87948ab1c78916f1805138148ae2e726af07199623",
+  "claims": [
+    {
+      "id": "claim_644dca43a1de4559a4ade62f4600d5b7",
+      "statement": "Three audit rows are blocked by ghia: the Select and Combobox popup scaleY entrance (no CSS transform scale) and a native range input under each slider thumb (no input type range).",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L317-L317",
+          "version": "repo-lines-v1:sha256:f01e4c95c71262e7b088b0213dde29d3cc9b2700acc9b756af2c712163e21c6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAxZTRjOTVjNzEyNjJlN2IwODhiMDIxM2RkZTI5ZDNjYzliMjcwMGFjYzliNzU2YWYyYzcxMjE2M2UyMWM2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAxZTRjOTVjNzEyNjJlN2IwODhiMDIxM2RkZTI5ZDNjYzliMjcwMGFjYzliNzU2YWYyYzcxMjE2M2UyMWM2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNiMDI3YzY5OWQ2Yjk2ZTk1YTU1YWI4ZjRhZGQ2ZWVlN2Q3MTFkN2RhYTk5MGY2MTE1YWViOTRkNjUwMjYwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjBhMzY1ZGZhYzMyYzRkNWM4MTllNTc4YmM5NGYwNWVkNTcwMTI3NDkxNzMyN2EzY2M4NjMwNzdiNzBlYmFjZiJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L34-L39",
+          "version": "repo-lines-v1:sha256:c715ad3df5def75a7e76325d6633b991f5ad8b0deba1a064e998411a128c5ec9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAzMjAyNmFhMmU4Y2NlNmVhNmI0ZmJkMDU3YmZlMTIyZmU1ZGEyZDMxOTIzMGI1ZGI4MTFkNjEzOGRiOTZlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyMDViNzRmZThmMTMwODZkMjY1ZmViZjNkODJlNmMwYmI1ZDc4NGFmNTlmMWI4ODM4MDFiMzUzZTUyNGE2ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzVhYWZmM2NjZGM3ODIzMTViNjQ1YWQ5MDJiNTQxYjRkMDU5MWI0NTc0OWQ4MjcxOWExMTlhMzhkNTU1MTIyMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTVhNDZlNmYxYjU2NmJiYzc2YzRmZGQ2NDY5ZGE1N2Y1MDJiOTIwM2EzOTg5YWRlZDQxMDgyYjEzNTZkYjY4YSJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L537-L537",
+          "version": "repo-lines-v1:sha256:3b5a5737de2697d526a275dbc17a1500d7a2cc6b8fe66dde453f9e6380f1a0b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2I1YTU3MzdkZTI2OTdkNTI2YTI3NWRiYzE3YTE1MDBkN2EyY2M2YjhmZTY2ZGRlNDUzZjllNjM4MGYxYTBiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2I1YTU3MzdkZTI2OTdkNTI2YTI3NWRiYzE3YTE1MDBkN2EyY2M2YjhmZTY2ZGRlNDUzZjllNjM4MGYxYTBiMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzE0ZWQxNDJhODlkOGIxNTEyZDg0NzliZGI0NTNhNDA2MjhlYWM3MDgyMTEyYWNmZTM3MmM4MGViNjQ1Nzc2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTVhYjkwMTRkNmM2ZWY5ZDBjYjQyZjYxNTNhNTQwMTc5YjU2YWM0MWViN2RmYzM0NDU5ODE2MzYxNWQ3OWVkZCJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L626-L626",
+          "version": "repo-lines-v1:sha256:247bf389e512894d1e65d41e138e76803963de77fbdb3725babcc4be847877bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ3YmYzODllNTEyODk0ZDFlNjVkNDFlMTM4ZTc2ODAzOTYzZGU3N2ZiZGIzNzI1YmFiY2M0YmU4NDc4NzdiZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ3YmYzODllNTEyODk0ZDFlNjVkNDFlMTM4ZTc2ODAzOTYzZGU3N2ZiZGIzNzI1YmFiY2M0YmU4NDc4NzdiZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGMzNThiYWIzZDY3ZjIwYmE5YjQ4MjhhNDAxN2Y4NjIxMzc5NDFkYTk2MTRiMTYyMjVhOThmZDRkZjEzYjcyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFiMzY1YzdmODVlMWEwNGZiN2YyOGNmYmI3MjM4Y2U5N2FkNDQyMmFmMGM5ZTExODU5MTAzMWU5YjdjZjZiOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f33124461fa4059ba370c827c219f42",
+      "statement": "A ghia capability the port has not adopted is recorded as a gap naming the API to use, such as <input disabled> for Combobox disabled and display: contents for the menu RadioGroup wrapper.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L24-L32",
+          "version": "repo-lines-v1:sha256:9fac0570c03f561c4553491f381b5653d7fd2d7302672320693cf1df8d734aa9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQ1YWM4MWM1NTRjYTE3MjEyZjViODE5YjFkNDU0OGRjMzg3MmI0MTkyZjJlNjYwMjk2ZDI1MDY0YjcwMzBlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY0ZTMzZDk1NTU5NDk3MTZlMzAzYmEwYWY2OGJmNmJjYmY2ZmFlM2RlNGU3NDY0OWIyMGQyYTdmNDljYzc5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRjYWQ4NmM2MTdkYzU5YWNkYWQ1NWM5MTRmZmYzMGNjZTdhOWViNjhjMWNjYTU4MDEzODBhYWRjZTlkMGMyOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMwY2ZjMjdlNjdjZmIwMDBhZTliZjA4OGNlYTA4Y2RkYTZhNWM1M2FiMzI5MmI0NDkwZDZmZmMwZDE3NjM1NSJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L414-L414",
+          "version": "repo-lines-v1:sha256:44f49c36ad42dc8995d39839743aec23431dc7afbd7dc77473b8625fcd6fbf8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRmNDljMzZhZDQyZGM4OTk1ZDM5ODM5NzQzYWVjMjM0MzFkYzdhZmJkN2RjNzc0NzNiODYyNWZjZDZmYmY4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRmNDljMzZhZDQyZGM4OTk1ZDM5ODM5NzQzYWVjMjM0MzFkYzdhZmJkN2RjNzc0NzNiODYyNWZjZDZmYmY4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDZjYjc2OGI2ZTRlNjk2Mjg1NDhkNGRiODA0NzZkOTRiNmUwNGUyMDZiOTExOTQ4ZWI5MDJhMDMwYmM2MjAxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGExYzgzODk0NmFmNzQ5ZDQ1YTM0MzM4Yzc1OWNhOTI3YmQyMGNkNWMyMGUxOWY0NzI2MjhmODA0NDkyYTFiYiJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L608-L608",
+          "version": "repo-lines-v1:sha256:342ee91cba468fcd49f8cdefc40c7ef49f391ff3b421800f04419e8c785ff732:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQyZWU5MWNiYTQ2OGZjZDQ5ZjhjZGVmYzQwYzdlZjQ5ZjM5MWZmM2I0MjE4MDBmMDQ0MTllOGM3ODVmZjczMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQyZWU5MWNiYTQ2OGZjZDQ5ZjhjZGVmYzQwYzdlZjQ5ZjM5MWZmM2I0MjE4MDBmMDQ0MTllOGM3ODVmZjczMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzYxNzRjMGQ2YjFlY2ZlZmU1ZTgzYjFhZDgxMmU1MmMzMzRjZWY4ODlmYTljZmFlODBkZTA4NTFkNjhjZjU2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQ1OTEwNTkxZmVhMTg3MjAxNzhkOGQxYTAyYzI2ODQ2YTdlNTc0Nzg4MTVjOGRmNDMyZmZiYzU5Y2MwN2YxNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc3865a927fa437e9ef2ec68a0c801a4",
+      "statement": "@ghia/native captures a pointer only when asked, so drags in the slider control and switch thumb use the port-only createPointerCapture and must also end on lost pointer capture.",
+      "evidence": [
+        {
+          "resource": "repo://src/slider/control/slider-control.ts#L78-L78",
+          "version": "repo-lines-v1:sha256:9c17800a140ef9f8944b68b3248a2feca417b131af94e7bc906c5bf36dd7d414:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWMxNzgwMGExNDBlZjlmODk0NGI2OGIzMjQ4YTJmZWNhNDE3YjEzMWFmOTRlN2JjOTA2YzViZjM2ZGQ3ZDQxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWMxNzgwMGExNDBlZjlmODk0NGI2OGIzMjQ4YTJmZWNhNDE3YjEzMWFmOTRlN2JjOTA2YzViZjM2ZGQ3ZDQxNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWMxMTcyMDYyMTNhZmE5NGI0MDQ4M2ViMmI4ZDFkYWRmNGIzMzk3YzQzYzE5ZDBiOTVhZWQ5NTdiZjE5Nzk4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDdiMTM3ZDJkOGQ3YzQwMzMzYTViYWRhMjY4ZDAxOTg3YzAyNjg1YzMyNTdkM2Y3ODZlOTQ5MTk5NWY5NWQ2YSJ9"
+        },
+        {
+          "resource": "repo://src/switch/thumb/switch-thumb.ts#L29-L29",
+          "version": "repo-lines-v1:sha256:38edd7cb26f72653aa577bb3e6c1372f7fc40f3e8069dc2105b6265320a3c8f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzhlZGQ3Y2IyNmY3MjY1M2FhNTc3YmIzZTZjMTM3MmY3ZmM0MGYzZTgwNjlkYzIxMDViNjI2NTMyMGEzYzhmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzhlZGQ3Y2IyNmY3MjY1M2FhNTc3YmIzZTZjMTM3MmY3ZmM0MGYzZTgwNjlkYzIxMDViNjI2NTMyMGEzYzhmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDVhODg2OWUxNmEyMTVhNDc4YjYwNmIzNjI3ZGIzZWEwYWY0Y2EyOTY5YjQ0YTIxMzUyMmZkYTVmZDhhMDY2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJhYWRkMTdhMmRhNTgwZGU1ZGUxMmY3YjkzMjRiZTBjMTdiNWQzMjhkZGIxNzgzYWMzN2EwYzNlNWFkMGU5YSJ9"
+        },
+        {
+          "resource": "repo://src/switch/thumb/switch-thumb.ts#L76-L94",
+          "version": "repo-lines-v1:sha256:70c6d18bc90f511ac919282d030077ea82e641a79c60900306b6de9018226a38:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlM2U2ZTc3ZDNmYmNhZDc3ZDdmNGUxODI4YTUzNDU1NWMwZWVmZjhkYjdhOTUwOTMzOTZmZjNhMGJlOWMyYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyNzIxMWQxMjYxYzFhYmI4OWU5ZDhhOGU1MDQ3YjkxM2YxMmQwYmQ2MjBjZTllZDdiYzZhOTNlMjFkMjJjYWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4YzdmYjYzOTYyNWQ4ZTU2MThjNmNiYmZkN2M1ZDU2MGM2MGMwY2VkMTUxNWRkMzAyYTgwZTY5Mjc0NjE1MTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1NzhlNmQ5MjlkNmM5MDZhNzAzODlhYTQ4ZjRjZWIzZTE1NGZiZDI5YzJiZWIzNmVmZDFiMGI4ZDMyODY3ZDQifQ"
+        },
+        {
+          "resource": "repo://src/utils/pointer-capture.ts#L3-L10",
+          "version": "repo-lines-v1:sha256:132db12d36cf7d496a991369037ece56fbd86326cca2280df063aa8db05effa1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA3MmM0ZmUxYmM1N2NmNDNjYzY0MTdmMDU2MjRiZjNhN2MwYzkwNWY0ODVjOGE1MDZjNzMzNmNmNjIwOWY4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWM2ZWE5MzE0MDI4NTNlN2ZjNDQ3Y2I2YzNhMTI3YWJjMmVlNWNiZjAwYzdlOWNmZDgwOTcyNGVjYjNkYjFiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2NmMDZlMDQwY2VkMjEzOGYxMjI0ODNlN2FjYTZhMTkyOGEyZTcyNzcyZGM2MWVlZTIyZjdiOTI5ODJlZGQ1YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_889d196af68a457a9cc7507249cb4ca5",
+      "statement": "The composite root and the menu list stop propagation of the navigation keys they consume, while the row list deliberately does not.",
+      "evidence": [
+        {
+          "resource": "repo://src/internals/composite/root/row-list.ts#L8-L15",
+          "version": "repo-lines-v1:sha256:c72ed713b8a6dd2af28d6ce47b664b73cfb5da7b9a7e8ee63eb05bd5d010e2be:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2FlNzcyNTZlY2E0MDExNTYxMGRhYTUxMmVkNGMyODA4ZmQzMjg1ODcyNGIxZTQyNmJjMTM4NzllYTllNTk1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWExY2I5YTRiMjJkM2M0NWJkNGZkMzNjZDIwODg4M2I2OWFmZmNhZmYzYzQ3MzY5YTVlMjkyNTFjZmIxYjE2NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTExYjhhMjJlOGVkNmVjMzVhMWIzYThlOGY5MDA4MTZhOGYxOGJhY2FlMDhjODA0ZjM2M2UzMDk5NTk3ZmNiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODcyYzI1NGQyMWM5MjY1NGUzYjJhYmZmZTkzNzQwYTk0NjZlMGFlMTU1NGI4Nzg4MmU5ZGQzOWYwZTI3YjVlZiJ9"
+        },
+        {
+          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L94-L109",
+          "version": "repo-lines-v1:sha256:3a616fc8a7d950c031cfb057458dfbf4973df168f3195820100187b585d9701a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwZDEyNGUxODE3NDhlMjEyZDJkZjI2MDhiZjM0NzgwNDc4OTFiZjc3NzQxZjk3NDkyYmEzYzlmMWJkMWY5ODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjM2EyMDc3NGQ1YzJiYjRjNzkwYzE4ODkwYTljNDk0Y2NiNTEwZmM4ZThjMDllYzc0NTE5YmMxNjRmYzc4NGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhM2E3YTI5YjM4MzI1MDI1YmM5YzVhZmMyYjllZGJlZTQzYTBjZmU0MmY0NzdjMTU0NTFlMTFhYzU4NjdhYTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/menu/list/menu-list.ts#L224-L224",
+          "version": "repo-lines-v1:sha256:7f716e8ec4787fcfc00d58b917657099a97236b8bea9a2e70a16591eb78b9783:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y3MTZlOGVjNDc4N2ZjZmMwMGQ1OGI5MTc2NTcwOTlhOTcyMzZiOGJlYTlhMmU3MGExNjU5MWViNzhiOTc4MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y3MTZlOGVjNDc4N2ZjZmMwMGQ1OGI5MTc2NTcwOTlhOTcyMzZiOGJlYTlhMmU3MGExNjU5MWViNzhiOTc4MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmNhMWUzMDhhMTdlYzUyMTkyZGJiOWFjN2UwMDg4MTBiNDliNWZiYWFkNzNjM2I3N2E5OTZkNjg1MmI4OGY1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTk0NGM4YTMxOWY3NGQwOWFkMjIwZjYzNDY1MDgwYTFmMzQzNGU4ODhhZjVlNDFmNDFjMzVlNjg2MzE2ODQ4NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_86a4a84949854165bd2731dcda765820",
+      "statement": "The test renderer's press sends a key-down then a key-up, so key-up behaviour such as switch Space can be a committed scenario; only a held Space needs the native key-down alone, and style.active does not show for it.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L41-L43",
+          "version": "repo-lines-v1:sha256:8c7dd89d7e81147221c0a70257b27d0fb0799368b31340c4996df4d2fa14ed78:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmI5MDEyY2M2Njc2MjhmMDczY2Y2NDcwZmYxZDdiMzdhMDIwOTg0MzBkNzk4ODMzMDRlYTg3NTE2YmIxYWQ0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmYyMjU4NDVmMWYxNjgwZTYwMjA0MzFiZDNjODc2ZDg5N2JiN2QyYmI1MGE2ZGQ1MzIzMTc3MmM3YTY4YjljNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWRkMDE1YmFkM2QyNDczMTRkOGFjNDU5MDdlZGEyNGRlNzE1NzhkOTU3YzRmMWI3ZDg5Y2FiYjBkMmFjYWE5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzgzN2Y1M2E3ZThiN2MyYTQxN2MyMjllNjBlYTY0NzQ2NzE3M2ZlOTg2YzEzYTBmMWE2NjdlYjRmMTg2ZGI0YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_862f3a7c61494d72ab26a45840dd5c86",
+      "statement": "The tooltip and menu submenu safe polygon runs from a ghia window mousemove listener, added when the trigger is left and removed when the popup closes, which replaced the earlier tooltip grace timer and menu dwell timer.",
+      "evidence": [
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L470-L470",
+          "version": "repo-lines-v1:sha256:a16b5a228112e6589ee9cf2a66a9f4ebd7aa550e154d3eca07773a590ce54f9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE2YjVhMjI4MTEyZTY1ODllZTljZjJhNjZhOWY0ZWJkN2FhNTUwZTE1NGQzZWNhMDc3NzNhNTkwY2U1NGY5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE2YjVhMjI4MTEyZTY1ODllZTljZjJhNjZhOWY0ZWJkN2FhNTUwZTE1NGQzZWNhMDc3NzNhNTkwY2U1NGY5ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDk5OGVmYjUwYTJiZDgwZjVmZjhlMDE2NTFlZWEyZTliYTA1YzUwODY2ZWVkMThkZmQxMmJhZjQ1MWQ1NGI5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNiZDU3Mzc4MTM0NTcwOTc3NjFhMzk0MWQwMzVjZTJkZTVhODFhYmIzMjg3ZjE1ODllYTI0OTZmMGZlOWE4ZiJ9"
+        },
+        {
+          "resource": "repo://BASE-UI-AUDIT.md#L776-L776",
+          "version": "repo-lines-v1:sha256:374e80cf2a129be17dbaa002fb55204a7430d5406cd5bee083296bc0efbfc806:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc0ZTgwY2YyYTEyOWJlMTdkYmFhMDAyZmI1NTIwNGE3NDMwZDU0MDZjZDViZWUwODMyOTZiYzBlZmJmYzgwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc0ZTgwY2YyYTEyOWJlMTdkYmFhMDAyZmI1NTIwNGE3NDMwZDU0MDZjZDViZWUwODMyOTZiYzBlZmJmYzgwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjMzNGMzZjdiNDQ0MjRkYjMyZTZhNjc4NTc1NzFjODI5ODY2N2Q3YTlhNjQwZDY4MTIwNzhmZWJjM2QyZjM3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQ1MzI2NzFmZDM2MWU4YmZmZGNmMDRkNGE1YWNjYzlkYmZmNjQ1MDQyNGQwZGQzMGVmMGU4Y2VkNjNjNDJjMiJ9"
+        },
+        {
+          "resource": "repo://src/floating-ui-solid/hooks/use-hover-reference-interaction.ts#L38-L129",
+          "version": "repo-lines-v1:sha256:e07886cbbf596c9f647485bc52a8def16125da352f3f28dc797122eae0c82d5a:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZmE3ZGNhNGQ5ZThjYjMzMzQxODViZWE2MjIzYjdlMGM0ZDEyYjM4NTAzODY1MGNmMGMwMWQ4YzMzZjUwY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOGJkMzg1ZWYyNmZlZWQ2ODljNTZkNzU3ZmVlYTVlZDQ5NjZkOWVmMTM5MTJlZjFkMTJhMDVlN2Q1MmRhMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f8d632e321d241afaac9f60e32ffb8c4",
+      "statement": "A scrollbar press calls preventDefault because native scrollbars never move focus and @ghia/native otherwise blurs the focused element on a press with no focusable element in its path.",
+      "evidence": [
+        {
+          "resource": "repo://src/scroll-area/scrollbar/use-scroll-area-scrollbar.test.ts",
+          "version": "repo-file-v1:sha256:7fc62e84a1c8588e9b67d7c25bbd3c3e1f72e3ff41478c0566f717c23855986c"
+        },
+        {
+          "resource": "repo://src/scroll-area/scrollbar/use-scroll-area-scrollbar.ts#L22-L26",
+          "version": "repo-lines-v1:sha256:c9b6ea0f52849069627243d2309b9c6f81926c90f0e03e7951cceeee3a2b9593:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWEzYTg3N2ZhYWJhMWZiN2Y1ZTIyOTg4MzI3NTgzOTcwNDkyZjU2NTUzNzgwNjRkZWZlMTRlZTFlNjQ0MjhjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2YwNWRmNTY0NDg3NWMwY2M2ZjU1OGY2NjBiYzQ4OThhYTcwNzYxYzc5NzUzZDhkNzZmMTJiOGJkNWZmNWQ3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjA4MWE2M2U0ZTAwY2Q0MmVmMGY1NWYxYjY2ZTBjZDkxZmI5YWY2NThkOGY1NmMxNjdkYzU0ZDcyN2MyMWNjZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGE0OTZlMzlkODU3NDJlYjIwMTExNTM0YWMyODAyZGMxMjFiZWQyNzVjODQzMzljOTc0OTk1ZDk4MmY3YTg4OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c911e78a4b974ed0b45df5a30a7fac54",
+      "statement": "scrollAlong clamps the request to the viewport's live scrollHeight - clientHeight range without consulting the thumb, returns false when that range is empty or the position is already the clamped one, and otherwise writes scrollTo and returns true without reading the position back, because the scroller's range ends exactly at the real end.",
+      "evidence": [
+        {
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.test.ts#L44-L68",
+          "version": "repo-lines-v1:sha256:63dee49c4d627d61140e0189f397892860c146c94c1bdeb9c270d2180caecd2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiMWU5YjAxODg3ZjVkMzRiYjcyZTAwMzllNjVlMzc0ZmVhMjQ1ODYxN2QyODQwMDA0MDFkN2Y3OWJiMWU5MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ODZiNTNkMWQxOTUzZmFiMWY1NTJmM2U5ZDZiYWJkNmU4ZDYxYTg3ZGJiNjdhMGFmNzZlOGQ0MDlhYThhN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwM2VjMGM3YTE4ODY1ZmFiZmFkNGY5M2NiM2Q2ZTg5OWY0MDVkZWFlMTU4NTM1MDBmZmMyMjI2YzhkYmY5MWIifQ"
+        },
+        {
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.ts#L131-L146",
+          "version": "repo-lines-v1:sha256:745a744584ef2787576039012cce601c951b898085fa6368500c1f230b04e74e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMmEzYjc2ZTEyY2UxNTM3OWQwNWYyODY5ZGM0ODMyZGU3NTg5MDUzYjQ5YmZmMjM3ZTQyNWM3MjM3ODAxNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YWMwM2VkNmRmNWE5NjNkMTcxZDdiOTk2Y2ZmNzg3MDZmN2YxZDJiZTExYzEzNWQwMWYzNmM1ZWYyMTY1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmYTY2NmNiNGJjOTVlNWQ4NWNhZDY1MDNkZGYzZjU0NDY4ODk2YjdlYzExNmYyMmM4YTYyOTlkOWI0MDAxYTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3YmYxYjg1ZTNlNWEyNGRiYjJiYjc5Yzc3YWFhMjRjYzU3ZDEyYzZkYzBhMTFmMWEyNTRlZjMwMzk4M2U2Y2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ee82063c46e49dbad605e2cf6d4e279",
+      "statement": "Scroll-area key handling acts only when the viewport's live scroll range along the key's axis is above 0, instead of checking the onLayout-fed thumb, because since ghia 8352e66c onLayout arrives after the next painted frame and lags content growth.",
+      "evidence": [
+        {
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.test.ts#L91-L118",
+          "version": "repo-lines-v1:sha256:f7e9207370756ad94a8f2cdc9ef7d343c0e060456024873d3d58b69339e730bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZGFiMDM2YWNhMGY1Y2MxZGM3NmY0Y2E0NGVmYjk4MjE1YmUxYWVjYjNjNGM4NTYzMjJjMTY5NzRmYzYyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNzM0OTJkODk0NmIxZDBmOWQ5YzA0YjcwNGE5MjBmMjRmODllZjdjN2Y3MzExYTg1OTlkMTBjN2Y2MzU4ZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkNzIzZmFiMjZjZmNjNTUzYWQ5OWJlZGNjODA2MzE3NGM2NWYwZTk3MGM2YzE0NDExODdiODA5MzBkMDY3ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIifQ"
+        },
+        {
+          "resource": "repo://src/scroll-area/root/use-scroll-area-root.ts#L187-L203",
+          "version": "repo-lines-v1:sha256:b1feaf83f7dadecaa0cf01134c58cf332bdfc515faa621574a45425cf50abf60:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjM2EyMDc3NGQ1YzJiYjRjNzkwYzE4ODkwYTljNDk0Y2NiNTEwZmM4ZThjMDllYzc0NTE5YmMxNjRmYzc4NGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMDU1MTI1NjQ2ZmFlNDUyZjhhNmU5NWU3NDY2M2U5ZTQ1ZTFlMjVhYzU1MWJhM2RhZDViMDYzZDQxZGFiNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzYjNiOTBkYjVlNzgyZTZlYzQ2NjExYzJkZmExOWQwZWU1NjA3MDgzZTYxZmRhYmYxMjI3ZjhlZjRlNjFlMzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4dcfa4f9d3740829fc0d610063aea6f",
+      "statement": "The Combobox filter effect sets revealOnMeasure so the highlighted row is revealed again once the filtered rects are measured, since the rects are measured after the next paint and an earlier reveal would use pre-filter ones.",
+      "evidence": [
+        {
+          "resource": "repo://src/combobox/root/use-combobox-root.ts#L186-L215",
+          "version": "repo-lines-v1:sha256:c90fe8606a1f3db02508d8a17820a494830cdeaae8c47edac00f2dbebc322597:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0NmFlOTE1MjI2NmUwODg5YTUzMzFkMzE5ZGU0ODVkZTUyZWM4YmRjZTdkZGMyYzM2ZjQ4OGViNmRmNGE2OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYzQyYmFlNTQ5YTE5YmJkODllMjdjNjExYzI2MGE4OWJlODk1ZjA4YTQ0MmZiMWZjMjdiYTIyN2ZmODU5ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0Y2QzNmMxOTk0Y2JlMDc0ZTU4NGZiOGNjNjdlN2U3MDMwNDc0NTc5M2VkYmUyY2YwMTFjNWMzZDcwMjMyNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhMDQ2NmVhYWU0OWNjMDNkYjdmN2FkM2JiYmE5MjRlN2JiZTFmY2Y3MmRkMzhlOTJkODU3MDE3YzRmNTRiZTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.3",
+    "at": "2026-11-03T23:38:47.409Z"
+  }
+}

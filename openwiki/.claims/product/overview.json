@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:a5378cfdb40d49ba22558921ea1efcd23e49dd92d88a39197531ce2fb47a244b",
+  "pageVersion": "sha256:20d7fb1012004f5230cfc36a3fd550b84522bf2031e02d7e8f52cb7f4c1e53f5",
   "claims": [
     {
       "id": "claim_b6691eae835341568a0b7d78a87b8355",
       "statement": "The port is pinned to @base-ui/react 1.9.0, tag v1.9.0, commit ad7ecda5296b0295b41a51ecb01fce6204acd099, because that is the version FF's upstream pins; the pin moves only when FF's upstream does.",
       "evidence": [
         {
-          "resource": "repo://UPSTREAM.md#L9-L20",
-          "version": "repo-lines-v1:sha256:284259b5c620329bb0867827f3c10cd457512e43c08cd9a8cbf0f2180bf766ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczYzZhNmVkNDU0ZTdjNjI2MDUzYmE2ZDFmY2M3ODU4NzRmYWY3NWJiZTdiNDllYWE1OTYzZGE2MjQ1YWU1ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzYjhhNWNiZGEyOGJiMjQ1M2VlNzY4YmY5ODA3ZGMzMTYzYWFiZjZmYWNiZjFjNTM4Zjk3NjNhMDEzMGIzMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlZmMyNWE0MmMxNjg0NDNkZWE4ZGQ0Y2FiYTBmYzRjY2M1NGViNmQ2MjUyM2Y2NGU5MjZkZGNjNWY2YTY1M2IifQ"
+          "resource": "repo://UPSTREAM.md",
+          "version": "repo-file-v1:sha256:43ea7081bc39fe130cf485afa96ff566917c113b273370b3e49a76f6a482d9d8"
         }
       ]
     },
@@ -18,31 +18,35 @@
       "evidence": [
         {
           "resource": "repo://README.md#L9-L9",
-          "version": "repo-lines-v1:sha256:f1892b6bc863fdd9fb0c80dad44ddb136814730aaa6a75555c35948d1471ec6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE4OTJiNmJjODYzZmRkOWZiMGM4MGRhZDQ0ZGRiMTM2ODE0NzMwYWFhNmE3NTU1NWMzNTk0OGQxNDcxZWM2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE4OTJiNmJjODYzZmRkOWZiMGM4MGRhZDQ0ZGRiMTM2ODE0NzMwYWFhNmE3NTU1NWMzNTk0OGQxNDcxZWM2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTllMmU0ZWYxMzliYzVkOWM0NzZkZDgyMmFjMjM4Y2JjODc3YzAxMjM4MzlkNTdjYmQ0NDVhMzc5OWY4OWQzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWMyYmQzYzE4MmY4MGY1Y2NlZGRkZDY2ODU4Yzk5ODFlZWVjZmM0NDI3MDE1MjY1MmIzN2NjMTkxMzUyY2YwYiJ9"
+          "version": "repo-lines-v1:sha256:9f0eeb6ae4b6a17a2a853157c89aa958abfc523f0d8550c754e6d9ca2169e97c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWYwZWViNmFlNGI2YTE3YTJhODUzMTU3Yzg5YWE5NThhYmZjNTIzZjBkODU1MGM3NTRlNmQ5Y2EyMTY5ZTk3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWYwZWViNmFlNGI2YTE3YTJhODUzMTU3Yzg5YWE5NThhYmZjNTIzZjBkODU1MGM3NTRlNmQ5Y2EyMTY5ZTk3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTllMmU0ZWYxMzliYzVkOWM0NzZkZDgyMmFjMjM4Y2JjODc3YzAxMjM4MzlkNTdjYmQ0NDVhMzc5OWY4OWQzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWMyYmQzYzE4MmY4MGY1Y2NlZGRkZDY2ODU4Yzk5ODFlZWVjZmM0NDI3MDE1MjY1MmIzN2NjMTkxMzUyY2YwYiJ9"
         },
         {
-          "resource": "repo://UPSTREAM.md#L118-L121",
-          "version": "repo-lines-v1:sha256:bc7d8356aae56d44c6bc2f112340a7eaa07131e33372ccc857c97e30fe755350:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRiMDc0YjcwMDM4Mzc3MDZkOTJiY2JjOTAyMWQ4NzNiOGIzMGZkODU5MWQ2YzJmNzdmZGQ1MjA2ZGI3ZDVhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjZmMDQ1Zjc4ZDU1NjViZjRhOTY5ZjllNGU3NjcxNTQxZmM1MGFjYTBlYjQ5NmQ4OTlmNjc1NGExMGM5OThlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWVmODJhZWVlZDZjNzY0Mjk4NGY5OTBjYzY2ODBkNjdjM2I4MjUzMDhiYzQxZGFlM2NlZGE0YjMyZTc3NTRjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjg3MjQ0N2U2ZTdlZTU4YThhNDYyN2Q0MTJkZWM1ZTRiMjBhMTU4NTc1MThmOTExZTViMGZmOGU0MjlkNzVlYiJ9"
+          "resource": "repo://UPSTREAM.md",
+          "version": "repo-file-v1:sha256:43ea7081bc39fe130cf485afa96ff566917c113b273370b3e49a76f6a482d9d8"
         }
       ]
     },
     {
       "id": "claim_571fb0a948284b0fae2ba28c478f48f4",
-      "statement": "The repo is private and unpublished, and FF consumes the source directly through a link: dependency as a member of FF's pnpm workspace, with no build step.",
+      "statement": "The package is published publicly to npm as ghia-base-ui, released only from CI via Changesets, while FF still consumes the source directly through a link: dependency as a member of FF's pnpm workspace, with no build step.",
       "evidence": [
         {
-          "resource": "repo://README.md#L9-L30",
-          "version": "repo-lines-v1:sha256:e5ae97184c9014f6a85591e40b55e841636f7a47502b10407cf6a42a6176f0cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxODkyYjZiYzg2M2ZkZDlmYjBjODBkYWQ0NGRkYjEzNjgxNDczMGFhYTZhNzU1NTVjMzU5NDhkMTQ3MWVjNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5ZTJlNGVmMTM5YmM1ZDljNDc2ZGQ4MjJhYzIzOGNiYzg3N2MwMTIzODM5ZDU3Y2JkNDQ1YTM3OTlmODlkMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzMzlhMzcwMDY1NTQwYTA5OWMwMzZkMmE3MTk1YzM0MTViYzQ5OGUwOWM2Njg5ZjA4YTMyMTAyNjk4OTBlZmMifQ"
+          "resource": "repo://.github/workflows/release.yml",
+          "version": "repo-file-v1:sha256:5a20874d8682cf4feb46d4a3365c21d236f94fe18253252001d1575672dc6aed"
         },
         {
-          "resource": "repo://package.json#L1-L11",
-          "version": "repo-lines-v1:sha256:a1b94bea2c7e3e2ec2bcb67f673dfa7ee3835e713eb7ddc6652f47ffc918cfde:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlNTAzMjQ5NjI1NjU2ODVhNTljMzk3NWUxYTU0MjRhODE3NWJhNDBmN2RmYTNhMDk2NTc5MTliMjFjZDkyNmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0ZWVlMjczZDFjYTM5MTQ3NGVhZmJmZmZjNmZlZjE1OGIwNmU1ODQwMjBmN2Q0NjgyYTM0MTg5ZmU5MDhhYTIifQ"
+          "resource": "repo://README.md#L9-L30",
+          "version": "repo-lines-v1:sha256:d38b66527447bab88ccba341ceede9c7666c79d846f55fd72a3130c0d21838f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmMGVlYjZhZTRiNmExN2EyYTg1MzE1N2M4OWFhOTU4YWJmYzUyM2YwZDg1NTBjNzU0ZTZkOWNhMjE2OWU5N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5ZTJlNGVmMTM5YmM1ZDljNDc2ZGQ4MjJhYzIzOGNiYzg3N2MwMTIzODM5ZDU3Y2JkNDQ1YTM3OTlmODlkMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczYjViY2JhODhlZjQ5Y2RiYjc0YmQwNzllMGY1MjA4NzU4MTc5YjNjYTZlYTMwYjU5YWVhM2ExOWZiOTliNTAifQ"
+        },
+        {
+          "resource": "repo://package.json#L1-L35",
+          "version": "repo-lines-v1:sha256:7a7f103bf968837a494b0acb64ca753bf1d6417366cb05a0b60ce046a3c53b3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MzRlOTBmMjc3ZDhmZWMxNGU0OTJlNGQwNjMyZjZlMTc0MTEzYjFiMGRkNDNkZmZjNGNmN2QzZjUxZmQwZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwMjg5MWFlZDQzYWMzNGFhNTFjMzc3YjM5Y2Y1NDYxYzU4NjY5OGNmYzAxYjhmZWQwNGZlZTA3YTJhOTIyZWUifQ"
         }
       ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.7.2",
-    "at": "2026-10-17T05:21:17.049Z"
+    "by": "openwiki/0.7.3",
+    "at": "2026-11-03T23:38:47.409Z"
   }
 }

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:89b59280933766cf2933dd732a8ff02a94109f3ffafd5cf1ab7ed92f15912a28",
+  "pageVersion": "sha256:2fae592b448a78acc3853b8ae1b2db6313219612df861b07440b51fd052e7ee5",
   "claims": [
     {
       "id": "claim_41909e38602544d1875074f0a9e718cf",
-      "statement": "Primitives return refs as separate functions (triggerRef, popupRef, itemRef) rather than inside prop objects, because a spread ref in gpuix JSX applies after the element is created, too late for an open that reads the elements as the popup mounts.",
+      "statement": "Primitives return refs as separate functions (triggerRef, popupRef, itemRef) rather than inside prop objects, because a spread ref in @ghia/solid JSX applies after the element is created, too late for an open that reads the elements as the popup mounts.",
       "evidence": [
         {
-          "resource": "repo://UPSTREAM.md#L147-L149",
-          "version": "repo-lines-v1:sha256:bbc66d11ccf7e941ece1269ea4853bee5cbf6503282cdc668ad75249222b06bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWViODAyMTQ5N2FlOTNkZWQ5Y2UwNjU1YmQ5ZDgzNDdhNDMwMGQ1ZTk4MDc2ZTMzOGVmMzY0ODRiYTUxYmJmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU5NmEyZTMxNDcyNmI3YWFkNzQzYWU4NDU2NDBmNTFmNWU1ZTQ0OGFkZjVhMmQyNGU5MDcwYzBmOTk2NWRmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGRiNzE4YTcxYjQyMzEzMzM4NDhjMjYwMjBlNGNmYTAzY2IwOTM4MzIyM2U3NzVjMWJhOGZkMWFjNDNhMWJjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg2YmE0ZWI0MDlhNTUyN2ExMDIxYTNiMGMwZDNiNWQ0ZWZlNTRlZTkzNzZhOWNkZjVkNGQ2YmYxMzgxMDQ0NyJ9"
+          "resource": "repo://UPSTREAM.md",
+          "version": "repo-file-v1:sha256:43ea7081bc39fe130cf485afa96ff566917c113b273370b3e49a76f6a482d9d8"
         },
         {
           "resource": "repo://src/select/root/use-select-root.ts#L371-L380",
@@ -45,15 +45,15 @@
       "statement": "createRowList is kept separate from the composite root because it orders rows by index, activates with Space and Enter, handles both axes and applies no modifier guard or stopPropagation, whereas the composite root guards modifiers and stops propagation of consumed keys.",
       "evidence": [
         {
-          "resource": "repo://src/internals/composite/root/row-list.ts#L8-L15",
+          "resource": "repo://src/internals/composite/root/row-list.ts#L4-L11",
           "version": "repo-lines-v1:sha256:87a121deda06a0e37899d2a4bd26b45278d66428e1200080970cc19cc7c7dd9b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcyYTQyOTM4MmIyZTE0NzE4ZTBlMzdiMDU3MGE4YTE3MDI5OTFmY2Q4NDk4Y2Q4NDA2MGE4YmY0ZjA1MDE3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE5NjZiMmYwMDVlM2IzMjc3NTg3OGMxN2UxZjVmNjAzMGEyMjUwZWZkZWM5MjIyMzZiOTEyN2M1OTcwNzBjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBkMDc3OGNmNTk5ZjBjOWE1NTI1ODNhYTY5YmRhNjY0MTY3NWE1OGU0ZTNiMTBiY2NiNzU3ZmNlNWY0MjZjYyJ9"
         },
         {
-          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L7-L9",
+          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L3-L5",
           "version": "repo-lines-v1:sha256:38499008c81cf708a20fd7d685ff5b2babb2cba969935def19e3f91bc0c95064:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTgzNGFmMWJlYTUxNDc4OTQyNjBkNjhhNmUzYjY3ZTVmYmYwZmFhNmY0MWI5ZjUyNDk4NmJkNjdjYjliNGZiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiMzUzOGJiNWNkY2Q5YzhhMWE5NDU4MzM3NjEwNTk3NmE4ODg5YjE2N2FiYjY2MzczZTY5YTBjOTM5NWFiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDcyMDE4ZjVhYTViNGIyMjMwNmI4M2IwZjllZjI5NTU4ZjVlNTliNTM5MzM2ZjZkZDVjYzcyMDE0MTk3MWM1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM4MTFkMGYzM2JiOWFhNTFiMWU3ZTRiYjBjNDQzNWI0MmViOTM5OGMzYWQ2NTg1NzIwOGU0ZTY2YzJmMWJmZSJ9"
         },
         {
-          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L94-L109",
+          "resource": "repo://src/internals/composite/root/use-composite-root.ts#L90-L105",
           "version": "repo-lines-v1:sha256:4ded78ac61b5d2bc8ef496d6326fb4f86e8d206a02f5830ef82c36e48ea2127c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzN2VkZTYxMzQ0ZDU2YWFlYTc2NzgzZTlhZTQzYzllMTIzMTY1MWVlMGVjOGU5YzQ4OGQyOWFiZDljNTlmOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2Nzc2YzE2ZjQ0NGY3MTQyOTZkNDlhMzc1NTFhOWU5YmEwMjFlNjliMWU3OWE3MzhlMzM0ZDZkMDhhZDUxN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmYzQyZGVmNTMwY2ZmZWVkZDQxMmI5YmI0MDE5OTNlNWY2OGZmYTliNmQxYTgzMTY5N2E2ZTZlYjRhYmQwNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwYTU5MDY3MWMzODQwNWViOWQxMTkyOGE4YjcxNDExYWViYTEwMzVjYTE5MzIzZjI4OWRhNGExY2IxYjIzYTQifQ"
         }
       ]
@@ -63,8 +63,8 @@
       "statement": "The menu search field is FF's real-focus layer, not Base UI's virtual-focus Menu.Input, and is kept here because it is woven into the menu list's keys.",
       "evidence": [
         {
-          "resource": "repo://UPSTREAM.md#L132-L132",
-          "version": "repo-lines-v1:sha256:93335c0283160fd42e74d9384fd689ced5ea51dbf7f0cec00f0db7b17d17533c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTMzMzVjMDI4MzE2MGZkNDJlNzRkOTM4NGZkNjg5Y2VkNWVhNTFkYmY3ZjBjZWMwMGYwZGI3YjE3ZDE3NTMzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTMzMzVjMDI4MzE2MGZkNDJlNzRkOTM4NGZkNjg5Y2VkNWVhNTFkYmY3ZjBjZWMwMGYwZGI3YjE3ZDE3NTMzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTU5OGE5Y2JhMmM4NmZkZTVjZGNkZDNkMjYxYjQ5NTAwNTg5MGZlZGM5N2U1OTQ0ZTAxZGM1N2E2OTFlZjk3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzZkNmRhNTAxMDExYjVkNWIxM2FiNzJhNWNmZmE5MWVmYTcyMGMyOTM1ZTMxYjVmMzBmM2I5MmZkYjU5MTMxMyJ9"
+          "resource": "repo://UPSTREAM.md",
+          "version": "repo-file-v1:sha256:43ea7081bc39fe130cf485afa96ff566917c113b273370b3e49a76f6a482d9d8"
         },
         {
           "resource": "repo://src/menu/input/menu-search.ts#L3-L7",
@@ -77,22 +77,22 @@
       "statement": "The package exports every folder through a single \"./*\" pattern mapped to src/*/index.ts, so adding a primitive folder needs no config change.",
       "evidence": [
         {
-          "resource": "repo://package.json#L9-L11",
+          "resource": "repo://package.json#L17-L19",
           "version": "repo-lines-v1:sha256:9ef916824dbc596dbb0c3aaa94429a9fbe50035da1d6f0e98b97e80275bb07db:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NhZjIyNzU1N2UzYTk5OWYyOTZjYzM1ZWIyYmNjNWU0NmIyNzMwN2I3MjYxNDM1Y2U4ODA4MWQ4NzBhMGZmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU1MDMyNDk2MjU2NTY4NWE1OWMzOTc1ZTFhNTQyNGE4MTc1YmE0MGY3ZGZhM2EwOTY1NzkxOWIyMWNkOTI2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjczNjUwOWZlMjE2Yjg4MzJiZTEzYWY4ZTRkOWViNzg1YzY1MDhjMGMxNWI1Yjk3YTgzYzhmZDM5MmM1MmRjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDRlZWUyNzNkMWNhMzkxNDc0ZWFmYmZmZmM2ZmVmMTU4YjA2ZTU4NDAyMGY3ZDQ2ODJhMzQxODlmZTkwOGFhMiJ9"
         }
       ]
     },
     {
       "id": "claim_1f8dba6c7c324721ac7efd763b585ff8",
-      "statement": "pnpm-workspace.yaml disables verifyDepsBeforeRun because pnpm's pre-script auto-install run from this folder relinks a second @gpuix/solid; installs must run from the consumer's root to keep a single instance.",
+      "statement": "pnpm-workspace.yaml disables verifyDepsBeforeRun because pnpm's pre-script auto-install run from this folder relinks a second @ghia/solid; installs must run from the consumer's root to keep a single instance.",
       "evidence": [
         {
-          "resource": "repo://AGENTS.md#L16-L16",
-          "version": "repo-lines-v1:sha256:863392149fa17a68cbce167a584aed7bc2d9b391cf8772d98bfbd6147a506015:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODYzMzkyMTQ5ZmExN2E2OGNiY2UxNjdhNTg0YWVkN2JjMmQ5YjM5MWNmODc3MmQ5OGJmYmQ2MTQ3YTUwNjAxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODYzMzkyMTQ5ZmExN2E2OGNiY2UxNjdhNTg0YWVkN2JjMmQ5YjM5MWNmODc3MmQ5OGJmYmQ2MTQ3YTUwNjAxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ0NjdmOTdkOWFmZWZiNDlkZDZlNDY3N2NmZTY5NmFiZjExNWIwNjk2ZWQ3YWE3MGI4MGQ5OGM1YzdlNmZiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGE4MjllMTdlNmI0ZDRiMzIwNjBjODQ0OGI4OGIwYTFjZWExYmYzMzFjNWUzZjNhNWE5OWZlMjQwNzJhMzE5MiJ9"
+          "resource": "repo://AGENTS.md#L21-L21",
+          "version": "repo-lines-v1:sha256:98dfcfb15bf275d5ed6a6d83d0dcf5f0e5a33464303991073192a3cc8ec0f733:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOThkZmNmYjE1YmYyNzVkNWVkNmE2ZDgzZDBkY2Y1ZjBlNWEzMzQ2NDMwMzk5MTA3MzE5MmEzY2M4ZWMwZjczMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOThkZmNmYjE1YmYyNzVkNWVkNmE2ZDgzZDBkY2Y1ZjBlNWEzMzQ2NDMwMzk5MTA3MzE5MmEzY2M4ZWMwZjczMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjMzYmE4MWNmOTU0MzdkNzcyYmZkZTU1ZDQ0YmFmYjA2Yjc4Y2NlNGZhYzhjOTE2NGNlNTMwMDUwNGNiNzBhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGE4MjllMTdlNmI0ZDRiMzIwNjBjODQ0OGI4OGIwYTFjZWExYmYzMzFjNWUzZjNhNWE5OWZlMjQwNzJhMzE5MiJ9"
         },
         {
           "resource": "repo://pnpm-workspace.yaml",
-          "version": "repo-file-v1:sha256:fbad28bb559d0486da24c432c1b2079833fc9309d0a11d62c37393a1ab422c4d"
+          "version": "repo-file-v1:sha256:f59d81a93655b62299c5be1a5a0553cc8e0ed131ef9070bfa6c45fc0b71a0ccc"
         }
       ]
     },
@@ -101,7 +101,7 @@
       "statement": "Source files use relative imports, never a #/ alias, because the consumer compiles this source with its own tsconfig.",
       "evidence": [
         {
-          "resource": "repo://AGENTS.md#L9-L9",
+          "resource": "repo://AGENTS.md#L10-L10",
           "version": "repo-lines-v1:sha256:c9731281747e17f5056f6753261cd013bba18e7a64e024e8cc9c93d54c3be357:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzEyODE3NDdlMTdmNTA1NmY2NzUzMjYxY2QwMTNiYmExOGU3YTY0ZTAyNGU4Y2M5YzkzZDU0YzNiZTM1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzEyODE3NDdlMTdmNTA1NmY2NzUzMjYxY2QwMTNiYmExOGU3YTY0ZTAyNGU4Y2M5YzkzZDU0YzNiZTM1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTg2ZDVkNWQyZGJmMjFjOTc5MDBjZTI1M2U3ZTdkYjc3MzA5M2NiOGU2ZDRkZmZiYThhZDlhNzcwN2I5NWE0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTA3MGM2NWZjNzllZWYwMjk1MjAyNWU5MjI4YWFiMmQ0ODRhMDU2ZmY2YjVmMTViNmI3YTFiZGQ1MzQ1OWExNCJ9"
         }
       ]
@@ -112,7 +112,7 @@
       "evidence": [
         {
           "resource": "repo://src/floating-ui-solid/hooks/use-hover-reference-interaction.ts#L38-L129",
-          "version": "repo-lines-v1:sha256:a5fd037a4f729672501a18f9d4782dba6e71a2ff31cd6045ecefcadee1cc063a:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZmE3ZGNhNGQ5ZThjYjMzMzQxODViZWE2MjIzYjdlMGM0ZDEyYjM4NTAzODY1MGNmMGMwMWQ4YzMzZjUwY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOGJkMzg1ZWYyNmZlZWQ2ODljNTZkNzU3ZmVlYTVlZDQ5NjZkOWVmMTM5MTJlZjFkMTJhMDVlN2Q1MmRhMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "version": "repo-lines-v1:sha256:e07886cbbf596c9f647485bc52a8def16125da352f3f28dc797122eae0c82d5a:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZmE3ZGNhNGQ5ZThjYjMzMzQxODViZWE2MjIzYjdlMGM0ZDEyYjM4NTAzODY1MGNmMGMwMWQ4YzMzZjUwY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOGJkMzg1ZWYyNmZlZWQ2ODljNTZkNzU3ZmVlYTVlZDQ5NjZkOWVmMTM5MTJlZjFkMTJhMDVlN2Q1MmRhMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
           "resource": "repo://src/menu/submenu-trigger/menu-submenu-trigger.ts#L36-L57",
@@ -141,10 +141,38 @@
           "version": "repo-lines-v1:sha256:3ddb03814ce5eec19b87bcb8eb19293e32847dc89f8d684cb110d8aa2441e0e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMmEzYjc2ZTEyY2UxNTM3OWQwNWYyODY5ZGM0ODMyZGU3NTg5MDUzYjQ5YmZmMjM3ZTQyNWM3MjM3ODAxNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMmEzYjc2ZTEyY2UxNTM3OWQwNWYyODY5ZGM0ODMyZGU3NTg5MDUzYjQ5YmZmMjM3ZTQyNWM3MjM3ODAxNTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmZDk3OWRmMWFhZTFhNmQ1NjkwNzhlZmM2MDk0YWVlNDA4ZDI1NmQzNjdhMDFmNjc3YzE1NjJlM2U2YzliMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkNWUwZmQxOTJhMzU5OGI0NzNkN2RmZTFhNmY4NTU5NDI5NTI3ZjA5NmRlOWNlMTkyMmExNjJiNWY2YjhhZDkifQ"
         }
       ]
+    },
+    {
+      "id": "claim_da2eeacff0c343c59a5c95e17c8440a9",
+      "statement": "The published package ghia-base-ui keeps exports pointing at src/*/index.ts for source consumers, while publishConfig.exports points at the tsdown build in dist, with solid-js and @ghia/solid kept external; releases are CI-only and prepublishOnly refuses a local publish.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L14-L35",
+          "version": "repo-lines-v1:sha256:49e6b4d91fcb4c92be23be0d68fc628b4cd674772a1cd6c1225fd79f317f37b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmQ4OTA3NTJhYWIyYzU5ZDgwNTQ4ZjYwNzhkMzljNThlNjFlODY4NWZlMjNiNTVlMTM1MGQxOTYzZjQzMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MzRlOTBmMjc3ZDhmZWMxNGU0OTJlNGQwNjMyZjZlMTc0MTEzYjFiMGRkNDNkZmZjNGNmN2QzZjUxZmQwZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMmE2NDMxNTNlOTg0NWJjYjNmYmRmMTkxZTI2NzBjYThjNmU0OTc4ZDY5MjM3NTgxZWE4M2IxMjY4Y2JiNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwMjg5MWFlZDQzYWMzNGFhNTFjMzc3YjM5Y2Y1NDYxYzU4NjY5OGNmYzAxYjhmZWQwNGZlZTA3YTJhOTIyZWUifQ"
+        },
+        {
+          "resource": "repo://tsdown.config.ts",
+          "version": "repo-file-v1:sha256:a4a73c5f15f38f450501b37004d9ca9b66b2f2e8def72eeec0ff5084363c1c86"
+        }
+      ]
+    },
+    {
+      "id": "claim_5821e2cbc1f946e782469cfeb08a9dfb",
+      "statement": "src contains no JSX because @ghia/solid's Bun plugin skips node_modules, so a published .tsx would not compile; host elements are built with jsx() from @ghia/solid/jsx-runtime.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md#L10-L10",
+          "version": "repo-lines-v1:sha256:c9731281747e17f5056f6753261cd013bba18e7a64e024e8cc9c93d54c3be357:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzEyODE3NDdlMTdmNTA1NmY2NzUzMjYxY2QwMTNiYmExOGU3YTY0ZTAyNGU4Y2M5YzkzZDU0YzNiZTM1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzEyODE3NDdlMTdmNTA1NmY2NzUzMjYxY2QwMTNiYmExOGU3YTY0ZTAyNGU4Y2M5YzkzZDU0YzNiZTM1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjdhZDhjMjY2ZDgzNmFlOTM5ZWVhZmY1OTMzNjRmYjliMGZmM2M1MzEzNWEzNDNmN2FkNDFmNmZhNGZjNmVlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGRiNDk2ZjYyMDMwOTNiYWM2ZDhlNDA2MGRlYmE3YWRlMTkyMDM1Y2NhM2I0MWQwMDM3YWFlZTQyMGIzZGJjZSJ9"
+        },
+        {
+          "resource": "repo://src/utils/form-value.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:6494d47c8f400498b8afa5b07d64c895b8270dff6b0ce78960102ddd33cebc6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMGY2OWIxNTIxNzEwNmIxNjA1ZGYxNzM1N2U0MTRiYTM3Mzg2N2VmN2ZlNGFlN2Y0OGE2NDM5YjNkMDY2MjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMDJlNjRhMjU5MzA5NDc5NzFjMzIyYjJkYzIzMTMwZjc1MmUwYjllOWQ2ZDY0M2RlOTY4MDljZTM2MTZhZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyNGJmZGY2NGNjMzA2MjQ0YjQ1ZTBhYzhkNTM5OWU5NzJjMjJkMWM5YjVkZWZlMDlhMzA5NjAwYzAxYjg5MmIifQ"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.7.2",
-    "at": "2026-10-17T05:21:17.049Z"
+    "by": "openwiki/0.7.3",
+    "at": "2026-11-03T23:38:47.409Z"
   }
 }

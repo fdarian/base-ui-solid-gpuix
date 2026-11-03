@@ -12,17 +12,17 @@ sources:
     resource: repo://src/internals/composite/root/use-composite-root.ts
   - id: openwiki-source-ff18555ad70362de0f452788
     resource: repo://UPSTREAM.md
-generated: { by: "claude-code", at: "2026-10-17T05:21:17.049Z" }
+generated: { by: "claude-code", at: "2026-11-03T23:38:47.409Z" }
 verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-17T05:21:17.049Z
+  - by: openwiki/0.7.3
+    at: 2026-11-03T23:38:47.409Z
 ---
 
 # Extraction history (2026-10-17) and known stale notes
 
 ## Before 2026-10-17
 
-The primitives were first written inside the Fluid Functionalism (FF) gpuix port itself, as `src/lib` helpers and component code, from 2026-10-13 on. `BASE-UI-AUDIT.md` was started there on 2026-10-14, and about 175 of its gaps were fixed in that codebase. On 2026-10-16 the popup focus model was switched to Base UI's (see [focus model](../decisions/focus-model-and-ff-conflicts.md)). That is why this repo's history begins before the repo existed.
+The primitives were first written inside the Fluid Functionalism (FF) port itself, as `src/lib` helpers and component code, from 2026-10-13 on. `BASE-UI-AUDIT.md` was started there on 2026-10-14, and about 175 of its gaps were fixed in that codebase. On 2026-10-16 the popup focus model was switched to Base UI's (see [focus model](../decisions/focus-model-and-ff-conflicts.md)). That is why this repo's history begins before the repo existed.
 
 ## The extraction (2026-10-17)
 
@@ -30,14 +30,16 @@ The goal was a pure refactor. FF's behaviour had to stay the same, and every FF 
 
 1. **Foundation.** The seven `src/lib` files that became primitives, plus `BASE-UI-AUDIT.md`, were carried over with `git filter-repo`, so `git log --follow` on them reaches back past the split. They were then moved to their upstream-shaped homes: presence to `internals/use-transition-status`, typeahead to `floating-ui-solid/hooks/use-typeahead`, list navigation to `internals/composite/composite`, the popup trigger to `floating-ui-solid/hooks/use-click`, modal to `floating-ui-solid/utils/mark-others`, pointer capture and form value to `utils/`, and the placement part of FF's popup to `internals/use-anchor-positioning`. The scaffold commit is `e78d0e6`.
 2. **Five component groups in parallel**, each on its own branch in both repos: **menus** (Menu, menu search, Tooltip), **listbox** (Select, Combobox), **disclosure** (Collapsible, Accordion, Tabs), **controls** (Switch, Checkbox, CheckboxGroup, Radio, RadioGroup, Slider) and **overlays** (Dialog, Drawer, ScrollArea). The merges are `6401a10`, `4eb41ff`, `f643f0c`, `bbcfd6a` and `4d57542`. The `"./*"` exports pattern exists so these branches never collided on a shared file.
-3. **Consolidation.** The two key-navigation helpers that controls and disclosure had each produced were moved under `internals/composite/root` but kept as two helpers (`8076342`; why is in [API decisions](../decisions/api-and-layout.md)). `verifyDepsBeforeRun: false` fixed the second-`@gpuix/solid` relink (`0dc9c74`). Biome was migrated (`15d7f8b`), and the combobox filter moved to `internals/filter` (`30c8dca`). `clamp` was left duplicated in FF's scroll area and `scroll-area/utils/scroll-math.ts`, because neither exports it.
+3. **Consolidation.** The two key-navigation helpers that controls and disclosure had each produced were moved under `internals/composite/root` but kept as two helpers (`8076342`; why is in [API decisions](../decisions/api-and-layout.md)). `verifyDepsBeforeRun: false` fixed the second-`@ghia/solid` relink (`0dc9c74`). Biome was migrated (`15d7f8b`), and the combobox filter moved to `internals/filter` (`30c8dca`). `clamp` was left duplicated in FF's scroll area and `scroll-area/utils/scroll-math.ts`, because neither exports it.
 4. **Docs.** README, UPSTREAM and AGENTS (`3b48070`). Every audit port ref was refreshed to `src/...` or `ff:src/...` (up to `cc35540`).
 
 The popover primitive and the color picker's adoption of Menu came after this, as a follow-up.
 
+The package was later renamed `ghia-base-ui`, because the renderer project it targets was renamed to ghia (`@ghia/solid`, `@ghia/native`), and it began publishing to npm. The two `.tsx` files (`utils/form-value`, `dialog/popup/focus-first`) became `.ts` at that point. History before the rename, including commit messages and the audit's older refs, uses the old names.
+
 ## Known stale audit Notes
 
-The extraction left four Notes knowingly out of date, to fix once the color-picker follow-up landed. Later audit passes (the Round 5 refresh against Base UI v1.9.0 and gpuix poc `dcfc7a0e`) re-read two of them: the **switch key-repeat** row now reads `fixed (b1c17bc)` and says the port matches Base UI, and the **dialog rows** on focus return after the exit and on nested dialogs ignoring Escape and outside press now read `ported` and verified. Two were not re-checked and may still be stale, so don't trust their prose without re-reading the code:
+The extraction left four Notes knowingly out of date, to fix once the color-picker follow-up landed. Later audit passes (the Round 5 refresh against Base UI v1.9.0 and ghia poc `dcfc7a0e`) re-read two of them: the **switch key-repeat** row now reads `fixed (b1c17bc)` and says the port matches Base UI, and the **dialog rows** on focus return after the exit and on nested dialogs ignoring Escape and outside press now read `ported` and verified. Two were not re-checked and may still be stale, so don't trust their prose without re-reading the code:
 
 - **tabs `activateOnFocus`** (the pointer-activation-timing Note);
 - the **Tab rows of the menu and of the color picker's format menu**.
@@ -59,5 +61,5 @@ The full per-section lists are under "FF-vs-Base-UI conflicts" in [BASE-UI-AUDIT
 
 ## Related
 
-- [What base-ui-solid-gpuix is](../product/overview.md)
+- [What ghia-base-ui is](../product/overview.md)
 - [Focus model and FF-vs-Base-UI conflicts](../decisions/focus-model-and-ff-conflicts.md)

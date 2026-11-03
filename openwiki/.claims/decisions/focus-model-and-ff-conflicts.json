@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:c13dd567699bc864161d28ec66c059514decef529b73f7f246c291fbd8565ff9",
+  "pageVersion": "sha256:f03398856875903144cf50852f7947aca8ec361de8e2a1c642dc0023594fdcfa",
   "claims": [
     {
       "id": "claim_5e21c484b6084f6882ae32578906e733",
-      "statement": "Dialog popups move focus from the popup element (which gpuix focuses) to the popup's first tab stop, as Base UI's focus manager does, and do it one tick after mount because gpuix's tab order exists only once the popup has painted.",
+      "statement": "Dialog popups move focus from the popup element (which @ghia/solid focuses) to the popup's first tab stop, as Base UI's focus manager does, and do it one tick after mount because the renderer's tab order exists only once the popup has painted.",
       "evidence": [
         {
-          "resource": "repo://src/dialog/popup/focus-first.tsx#L4-L18",
-          "version": "repo-lines-v1:sha256:fe1b495fb4f28fd30d5bef436c5803d83ac75c237bfc9074eb1bd5d7602c43dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMjU3ZDhiZDVhMzRmZTgzNTEyNDUyZjNjOTlmM2RkYzU5ZGU2M2IyNDJlYWZjZTM1Mjk4N2M5ZjNlNmE3MzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5MDcwMDQ4MDNhMDAzY2U1MjllZTZmNGE4NzhhZWY4MzRkMzFmNGU1NGJkYWM0M2ZhZTZjYTVmNTM3YjAzZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+          "resource": "repo://src/dialog/popup/focus-first.ts#L4-L18",
+          "version": "repo-lines-v1:sha256:7bc3e9eb720672c307004275acd3ba268ee5a842dd4e49e2a5fc22935e73bf8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMjU3ZDhiZDVhMzRmZTgzNTEyNDUyZjNjOTlmM2RkYzU5ZGU2M2IyNDJlYWZjZTM1Mjk4N2M5ZjNlNmE3MzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4ZTJiYzQ5ZDJhNDRmOTY2OGQ1MWE1MjRhOTY0YWVlNGY0MTM1ZTdiYmQ0NTY1NWViNzQ0ZWE3ZWY2MDc5ZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
         }
       ]
     },
@@ -41,7 +41,7 @@
       "statement": "Select's close returns focus to the trigger only when focus sat in the popup or nowhere, leaving a control that took focus alone.",
       "evidence": [
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L558-L558",
+          "resource": "repo://BASE-UI-AUDIT.md#L568-L568",
           "version": "repo-lines-v1:sha256:49d8af21cdb363e9691a1bfeb8052286eb40a63255a21cf7f0dc1f6034759e90:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkOGFmMjFjZGIzNjNlOTY5MWExYmZlYjgwNTIyODZlYjQwYTYzMjU1YTIxY2Y3ZjBkYzFmNjAzNDc1OWU5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkOGFmMjFjZGIzNjNlOTY5MWExYmZlYjgwNTIyODZlYjQwYTYzMjU1YTIxY2Y3ZjBkYzFmNjAzNDc1OWU5MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzQyMzJjMjkxYmFiNjIyNmE1ZDQ5N2Q3ZjdhMWQ2YmY5ODQwNTA3YWYyNDY1YmIwMWM5MzM1YjAzYTg4OGZmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTgzNTRhYTFiZDIzMjIxNzhmYjYyODY0YjBkNmE3ODE5YWU4NGFmMTI0YzExMzRkYzY4NjRhYWIwMzdkMDg1MSJ9"
         }
       ]
@@ -51,15 +51,15 @@
       "statement": "Where FF and Base UI disagree the port follows FF, and each audit section lists those conflicts so a sync does not revert them; examples are accordion arrow keys from the Radix registry, checkbox Enter toggling, radio Home/End selecting and the tooltip provider's 200/300 ms delays.",
       "evidence": [
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L216-L217",
+          "resource": "repo://BASE-UI-AUDIT.md#L217-L218",
           "version": "repo-lines-v1:sha256:ec1f783e6c18855332b2cd0d794f5f730f6d5e1cc4f461c027bc8e84008ca20e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDY0OWJkMmM4MjU0M2MzMTE4N2MxZjI2ODQzMmI3NWY3ZTQ1OWRkNWJjYmM3OGUzZDM3OTk1MDUwMjQ1MDQxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM3NGY2YWE4MGQ5NDJmNGU5YzMzYThkM2U4ZjQ2NmJmNWJlYjhlYTljYWM4OWEzNjRjNDZjZjgyYjFjMDc4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJlNDRhZDEzYWQxYjIwYzJjNDMzOTJkY2MxNWM0ZDEyYmFiNTU3MDE1OTdiYjRhMjA4NzVlY2YwODdiNThlNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRlNGRjMTU3NWQyYzI2MTYwZTc3Mzk3MzU4Yzc2NTQ2MmIwYTFhZGJmYzJmMDA3M2JlYzJlOGY0NWEwNGM5OSJ9"
         },
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L251-L251",
+          "resource": "repo://BASE-UI-AUDIT.md#L254-L254",
           "version": "repo-lines-v1:sha256:7461ec2c9d31f4de7f372699d2b92c235a3144a13f7f8599b1f4cf11b3af4fc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ2MWVjMmM5ZDMxZjRkZTdmMzcyNjk5ZDJiOTJjMjM1YTMxNDRhMTNmN2Y4NTk5YjFmNGNmMTFiM2FmNGZjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ2MWVjMmM5ZDMxZjRkZTdmMzcyNjk5ZDJiOTJjMjM1YTMxNDRhMTNmN2Y4NTk5YjFmNGNmMTFiM2FmNGZjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTNlMTFhOTA2ZTVmZThhMDNmMGY4MjUyNDEwNzYzMjdlODE5ZTIwMmE0YWI4YTVkYTNiZGM3Yjg2ZTc3MThkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjg5M2IwZDM4Y2NmM2UwOTJkMWUwMDU2MmZlMDM2ZGYxOTVlNTU1NzgwN2Y4YWFmNzkxMDVhNTQzNTJmM2Q3YyJ9"
         },
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L756-L756",
+          "resource": "repo://BASE-UI-AUDIT.md#L768-L768",
           "version": "repo-lines-v1:sha256:44dfd0bc5f06b1f7a5cf307dcab3317668f87cb6972557a9ba3ab8776b539c13:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkZmQwYmM1ZjA2YjFmN2E1Y2YzMDdkY2FiMzMxNzY2OGY4N2NiNjk3MjU1N2E5YmEzYWI4Nzc2YjUzOWMxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkZmQwYmM1ZjA2YjFmN2E1Y2YzMDdkY2FiMzMxNzY2OGY4N2NiNjk3MjU1N2E5YmEzYWI4Nzc2YjUzOWMxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWU5Nzc2MGNjOWI4MGU1YTljMTM1ZDcyYzc0M2FjNzk0ZGFiZjA4OTQ0OWJmZjJiNzFhMjk2NTRkYjgzOWUyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMzNzQ5NTQ0OTM3NWIwMWU0ODE2Yjc2NTQ2YmYzZGQ3ZTgzMzdlMTJlNDkxZmE2YzFiYmY1NDM3MzdiN2RjOSJ9"
         },
         {
@@ -77,18 +77,18 @@
       "statement": "Combobox keeps focus in the input with autoHighlight=\"always\": the first row is lit on open and arrows wrap without returning to the input.",
       "evidence": [
         {
-          "resource": "repo://BASE-UI-AUDIT.md#L621-L621",
+          "resource": "repo://BASE-UI-AUDIT.md#L632-L632",
           "version": "repo-lines-v1:sha256:7c4764803c938e1cf3550f7e24d2fc64d67183ed86d7aa0b89ded0ce660d813c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M0NzY0ODAzYzkzOGUxY2YzNTUwZjdlMjRkMmZjNjRkNjcxODNlZDg2ZDdhYTBiODlkZWQwY2U2NjBkODEzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M0NzY0ODAzYzkzOGUxY2YzNTUwZjdlMjRkMmZjNjRkNjcxODNlZDg2ZDdhYTBiODlkZWQwY2U2NjBkODEzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjZjMmE3NDNiNGYwNmQ1OThkMzc2N2VhMDYzNzMyZTA3YmVjOTk0Mjk3NWY2N2UwOWM0MWIxZTljM2Y4MzQzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdlODI4NDQwYmZlMDZlY2E5YzQ3ODlkZWZjMThjY2Q1OWRiZGRiY2NiZjE5ZjFkMzZhNWEzOGYzNTA1NjRmZiJ9"
         }
       ]
     },
     {
       "id": "claim_47174316814b4733b8f3c5e996edfbbd",
-      "statement": "After an outside press closes a popup, refocusAfterPress gives focus back to the trigger on the next tick if nothing else holds focus, because the close hands focus to the trigger immediately and gpuix then blurs it as the press's default action after the mousedown handlers return.",
+      "statement": "After an outside press closes a popup, refocusAfterPress gives focus back to the trigger on the next tick if nothing else holds focus, because the close hands focus to the trigger immediately and @ghia/native then blurs it as the press's default action after the mousedown handlers return.",
       "evidence": [
         {
-          "resource": "repo://src/floating-ui-solid/hooks/use-click.ts#L3-L19",
-          "version": "repo-lines-v1:sha256:81a42ae1b7b82eb3c7f451a1b49546b6996efcd2fb6a5faec5259171060bde81:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiYTg2Y2EyZTNmYTc3YmU2MzRiYjdjODNhNzllMWU3MDU3ZDgyZDg3OTg4YzdjMjA4YTQ4OWNmM2MxN2Y2NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwMjY0Yzk4N2Y5OThhNTk1MTdlMDNhYjAyMGJkNmFiYTFjNjRlMGVkNjViMTU1MDE5ZTBjMzg3OWFmMDUwNmEifQ"
+          "resource": "repo://src/floating-ui-solid/hooks/use-click.ts#L3-L18",
+          "version": "repo-lines-v1:sha256:d1d0207516ddd08a033e2e7194999e60b1ffbf0e0549847896aaeec77773885c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1NjI2ZDdmMjQzM2U3Mjc3MDZkMjI2OWZmNDcyZDYzMGMzYTUxOGJiOGZmZDBjNTE3MjFjNzU2NTA1NDMyZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5NzAzMTg2MzVmZTY5NzQ5ODg0YzYyNDNlYmJiMDg0NWQ1YjBjZTU3YjY2ZTVhM2ZlMTIzYjViODcxZDhhMTEifQ"
         },
         {
           "resource": "repo://src/menu/root/menu-root.ts#L134-L134",
@@ -120,7 +120,7 @@
     }
   ],
   "verification": {
-    "by": "openwiki/0.7.2",
-    "at": "2026-10-17T05:21:17.049Z"
+    "by": "openwiki/0.7.3",
+    "at": "2026-11-03T23:38:47.409Z"
   }
 }

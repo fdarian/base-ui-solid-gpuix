@@ -1,33 +1,33 @@
 ---
 type: guide
 title: Quickstart
-description: Where to look for what in base-ui-solid-gpuix, the Solid + gpuix port of the @base-ui/react 1.9.0 primitives that Fluid Functionalism uses. Routes each task to a repo doc or a wiki page.
+description: Where to look for what in ghia-base-ui, the Solid + @ghia/solid port of the @base-ui/react 1.9.0 primitives that Fluid Functionalism uses. Routes each task to a repo doc or a wiki page.
 tags: [quickstart, routing, overview]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-17T00:13:17.331Z
 sources:
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
-generated: { by: "claude-code", at: "2026-10-17T00:13:17.331Z" }
+generated: { by: "claude-code", at: "2026-11-03T23:38:47.409Z" }
+verified:
+  - by: openwiki/0.7.3
+    at: 2026-11-03T23:38:47.409Z
 ---
 
 # Quickstart
 
-base-ui-solid-gpuix ports the Base UI 1.9.0 primitives to Solid on gpuix, limited to what Fluid Functionalism (FF) uses. Each primitive is a headless `create*` function, and FF consumes the source directly. The repo docs are the primary reference. This wiki adds the reasons, the history and the constraints the docs don't hold.
+ghia-base-ui (published to npm; GitHub `fdarian/ghia-base-ui`) ports the Base UI 1.9.0 primitives to Solid on `@ghia/solid`, limited to what Fluid Functionalism (FF) uses. Each primitive is a headless `create*` function, and FF consumes the source directly. The repo docs are the primary reference. This wiki adds the reasons, the history and the constraints the docs don't hold.
 
 ## Start here
 
 | Task | Read |
 |---|---|
-| Install, import, run checks | [README.md](../README.md) (install from FF's root, never here) |
+| Install, import, run checks | [README.md](../README.md) (npm install for outside users; for local work with FF, install from FF's root, never here) |
 | Find the port file for an upstream file, or sync to a new Base UI release | [UPSTREAM.md](../UPSTREAM.md): pin, sync steps, file map, port-only files |
 | Check whether a behaviour matches Base UI | [BASE-UI-AUDIT.md](../BASE-UI-AUDIT.md), the section's table and its "FF-vs-Base-UI conflicts" list |
 | Work in the code (layout, imports, gotchas) | [AGENTS.md](../AGENTS.md) |
 | What this repo is for, and why the pin is 1.9.0 | [Overview](product/overview.md) |
 | Why the API is shaped this way (refs as functions, controllable highlight, two composite helpers, packaging rules) | [API decisions](decisions/api-and-layout.md) |
 | Popup focus, or "Base UI does X but we do Y" | [Focus model and FF conflicts](decisions/focus-model-and-ff-conflicts.md) |
-| Something gpuix can't do, or browser-like event behaviour that differs | [gpuix gaps and divergences](gpuix/gaps-and-divergences.md) |
+| Something `@ghia/solid` can't do, or browser-like event behaviour that differs | [@ghia/solid gaps and divergences](ghia/gaps-and-divergences.md) |
 | How the repo came to be, stale audit Notes, mismatches kept on purpose | [Extraction history](history/extraction.md) |
 
 ## Before changing behaviour

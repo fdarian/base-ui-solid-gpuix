@@ -1,11 +1,11 @@
 ---
 type: decision-record
 title: "Design decisions: API shape, layout and packaging"
-description: Why the port is headless create* functions laid out file-for-file like upstream Base UI, why refs come back as functions, why highlight is controllable, and the packaging rules (peer deps, single instance, relative imports) that keep it consumable as source.
-tags: [decisions, api, layout, packaging, gpuix, solid]
+description: Why the port is headless create* functions laid out file-for-file like upstream Base UI, why refs come back as functions, why highlight is controllable, and the packaging rules (peer deps, single instance, relative imports, no JSX in src) that keep it consumable both as source and as the published npm package.
+tags: [decisions, api, layout, packaging, ghia, solid]
 verified:
-  - by: openwiki/0.7.2
-    at: 2026-10-17T05:21:17.049Z
+  - by: openwiki/0.7.3
+    at: 2026-11-03T23:38:47.409Z
 sources:
   - id: openwiki-source-8037e2358a2c4f9b2c722a11
     resource: repo://AGENTS.md
@@ -31,9 +31,13 @@ sources:
     resource: repo://src/select/root/use-select-root.ts
   - id: openwiki-source-25d8786996ca4a96ca5c6d6f
     resource: repo://src/tooltip/trigger/tooltip-trigger.ts
+  - id: openwiki-source-7d285dbfb1e8a6a35fc8f78d
+    resource: repo://src/utils/form-value.ts
+  - id: openwiki-source-40f53d1663f704797c52ff86
+    resource: repo://tsdown.config.ts
   - id: openwiki-source-ff18555ad70362de0f452788
     resource: repo://UPSTREAM.md
-generated: { by: "claude-code", at: "2026-10-17T05:21:17.049Z" }
+generated: { by: "claude-code", at: "2026-11-03T23:38:47.409Z" }
 ---
 
 # Design decisions: API shape, layout and packaging
@@ -42,13 +46,13 @@ These were settled when the primitives were extracted from Fluid Functionalism (
 
 ## Headless `create*` functions, not compound components
 
-Base UI is React compound components (`<Select.Root>`, `<Select.Trigger>` ...). The port instead gives each part a Solid function that returns state accessors and prop objects for the consumer to spread on its own gpuix elements.
+Base UI is React compound components (`<Select.Root>`, `<Select.Trigger>` ...). The port instead gives each part a Solid function that returns state accessors and prop objects for the consumer to spread on its own `@ghia/solid` elements.
 
-Why: FF already owns every visual (fluid hover, focus rings, popup surfaces, springs), and a gpuix popup needs gpuix's own components (`<anchored>`, `DismissableLayer`, `Dialog`). Hook-shaped primitives let FF keep its markup and styling and still take behaviour from one place. The extraction itself was a pure refactor: FF's checks and screenshots had to pass unchanged after each slice.
+Why: FF already owns every visual (fluid hover, focus rings, popup surfaces, springs), and a `@ghia/solid` popup needs its own components (`<anchored>`, `DismissableLayer`, `Dialog`). Hook-shaped primitives let FF keep its markup and styling and still take behaviour from one place. The extraction itself was a pure refactor: FF's checks and screenshots had to pass unchanged after each slice.
 
 ## Layout mirrors upstream, file for file
 
-`src/<component>/<part>/<kebab-name>.ts` corresponds to `packages/react/src/<component>/<part>/<PascalName>.tsx`. Nothing here is a git fork (React/DOM to Solid/gpuix rewrites every line), so staying current means reading upstream diffs and porting them by hand. A one-to-one layout makes that a lookup instead of a search: an upstream diff path names the port file, and the audit's "Base UI ref" column can be grepped for the rows a change touches. Shared code lives where upstream keeps it (`internals/`, `floating-ui-solid/` for `floating-ui-react/`, `utils/`).
+`src/<component>/<part>/<kebab-name>.ts` corresponds to `packages/react/src/<component>/<part>/<PascalName>.tsx`. Nothing here is a git fork (React/DOM to Solid/`@ghia/solid` rewrites every line), so staying current means reading upstream diffs and porting them by hand. A one-to-one layout makes that a lookup instead of a search: an upstream diff path names the port file, and the audit's "Base UI ref" column can be grepped for the rows a change touches. Shared code lives where upstream keeps it (`internals/`, `floating-ui-solid/` for `floating-ui-react/`, `utils/`).
 
 `package.json` exports `"./*": "./src/*/index.ts"` so adding a folder never edits a shared file. That mattered during extraction, when five component groups were built in parallel branches and would otherwise all have collided on one exports map.
 
@@ -58,17 +62,17 @@ Select, Combobox and Menu accept the highlighted index as an option and report e
 
 ## Hover close is shared, open delays are not
 
-The tooltip and menu submenus both leave their popup open while the pointer travels toward it. The port uses Base UI's safe polygon (`floating-ui-solid/safe-polygon.ts`) for both, run by one tracker (`createHoverHandleClose` in `hooks/use-hover-reference-interaction.ts`) that listens to the window `mousemove` from the trigger's leave until the polygon closes the popup. This replaced a tooltip grace timer and a menu dwell timer. The tracker is split from the open logic because the two consumers open differently: the tooltip has a rest delay and the submenu has its own hover-intent, so each trigger keeps its own open timers and only the close decision is shared. See [gaps](../gpuix/gaps-and-divergences.md) for why this was impossible before gpuix delivered window moves over bare background.
+The tooltip and menu submenus both leave their popup open while the pointer travels toward it. The port uses Base UI's safe polygon (`floating-ui-solid/safe-polygon.ts`) for both, run by one tracker (`createHoverHandleClose` in `hooks/use-hover-reference-interaction.ts`) that listens to the window `mousemove` from the trigger's leave until the polygon closes the popup. This replaced a tooltip grace timer and a menu dwell timer. The tracker is split from the open logic because the two consumers open differently: the tooltip has a rest delay and the submenu has its own hover-intent, so each trigger keeps its own open timers and only the close decision is shared. See [gaps](../ghia/gaps-and-divergences.md) for why this was impossible before `@ghia/native` delivered window moves over bare background.
 
 Base UI's `blockPointerEvents` is approximated, not reproduced. Upstream sets `pointer-events: none` on the parent popup while the pointer is on its way to a submenu. Here the menu list ignores pointer movement for that row (`blockedIndex`), so the trigger stays lit under whatever row the pointer crosses, but a click on a sibling row still lands.
 
 ## Refs as functions, and Select rows set props one by one
 
-A spread `ref` in gpuix JSX applies in an effect after the element is created, which is after props that depend on that element have been read. The concrete failure: a Select open focuses a row as the popup mounts, and if the row's `tabIndex` arrived through a spread it landed too late for that focus. So primitives return `triggerRef`, `popupRef`, `itemRef(...)` as separate functions to pass as `ref={...}`, and FF's Select rows set their props individually rather than spreading `itemProps`. Keep this in mind before "simplifying" a consumer back to a single spread.
+A spread `ref` in `@ghia/solid` JSX applies in an effect after the element is created, which is after props that depend on that element have been read. The concrete failure: a Select open focuses a row as the popup mounts, and if the row's `tabIndex` arrived through a spread it landed too late for that focus. So primitives return `triggerRef`, `popupRef`, `itemRef(...)` as separate functions to pass as `ref={...}`, and FF's Select rows set their props individually rather than spreading `itemProps`. Keep this in mind before "simplifying" a consumer back to a single spread.
 
-## Dialogs build on gpuix's `Dialog` family
+## Dialogs build on `@ghia/solid`'s `Dialog` family
 
-The dialog and drawer primitives return props for gpuix's `Dialog` and its popup instead of re-implementing the layer, focus trap and Escape stack. Re-implementing would duplicate gpuix's dismiss-layer stack, which other popups (the tooltip) also join. The two pieces gpuix does not cover are port-only files: `focus-first.tsx` (gpuix focuses the popup itself; Base UI's focus manager moves on to the first tab stop, see [focus model](focus-model-and-ff-conflicts.md)) and `mark-others`.
+The dialog and drawer primitives return props for `@ghia/solid`'s `Dialog` and its popup instead of re-implementing the layer, focus trap and Escape stack. Re-implementing would duplicate `@ghia/solid`'s dismiss-layer stack, which other popups (the tooltip) also join. The two pieces `@ghia/solid` does not cover are port-only files: `focus-first.ts` (`@ghia/solid` focuses the popup itself; Base UI's focus manager moves on to the first tab stop, see [focus model](focus-model-and-ff-conflicts.md)) and `mark-others`.
 
 ## What stays in the consumer and what lives here
 
@@ -87,6 +91,8 @@ Both handle arrow keys over a list, and consolidation considered merging them. T
 ## Packaging rules
 
 - **Relative imports only.** FF compiles this source directly with FF's own tsconfig (no build step), so a `#/*` alias here would resolve into FF's tree.
-- **Peer dependencies and exactly one runtime instance** of `solid-js` and `@gpuix/solid` across both repos. Two instances break context and reactivity silently. A plain `link:` was tried first and failed: `file:` dependencies get a store path per project directory, so each repo got its own `@gpuix/solid`. The fix is that FF's pnpm workspace includes this folder and installs run from FF's root; FF's single-instance check guards it. See the [README](../../README.md#use-it).
-- **`verifyDepsBeforeRun: false`** in `pnpm-workspace.yaml`. pnpm 12 auto-installs before running a script; run from this folder that install relinked a second `@gpuix/solid`, so a plain `pnpm check` here broke the consumer. Keep it off.
+- **Published as `ghia-base-ui` on npm, still consumable as source.** `exports` points at `src/*/index.ts` for FF's source link, while `publishConfig.exports` swaps in the tsdown build (`dist/<folder>/index.js` plus types) at publish time, with `solid-js` and `@ghia/solid` kept external as peer dependencies. Releases are CI-only: a Changesets version PR, then publish on merge to `main`; `prepublishOnly` refuses a local publish.
+- **No JSX in `src`.** `@ghia/solid`'s Bun plugin skips `node_modules`, so a published `.tsx` would not compile for npm consumers. The two files that had JSX (`utils/form-value`, `dialog/popup/focus-first`) became plain `.ts` using `jsx()` from `@ghia/solid/jsx-runtime`.
+- **Peer dependencies and exactly one runtime instance** of `solid-js` and `@ghia/solid` across both repos. Two instances break context and reactivity silently. A plain `link:` was tried first and failed: `file:` dependencies get a store path per project directory, so each repo got its own `@ghia/solid`. The fix is that FF's pnpm workspace includes this folder and installs run from FF's root; FF's single-instance check guards it. See the [README](../../README.md#use-it).
+- **`verifyDepsBeforeRun: false`** in `pnpm-workspace.yaml`. pnpm 12 auto-installs before running a script; run from this folder that install relinked a second `@ghia/solid`, so a plain `pnpm check` here broke the consumer. Keep it off.
 - **`noUncheckedIndexedAccess` stays on** here (FF itself turned it off at extraction because it produced hundreds of errors in code that was about to be rewritten). Satisfy it without `!` or fake fallbacks.
