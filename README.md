@@ -1,4 +1,4 @@
-# base-ui-solid-gpuix
+# ghia-base-ui
 
 Headless [Base UI](https://github.com/mui/base-ui) primitives for Solid on [`@ghia/solid`](https://github.com/fdarian/ghia), ported from `@base-ui/react` 1.9.0.
 
@@ -6,36 +6,46 @@ Each primitive is a `create*` function that returns state and prop objects to sp
 
 ## Status
 
-This is a port of only what [Fluid Functionalism](https://github.com/fdarian/fluid-functionalism-gpuix) (FF) uses: accordion, collapsible, tabs, checkbox, checkbox-group, radio, radio-group, switch, slider, menu, select, combobox, dialog, drawer, tooltip and scroll-area, plus the shared pieces under `internals/`, `floating-ui-solid/` and `utils/`. Base UI parts and props FF never touches are not ported. It is private and unpublished; FF consumes the source directly, with no build step.
+This is a port of only what [Fluid Functionalism](https://github.com/fdarian/fluid-functionalism-gpuix) (FF) uses: accordion, collapsible, tabs, checkbox, checkbox-group, radio, radio-group, switch, slider, menu, select, combobox, dialog, drawer, tooltip and scroll-area, plus the shared pieces under `internals/`, `floating-ui-solid/` and `utils/`. Base UI parts and props FF never touches are not ported. FF consumes the source directly, with no build step; everyone else installs the built package from npm.
 
 Where the port differs from Base UI 1.9.0, [BASE-UI-AUDIT.md](BASE-UI-AUDIT.md) says so row by row.
 
-## Use it
+## Install
 
-It is consumed as source through a `link:` dependency, as a workspace member of the consumer. FF does it like this:
+```bash
+pnpm add ghia-base-ui @ghia/solid solid-js
+```
+
+Peer dependencies are `solid-js` 1.9.15 and `@ghia/solid`. Exactly one runtime instance of each may exist in your app.
+
+### Local development with the consumer
+
+FF links the source instead of installing from npm, as a workspace member of the consumer:
 
 ```yaml
 # pnpm-workspace.yaml
 packages:
   - .
-  - ../base-ui-solid-gpuix
+  - ../ghia-base-ui
 ```
 
 ```jsonc
 // package.json
-"base-ui-solid-gpuix": "link:../base-ui-solid-gpuix"
+"ghia-base-ui": "link:../ghia-base-ui"
 ```
 
-Peer dependencies are `solid-js` 1.9.15 and `@ghia/solid`. Exactly one runtime instance of each may exist across this repo and the consumer, so **run `pnpm install` from the consumer's root**; a bare `pnpm install` here links a second `@ghia/solid` (the consumer's `scripts/check-single-instance.ts` catches it).
+**Run `pnpm install` from the consumer's root**; a bare `pnpm install` here resolves a second `@ghia/solid` (the consumer's `scripts/check-single-instance.ts` catches it).
+
+## Use it
 
 Import by folder:
 
 ```ts
-import { createSelectRoot } from 'base-ui-solid-gpuix/select';
-import { createRowList } from 'base-ui-solid-gpuix/internals/composite';
+import { createSelectRoot } from 'ghia-base-ui/select';
+import { createRowList } from 'ghia-base-ui/internals/composite';
 ```
 
-`package.json` maps `base-ui-solid-gpuix/<folder>` to `src/<folder>/index.ts`; nested folders work, and a new folder needs no config. Primitive files mirror upstream's layout (`accordion/root/use-accordion-root.ts` for `accordion/root/AccordionRoot.tsx`); the [file map](UPSTREAM.md#file-map) lists all of them.
+`package.json` maps `ghia-base-ui/<folder>` to `src/<folder>/index.ts` (`dist/<folder>/index.js` once published); nested folders work, and a new folder needs no config. Primitive files mirror upstream's layout (`accordion/root/use-accordion-root.ts` for `accordion/root/AccordionRoot.tsx`); the [file map](UPSTREAM.md#file-map) lists all of them.
 
 ## Commands
 
@@ -44,12 +54,13 @@ pnpm check:type   # tsc
 pnpm check:test   # bun test, headless
 pnpm check        # both
 pnpm format       # biome check --write
+pnpm build        # tsdown into dist/
 ```
 
 <details>
 <summary>Installing without the consumer</summary>
 
-Clone the sibling `ghia` repository next to this one (the dev dependencies point at `../ghia/packages/*`) and run `pnpm install` here. Do this only for a standalone clone: next to a consumer it creates the second instance described above.
+Run `pnpm install` here; `@ghia/solid` comes from npm. Do this only for a standalone clone: next to a consumer it creates the second instance described above.
 
 </details>
 
