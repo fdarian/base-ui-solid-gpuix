@@ -2,7 +2,7 @@
 
 Headless [Base UI](https://github.com/mui/base-ui) primitives for Solid on [`@ghia/solid`](https://github.com/fdarian/ghia), ported from `@base-ui/react` 1.9.0.
 
-Each primitive is a `create*` function that returns state and prop objects to spread on your own gpuix elements. There is no styling, no theme tokens and no animation in here; timings and sizes arrive as options.
+Each primitive is a `create*` function that returns state and prop objects to spread on your own `@ghia/solid` elements. There is no styling, no theme tokens and no animation in here; timings and sizes arrive as options.
 
 ## Status
 

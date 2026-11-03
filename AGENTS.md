@@ -9,7 +9,7 @@ Headless Base UI primitives for Solid on `@ghia/solid`, ported from `@base-ui/re
 - [BASE-UI-AUDIT.md](BASE-UI-AUDIT.md) — Base UI vs port, row by row, with `src/...` and `ff:src/...` refs; update the rows you touch.
 - Files use relative imports, never `#/*`: the consumer compiles this source with its own tsconfig.
 - No JSX in `src`: `@ghia/solid`'s Bun plugin skips `node_modules`, so a published `.tsx` would not compile. Build host elements with `jsx()` from `@ghia/solid/jsx-runtime` (see `utils/form-value.ts`).
-- Primitives take timings and sizes as options; the consumer owns styling constants. Refs are returned as functions because a spread `ref` applies late in gpuix JSX.
+- Primitives take timings and sizes as options; the consumer owns styling constants. Refs are returned as functions because a spread `ref` applies late in `@ghia/solid` JSX.
 
 ## Commands
 

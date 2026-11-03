@@ -1,7 +1,7 @@
 # Upstream
 
 This is a port of **[Base UI](https://github.com/mui/base-ui)** (`@base-ui/react`, MIT, Copyright (c) MUI) to Solid
-on gpuix, limited to the primitives and props that [Fluid Functionalism](https://github.com/fdarian/fluid-functionalism-gpuix)
+on `@ghia/solid`, limited to the primitives and props that [Fluid Functionalism](https://github.com/fdarian/fluid-functionalism-gpuix)
 (FF) uses. Nothing here is a git fork: the upstream is React and DOM, so every file is rewritten, and staying current
 means reading upstream diffs and porting them by hand. [BASE-UI-AUDIT.md](BASE-UI-AUDIT.md) records where the port
 still differs; this file is how to keep it in step.
@@ -105,7 +105,7 @@ kebab-case, `use-*.ts` where upstream has a `use*` hook and `create*` is the exp
 | `internals/composite/root/useCompositeRoot.ts`                                                                                                                                             | `internals/composite/root/use-composite-root.ts`                                                                                                                            |
 | `internals/filter.ts`                                                                                                                                                                      | `internals/filter.ts` (`contains` only; and its test)                                                                                                                       |
 | `internals/useTransitionStatus.ts`                                                                                                                                                         | `internals/use-transition-status.ts` (`createPresence`: a timed exit, not CSS animations)                                                                                   |
-| `internals/useAnchorPositioning.ts`                                                                                                                                                        | `internals/use-anchor-positioning.ts` (placement state; the flip itself is gpuix's `<anchored>`)                                                                            |
+| `internals/useAnchorPositioning.ts`                                                                                                                                                        | `internals/use-anchor-positioning.ts` (placement state; the flip itself is `@ghia/native`'s `<anchored>`)                                                                   |
 | `floating-ui-react/hooks/useClick.ts`                                                                                                                                                      | `floating-ui-solid/hooks/use-click.ts`                                                                                                                                      |
 | `floating-ui-react/hooks/useTypeahead.ts`                                                                                                                                                  | `floating-ui-solid/hooks/use-typeahead.ts` (and its test)                                                                                                                   |
 | `floating-ui-react/utils/markOthers.ts`                                                                                                                                                    | `floating-ui-solid/utils/mark-others.ts`                                                                                                                                    |
@@ -123,18 +123,18 @@ hook folds in.
 
 ### Port-only files
 
-No upstream file; each exists because gpuix or FF needs it.
+No upstream file; each exists because ghia or FF needs it.
 
 | Port file                                      | Why                                                                                                                                                                                                                                                                        |
 | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `utils/pointer-capture.ts`                     | gpuix captures a pointer only when asked, so a drag calls `createPointerCapture`; React uses `setPointerCapture` inline in `SliderControl` and the scroll bar.                                                                                                             |
+| `utils/pointer-capture.ts`                     | `@ghia/native` captures a pointer only when asked, so a drag calls `createPointerCapture`; React uses `setPointerCapture` inline in `SliderControl` and the scroll bar.                                                                                                    |
 | `internals/composite/root/row-list.ts`         | `createRowList` stands in for `CompositeRoot`'s key handling over a list of rows that radio-group and checkbox-group share (ordered by index, Space and Enter activate). Kept apart from `use-composite-root.ts`: different ordering, modifier and `preventDefault` rules. |
 | `menu/input/menu-search.ts`                    | A search field woven into the menu's list keys. It is FF's layer (`dropdown-search`), not `Menu.Input`, which is Base UI's virtual-focus filter.                                                                                                                           |
 | `slider/utils/value-pixel.ts`                  | Value to pixel mapping for a thumb that stays inside the track, with the `steps` list FF's slider adds (Base UI works on indices).                                                                                                                                         |
 | `switch/thumb/switch-thumb.ts` (the drag part) | FF's switch thumb can be dragged; Base UI's cannot.                                                                                                                                                                                                                        |
-| `scroll-area/viewport/get-key-scroll.ts`       | What a browser does for a focused scroller (arrows, pages, Home and End); gpuix has no native keyboard scrolling.                                                                                                                                                          |
+| `scroll-area/viewport/get-key-scroll.ts`       | What a browser does for a focused scroller (arrows, pages, Home and End); `@ghia/native` has no native keyboard scrolling.                                                                                                                                                 |
 | `scroll-area/utils/scroll-math.ts`             | `clamp` (Base UI imports it from `@base-ui/utils`) and `pointerAlong`.                                                                                                                                                                                                     |
-| `dialog/popup/focus-first.ts`                  | Moves focus from the popup to its first tab stop, as Base UI's focus manager does; gpuix focuses the popup itself.                                                                                                                                                         |
+| `dialog/popup/focus-first.ts`                  | Moves focus from the popup to its first tab stop, as Base UI's focus manager does; `@ghia/solid` focuses the popup itself.                                                                                                                                                 |
 | `dialog/root/dialog-root-context.ts`           | The dialog parts share state through a context; upstream's store classes are not ported.                                                                                                                                                                                   |
 
 ## API shape
@@ -142,9 +142,9 @@ No upstream file; each exists because gpuix or FF needs it.
 Base UI is React compound components; this port is headless `create*` functions.
 
 - **A function per part, not a component.** `createSelectRoot(options)` returns accessors and prop objects
-  (`triggerProps`, `popupProps`, `itemProps(item, index)`) that the consumer spreads on its own gpuix elements. There is
+  (`triggerProps`, `popupProps`, `itemProps(item, index)`) that the consumer spreads on its own `@ghia/solid` elements. There is
   no styling, no theme token and no animation library in this repo; timings and sizes arrive as options.
-- **Refs are returned as functions.** A spread `ref` applies late in gpuix JSX, after props that depend on the element
+- **Refs are returned as functions.** A spread `ref` applies late in `@ghia/solid` JSX, after props that depend on the element
   (for instance a row's `tabIndex` against the open's focus), so the primitives return ref functions and the consumer
   sets props and refs one by one where order matters.
 - **Controllable highlight with reasons.** Select, Combobox and Menu take the highlighted index as an option and report
@@ -152,10 +152,10 @@ Base UI is React compound components; this port is headless `create*` functions.
   `reset`, and so on), so the consumer's own highlight (fluid hover) can follow or ignore it.
 - **Pointer highlight belongs to the consumer.** Base UI highlights on hover itself. Here the consumer's fluid hover owns
   it, and the menu list takes its pointer handlers (`pointer: { onMouseEnter, onMouseMove, onMouseLeave }`).
-- **Dialogs build on gpuix's `Dialog` family.** The dialog and drawer hooks return props for gpuix's `Dialog` and its
+- **Dialogs build on `@ghia/solid`'s `Dialog` family.** The dialog and drawer hooks return props for `@ghia/solid`'s `Dialog` and its
   popup instead of re-implementing the layer, focus trap and Escape stack; `FocusFirst` and `mark-others` cover what
   Base UI's focus manager and `markOthers` do beyond it.
-- **One gpuix instance.** The primitives import `@ghia/solid` and `solid-js` as peers; see the README for the
+- **One `@ghia/solid` instance.** The primitives import `@ghia/solid` and `solid-js` as peers; see the README for the
   single-instance rule.
 
 ## Deviations
@@ -165,13 +165,13 @@ Base UI 1.9.0's source and this port, row by row. Port refs read `src/...:lines`
 `ff:src/...:lines` for code that stayed in FF. Each row has one **Status**:
 
 - **ported** (190): same behaviour.
-- **gap** (17): fixable in the port and not fixed. Five are gpuix capabilities the port has not adopted yet (the note
+- **gap** (17): fixable in the port and not fixed. Five are ghia capabilities the port has not adopted yet (the note
   names the API to use); six are the popover's missing controlled `open`, Escape from anywhere, close on focus-out,
   focus into the popup, focus back to the trigger and Space on key-up; six are FF-only layers that are not Base UI or limits of the demos (select gap click,
   combobox `onCreate`, `variant`, `error` and `size`, mount-order indices for accordion items and tabs, tabs-subtle
   overflow).
 - **fixed (sha)** (182): was a gap, fixed in this port at that commit.
-- **blocked by gpuix** (3): gpuix still lacks the capability: CSS `transform` scale and rotate (the select and combobox
+- **blocked by ghia** (3): ghia still lacks the capability: CSS `transform` scale and rotate (the select and combobox
   popup entrance) and
   `<input type="range">` (a native range input under each slider thumb).
 - **n/a** (34): FF overrides the behaviour, or it is out of scope (`DirectionProvider` and RTL, the `active` and
