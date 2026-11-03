@@ -3,7 +3,7 @@ import { jsx } from '@ghia/solid/jsx-runtime';
 
 /**
  * Base UI's hidden input: what a form submits for a control that is not an
- * input itself. gpuix's `FormData` reads named, enabled `<input>`s, so this is
+ * input itself. `@ghia/native`'s `FormData` reads named, enabled `<input>`s, so this is
  * a real one that nothing can see, point at or reach with Tab. An empty
  * `required` one blocks the submit and takes focus, which it hands to the
  * control that holds the value.

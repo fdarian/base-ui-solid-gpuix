@@ -39,7 +39,7 @@ function toHoverEvent(event: DomEvent, type: HoverEvent['type']): HoverEvent {
  * that runs a `handleClose` (`floating-ui-react/hooks/useHoverReferenceInteraction.ts`
  * `onMouseLeave`, `useHoverFloatingInteraction.ts` `onFloatingMouseEnter` and
  * `onFloatingMouseLeave`). The trigger's `mouseleave` starts it; from then on
- * the handler hears every window `mousemove`, which gpuix delivers over bare
+ * the handler hears every window `mousemove`, which `@ghia/native` delivers over bare
  * background too, until it closes the popup or `reset` is called.
  */
 export function createHoverHandleClose(options: HoverHandleCloseOptions) {

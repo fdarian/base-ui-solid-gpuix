@@ -21,7 +21,7 @@ export function createScrollAreaScrollbar(
 
 	/** A press on the thumb starts a drag; one on the bare track jumps the way Base UI does and goes on as a drag from there. */
 	const pressTrack = (event: HostMouseEvent) => {
-		// Native scrollbars never move focus, whichever button presses them; gpuix blurs the focused element on a press with no focusable element in its path unless this is called.
+		// Native scrollbars never move focus, whichever button presses them; `@ghia/native` blurs the focused element on a press with no focusable element in its path unless this is called.
 		event.preventDefault();
 		// Only the primary button presses a scrollbar.
 		if (event.button !== undefined && event.button !== 0) return;
@@ -46,7 +46,7 @@ export function createScrollAreaScrollbar(
 		root.startDrag(axis, track, event, target);
 	};
 
-	/** A wheel event over the track scrolls the viewport, which is not under the pointer, and is prevented so the scroller around the area does not take it too. A viewport already at its limit leaves the event alone: gpuix gives one event to the innermost scroller that can use it, which is then the scroller around the area. */
+	/** A wheel event over the track scrolls the viewport, which is not under the pointer, and is prevented so the scroller around the area does not take it too. A viewport already at its limit leaves the event alone: `@ghia/native` gives one event to the innermost scroller that can use it, which is then the scroller around the area. */
 	const wheelTrack = (event: HostWheelEvent) => {
 		const delta = axis === 'y' ? event.deltaY : event.deltaX;
 		if (delta === 0) return;

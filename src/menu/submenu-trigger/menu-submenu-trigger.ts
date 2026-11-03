@@ -128,7 +128,7 @@ export function createMenuSubmenuTrigger(options: MenuSubmenuTriggerOptions) {
 			if (!tracking.start(event)) sub.setOpen(false);
 		},
 		popup: {
-			/** A function, not a prop: a spread `ref` applies late in gpuix JSX. */
+			/** A function, not a prop: a spread `ref` applies late in `@ghia/solid` JSX. */
 			ref(element: HostElement) {
 				popupElement = element;
 			},

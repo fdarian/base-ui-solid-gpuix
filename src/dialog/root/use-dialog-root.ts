@@ -36,9 +36,9 @@ export interface DialogRootState {
 }
 
 /**
- * Open state, exit hold and ids for a dialog over gpuix's headless `Dialog`,
+ * Open state, exit hold and ids for a dialog over `@ghia/solid`'s headless `Dialog`,
  * which unmounts the moment it closes: `mounted` outlives `shown` by the exit
- * fade (Base UI's `preventUnmountOnClose`). Pass `mounted()` to gpuix's
+ * fade (Base UI's `preventUnmountOnClose`). Pass `mounted()` to `@ghia/solid`'s
  * `Dialog` as `open` and provide the result through `DialogRootContext`.
  *
  * Call it inside the component that renders the dialog, so `nested` can see a
@@ -59,7 +59,7 @@ export function createDialogRoot(
 	const mounted = presence.mounted;
 
 	const setOpen = (next: boolean) => {
-		// gpuix keeps its layer up through the exit fade, so a second close request (a press on the backdrop or the ✕) can arrive when the dialog is already closed. Nothing to report.
+		// `@ghia/native` keeps its layer up through the exit fade, so a second close request (a press on the backdrop or the ✕) can arrive when the dialog is already closed. Nothing to report.
 		if (!next && !shown()) return;
 		if (options.open?.() === undefined) setUncontrolled(next);
 		options.onOpenChange?.(next);
@@ -90,7 +90,7 @@ export function createDialogRoot(
 		},
 		pressTrigger() {
 			if (shown()) setOpen(false);
-			// Pressed while the exit fade plays: gpuix still sees the dialog open and ignores it.
+			// Pressed while the exit fade plays: `@ghia/solid` still sees the dialog open and ignores it.
 			else if (mounted()) setOpen(true);
 		},
 	};

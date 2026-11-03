@@ -2,7 +2,7 @@ import type { HostElement, HostMouseEvent } from '@ghia/solid';
 
 /**
  * A drag has to keep its moves and its release after the pointer leaves the
- * element, and gpuix only captures when asked: put `ref` on the element that
+ * element, and `@ghia/native` only captures when asked: put `ref` on the element that
  * owns the drag's move and release handlers and call `capture` from the press.
  * The release ends the capture; end the drag on `onLostPointerCapture` as well,
  * so no drag flag stays set.

@@ -9,7 +9,7 @@ export interface BoxElement {
 }
 
 /**
- * Whether `child` is `parent` or sits below it. The tree is gpuix's, where
+ * Whether `child` is `parent` or sits below it. The tree is `@ghia/solid`'s, where
  * every element knows its `parent`; a popup anchored to a trigger is the
  * trigger's descendant, which the DOM version's portalled popup is not.
  */

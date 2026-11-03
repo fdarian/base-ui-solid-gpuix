@@ -6,7 +6,7 @@ import { document, type HostElement, type HostMouseEvent } from '@ghia/solid';
  * reference on outside press" in its test). There the return runs after the
  * popup's exit, behind the press's own focus default. Here the close hands
  * focus to the trigger at once, and a press over bare background then blurs it:
- * gpuix, like a browser, runs that default after the `mousedown` handlers. So
+ * `@ghia/native`, like a browser, runs that default after the `mousedown` handlers. So
  * the trigger takes focus again on the next tick; a control that took focus
  * from the press keeps it.
  */

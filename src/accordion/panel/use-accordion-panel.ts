@@ -36,7 +36,7 @@ export function createAccordionPanel(
 			role: 'region' as const,
 			'aria-labelledby': item.triggerId,
 		},
-		/** Closed and past its exit. The consumer applies it as `display: none` (gpuix has no `hidden` attribute). */
+		/** Closed and past its exit. The consumer applies it as `display: none` (`@ghia/native` has no `hidden` attribute). */
 		hidden,
 		/** Whether the panel element is in the tree: always with `keepMounted`, else until it is hidden. */
 		rendered: () => options?.keepMounted === true || !hidden(),

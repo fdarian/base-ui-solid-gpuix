@@ -3,7 +3,7 @@ import type { DomEvent, HostElement, KeyEvent } from '@ghia/solid';
 import { createRoot } from 'solid-js';
 import { createScrollAreaRoot } from './use-scroll-area-root';
 
-/** A scroller as gpuix reports it: integer sizes, and a `scrollTop` that `scrollTo` clamps to `[0, scrollHeight - clientHeight]`, like Chrome. */
+/** A scroller as `@ghia/native` reports it: integer sizes, and a `scrollTop` that `scrollTo` clamps to `[0, scrollHeight - clientHeight]`, like Chrome. */
 function scroller(scrollHeight: number, clientHeight: number) {
 	let top = 0;
 	const scrolls: number[] = [];

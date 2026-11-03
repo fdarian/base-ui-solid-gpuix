@@ -38,7 +38,7 @@ function sizeOf(event: Pick<DomEvent, 'width' | 'height'>): ScrollAreaSize {
 
 /**
  * State, measurement, thumb maths, drag, track press, wheel and keys for a
- * scroll area over a gpuix scroller. Spread `rootProps` on the root,
+ * scroll area over a `@ghia/native` scroller. Spread `rootProps` on the root,
  * `viewportProps` on the scroller and `contentProps` on its one child; a bar
  * is built from this with `createScrollAreaScrollbar`.
  */
