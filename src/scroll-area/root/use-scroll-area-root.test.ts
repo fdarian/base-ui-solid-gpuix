@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import type { DomEvent, HostElement, KeyEvent } from '@gpuix/solid';
+import type { DomEvent, HostElement, KeyEvent } from '@ghia/solid';
 import { createRoot } from 'solid-js';
 import { createScrollAreaRoot } from './use-scroll-area-root';
 

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import type { HostMouseEvent } from '@gpuix/solid';
+import type { HostMouseEvent } from '@ghia/solid';
 import type { ScrollAreaRootState } from '../root/use-scroll-area-root';
 import { createScrollAreaScrollbar } from './use-scroll-area-scrollbar';
 

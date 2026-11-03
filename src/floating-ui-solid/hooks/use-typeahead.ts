@@ -1,4 +1,4 @@
-import type { KeyEvent } from '@gpuix/solid';
+import type { KeyEvent } from '@ghia/solid';
 import { isChord } from '../../internals/composite';
 
 /** Base UI `useTypeahead` `resetMs`. */

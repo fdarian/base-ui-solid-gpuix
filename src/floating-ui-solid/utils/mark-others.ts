@@ -1,4 +1,4 @@
-import { type HostElement, setProp } from '@gpuix/solid';
+import { type HostElement, setProp } from '@ghia/solid';
 import { onCleanup, onMount } from 'solid-js';
 
 /**

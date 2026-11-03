@@ -1,4 +1,4 @@
-import { document, type HostElement, type KeyEvent } from '@gpuix/solid';
+import { document, type HostElement, type KeyEvent } from '@ghia/solid';
 import {
 	createEffect,
 	createSignal,

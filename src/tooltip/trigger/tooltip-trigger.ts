@@ -1,4 +1,4 @@
-import type { DomEvent, HostElement, HostMouseEvent } from '@gpuix/solid';
+import type { DomEvent, HostElement, HostMouseEvent } from '@ghia/solid';
 import { type Accessor, onCleanup } from 'solid-js';
 import {
 	createHoverHandleClose,

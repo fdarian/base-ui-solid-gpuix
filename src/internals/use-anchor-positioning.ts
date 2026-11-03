@@ -1,4 +1,4 @@
-import type { AnchoredPlacementEvent } from '@gpuix/solid';
+import type { AnchoredPlacementEvent } from '@ghia/solid';
 import { createSignal } from 'solid-js';
 
 /** The gap a popup keeps from the window edge: Base UI's default collision padding. */

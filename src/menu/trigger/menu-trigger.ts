@@ -2,7 +2,7 @@ import type {
 	HostElement,
 	HostMouseEvent,
 	HostPointerEvent,
-} from '@gpuix/solid';
+} from '@ghia/solid';
 import { createPressToggle } from '../../floating-ui-solid/hooks';
 import type { MenuRoot } from '../root/menu-root';
 

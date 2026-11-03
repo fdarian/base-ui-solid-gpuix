@@ -1,4 +1,4 @@
-import type { KeyEvent } from '@gpuix/solid';
+import type { KeyEvent } from '@ghia/solid';
 import { mergeProps } from 'solid-js';
 import {
 	type CollapsibleTriggerAria,

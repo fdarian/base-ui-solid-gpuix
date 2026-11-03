@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import type { KeyEvent } from '@gpuix/solid';
+import type { KeyEvent } from '@ghia/solid';
 import { createRoot } from 'solid-js';
 import { createSliderRoot } from '../root/slider-root';
 import { createSliderThumb, keyboardStep } from './slider-thumb';

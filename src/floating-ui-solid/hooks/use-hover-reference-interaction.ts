@@ -1,4 +1,4 @@
-import { type DomEvent, window } from '@gpuix/solid';
+import { type DomEvent, window } from '@ghia/solid';
 import { type Accessor, createSignal, onCleanup } from 'solid-js';
 import type { BoxElement } from '../utils/element';
 import type {

@@ -155,7 +155,7 @@ Base UI is React compound components; this port is headless `create*` functions.
 - **Dialogs build on gpuix's `Dialog` family.** The dialog and drawer hooks return props for gpuix's `Dialog` and its
   popup instead of re-implementing the layer, focus trap and Escape stack; `FocusFirst` and `mark-others` cover what
   Base UI's focus manager and `markOthers` do beyond it.
-- **One gpuix instance.** The primitives import `@gpuix/solid` and `solid-js` as peers; see the README for the
+- **One gpuix instance.** The primitives import `@ghia/solid` and `solid-js` as peers; see the README for the
   single-instance rule.
 
 ## Deviations

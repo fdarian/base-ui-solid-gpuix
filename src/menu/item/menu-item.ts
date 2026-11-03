@@ -1,4 +1,4 @@
-import type { DomEvent, HostElement } from '@gpuix/solid';
+import type { DomEvent, HostElement } from '@ghia/solid';
 import { type Accessor, createEffect, onCleanup } from 'solid-js';
 
 /** What the keyboard needs to know about a row the pointer would otherwise be the only one to reach. */

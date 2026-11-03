@@ -1,4 +1,4 @@
-import { type HostElement, useGpuixRequired } from '@gpuix/solid';
+import { type HostElement, useGpuixRequired } from '@ghia/solid';
 
 /**
  * Base UI's hidden input: what a form submits for a control that is not an

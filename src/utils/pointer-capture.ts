@@ -1,4 +1,4 @@
-import type { HostElement, HostMouseEvent } from '@gpuix/solid';
+import type { HostElement, HostMouseEvent } from '@ghia/solid';
 
 /**
  * A drag has to keep its moves and its release after the pointer leaves the

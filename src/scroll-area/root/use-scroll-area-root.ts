@@ -4,7 +4,7 @@ import type {
 	HostMouseEvent,
 	KeyEvent,
 	ScrollEvent,
-} from '@gpuix/solid';
+} from '@ghia/solid';
 import { createSignal, onCleanup } from 'solid-js';
 import { isChord } from '../../internals/composite';
 import { SCROLL_TIMEOUT, USER_SCROLL_MS } from '../constants';
