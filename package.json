@@ -1,6 +1,6 @@
 {
 	"name": "ghia-base-ui",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"type": "module",
 	"description": "Headless Base UI primitives for Solid on @ghia/solid, ported from @base-ui/react 1.9.0.",
 	"license": "MIT",
