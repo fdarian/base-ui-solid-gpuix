@@ -94,7 +94,7 @@ export function createMenuItem(host: MenuItemHost, props: MenuItemProps) {
 		});
 	});
 
-	const role = () => {
+	const role = (): 'menuitem' | 'menuitemcheckbox' | 'menuitemradio' => {
 		if (props.checked === undefined) return 'menuitem';
 		return host.multiple() ? 'menuitemcheckbox' : 'menuitemradio';
 	};
@@ -123,7 +123,7 @@ export function createMenuItem(host: MenuItemHost, props: MenuItemProps) {
 			get 'aria-disabled'() {
 				return props.disabled === true;
 			},
-			get 'aria-haspopup'() {
+			get 'aria-haspopup'(): 'menu' | undefined {
 				return props.submenu === undefined ? undefined : 'menu';
 			},
 			get 'aria-expanded'() {

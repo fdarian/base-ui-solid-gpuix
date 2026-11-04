@@ -29,6 +29,6 @@ export function createTabsList(options: TabsListOptions) {
 		/** The tab that holds the roving tab stop. */
 		tabStop: () => focusedTab() ?? Math.max(options.selectedIndex(), 0),
 		focusTab: setFocusedTab,
-		props: { role: 'tablist' },
+		props: { role: 'tablist' as const },
 	};
 }
